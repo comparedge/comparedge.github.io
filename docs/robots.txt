@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imkemit-ops.github.io/comparedge-blog/sitemap.xml
