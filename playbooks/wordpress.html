@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress.com Playbook: Website Builder Guide 2026</title>
+<meta name="description" content="Master WordPress.com with tips on the .com vs .org difference, theme selection, essential plugins, SEO setup, Gutenberg editor, and honest comparison vs Webflow and Squarespace.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/wordpress.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="WordPress.com Playbook: Website Builder Guide 2026">
+<meta property="og:description" content="WordPress.com power user guide: .com vs .org explained, themes, plugins, SEO setup, Gutenberg editor tips, speed optimization, vs Webflow vs Squarespace.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/wordpress.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WordPress.com Playbook: Website Builder Guide 2026">
+<meta name="twitter:description" content="WordPress.com guide: .com vs .org, themes, plugins, SEO, Gutenberg, speed, vs Webflow vs Squarespace with pricing breakdown.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-04-06","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"WordPress.com Playbook: Website Builder Guide 2026","description":"Master WordPress.com with tips on .com vs .org, themes, plugins, SEO, Gutenberg editor, and compare vs Webflow and Squarespace.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/wordpress.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"WordPress.com Playbook","item":"https://blog.comparedge.com/playbooks/wordpress.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the real difference between WordPress.com and WordPress.org?","acceptedAnswer":{"@type":"Answer","text":"WordPress.com is a hosted service by Automattic — you don't manage hosting, updates, or security. WordPress.org is the open-source software you download and host yourself. WordPress.org gives you complete control: install any plugin, any theme, modify any code. WordPress.com restricts plugin installation (only on Business plan and up), controls updates, and limits code customization on lower plans. If you want full control, use WordPress.org with a host like SiteGround, Kinsta, or WP Engine. If you want managed simplicity, WordPress.com works — just know the limitations."}},
+{"@type":"Question","name":"Does WordPress.com work for SEO?","acceptedAnswer":{"@type":"Answer","text":"WordPress.com on Business plan or higher gives you access to Yoast SEO and similar plugins, which makes it competitive for SEO. On lower plans, you get basic SEO settings (title, description, sitemap) but no advanced schema markup, no structured data plugins, and limited technical SEO control. For serious SEO, WordPress.org with full plugin access is significantly more powerful — and worth the additional hosting cost of $4-20/month."}},
+{"@type":"Question","name":"How does WordPress.com compare to Squarespace for beginners?","acceptedAnswer":{"@type":"Answer","text":"Squarespace wins on design consistency and ease of use for beginners — every template looks professional and the drag-and-drop editor is more intuitive than Gutenberg. WordPress.com wins on flexibility, content management depth, and SEO potential. For a portfolio, restaurant, or small business site, Squarespace delivers a better looking result faster. For a content-heavy site (blog, news, knowledge base), WordPress.com's CMS capabilities are stronger. Price is similar: Squarespace Personal at $16/mo vs WordPress.com Personal at $9/mo."}},
+{"@type":"Question","name":"What are the best plugins to install first on WordPress?","acceptedAnswer":{"@type":"Answer","text":"The essential first plugins on WordPress.org (or WordPress.com Business+): Yoast SEO or Rank Math (SEO), WP Rocket or LiteSpeed Cache (speed), Wordfence Security (security), Updraft Plus (backups), WPForms or Gravity Forms (contact forms), and Smush or Imagify (image optimization). These six categories cover 90% of what a professional WordPress site needs before adding any feature-specific plugins."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#21759B;--accent2:#2e9cc4;--accent3:#155e7a;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+a{color:var(--accent2);text-decoration:none}a:hover{opacity:.85}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+.progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
+.sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
+.sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
+.sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
+.sidebar-toc li a{display:block;font-size:.72rem;color:var(--text-muted);padding:4px 8px 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.3}
+.sidebar-toc li a::before{content:counter(stoc) ". ";color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.6rem}
+.sidebar-toc li a:hover,.sidebar-toc li a.active{color:var(--accent2);border-left-color:var(--accent2)}
+.sidebar-toc li a.active{background:rgba(33,117,155,.05);border-radius:0 6px 6px 0}
+.progress-track{position:fixed;top:90px;right:max(16px,calc((100vw - 1200px)/2 - 10px));width:4px;height:calc(100vh - 120px);background:var(--border);border-radius:2px;z-index:50}
+.progress-thumb{width:4px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;min-height:20px;transition:height .1s}
+@media(max-width:1400px){.sidebar-toc,.progress-track{display:none}}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--accent2)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--accent2)}.mobile-menu a.primary-link{color:var(--accent2);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);max-height:280px}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(33,117,155,.08);border:1px solid rgba(33,117,155,.25);color:var(--accent2);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}.toc li{margin-bottom:6px}.toc a{color:var(--accent2);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#050f18;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#7dd3f0}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.yellow{border-color:#f59e0b;background:#1a1505}.callout.yellow strong{color:#fcd34d}
+.callout.red{border-color:#ef4444;background:#1a0808}.callout.red strong{color:#fca5a5}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#7dd3f0}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#bae6fd}
+pre code{background:none;border:none;padding:0}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(255,255,255,.02)}
+.tip{background:rgba(33,117,155,.07);border:1px solid rgba(33,117,155,.2);border-radius:10px;padding:16px 20px;margin:20px 0}
+.tip strong{color:var(--accent2)}
+.key-takeaway{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:32px 0}
+.key-takeaway h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);margin-bottom:12px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+.newsletter{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;margin:40px 0;text-align:center}
+.newsletter h3{color:var(--text);margin-bottom:8px}.newsletter p{color:var(--text-dim);margin-bottom:20px}
+.newsletter-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.newsletter-form input{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-size:15px;width:280px}
+.newsletter-form button{background:var(--accent);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:15px}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent2)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#155e7a,#21759B);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-links{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo">
+    <svg width="26" height="24" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="wp-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#wp-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+    <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('wp-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div class="progress-bar" id="progressBar"></div>
+<div id="wp-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('wp-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<nav class="sidebar-toc" id="sidebarToc">
+  <h4>Navigation</h4>
+  <ol>
+    <li><a href="#com-vs-org">com vs .org</a></li>
+    <li><a href="#themes">Theme Selection</a></li>
+    <li><a href="#plugins">Essential Plugins</a></li>
+    <li><a href="#speed">Speed Optimization</a></li>
+    <li><a href="#seo">SEO Setup</a></li>
+    <li><a href="#gutenberg">Gutenberg Editor</a></li>
+    <li><a href="#vs-alternatives">vs Webflow vs Squarespace</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+<div class="progress-track" id="progressTrack"><div class="progress-thumb" id="progressThumb"></div></div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / WordPress.com</nav>
+
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wp-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#21759B"/><stop offset="100%" stop-color="#2e9cc4"/></linearGradient>
+  </defs>
+  <!-- Browser frame -->
+  <rect x="30" y="60" width="300" height="190" rx="10" fill="#050f18" stroke="#21759B" stroke-width="1.5"/>
+  <rect x="30" y="60" width="300" height="28" rx="10" fill="#0a1a28"/>
+  <rect x="30" y="74" width="300" height="14" rx="0" fill="#0a1a28"/>
+  <circle cx="50" cy="74" r="5" fill="#ef4444" opacity="0.5"/>
+  <circle cx="65" cy="74" r="5" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="80" cy="74" r="5" fill="#10b981" opacity="0.5"/>
+  <!-- URL bar -->
+  <rect x="95" y="67" width="220" height="14" rx="7" fill="#0f1825" stroke="#21759B" stroke-width="1" opacity="0.5"/>
+  <text x="105" y="78" fill="#21759B" font-size="8" font-family="monospace">yoursite.wordpress.com</text>
+  <!-- Page blocks stacking up -->
+  <rect x="48" y="100" width="264" height="16" rx="4" fill="#21759B" opacity="0">
+    <animate attributeName="opacity" values="0;0.4;0.4" dur="0.4s" begin="0.2s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" values="0,-10;0,0" dur="0.4s" begin="0.2s" fill="freeze"/>
+  </rect>
+  <rect x="48" y="124" width="200" height="10" rx="3" fill="#2e9cc4" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0.3" dur="0.4s" begin="0.5s" fill="freeze"/>
+  </rect>
+  <rect x="48" y="140" width="264" height="60" rx="4" fill="#0f1825" stroke="#21759B" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;0.6;0.6" dur="0.4s" begin="0.8s" fill="freeze"/>
+  </rect>
+  <rect x="58" y="150" width="120" height="8" rx="2" fill="#21759B" opacity="0">
+    <animate attributeName="opacity" values="0;0.5;0.5" dur="0.4s" begin="1s" fill="freeze"/>
+  </rect>
+  <rect x="58" y="164" width="180" height="6" rx="2" fill="#21759B" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0.3" dur="0.4s" begin="1.1s" fill="freeze"/>
+  </rect>
+  <rect x="58" y="176" width="150" height="6" rx="2" fill="#21759B" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0.3" dur="0.4s" begin="1.2s" fill="freeze"/>
+  </rect>
+
+  <!-- W logo rotating -->
+  <text x="220" y="215" fill="#21759B" font-size="32" font-weight="800" font-family="system-ui" opacity="0.4">
+    W
+    <animateTransform attributeName="transform" type="rotate" values="0 236 199;360 236 199" dur="8s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Product label -->
+  <text x="365" y="135" fill="url(#wp-grad1)" font-size="36" font-weight="800" font-family="system-ui,sans-serif" letter-spacing="-1">WordPress</text>
+  <text x="365" y="162" fill="#2e9cc4" font-size="24" font-weight="700" font-family="system-ui,sans-serif">.com</text>
+  <text x="365" y="190" fill="#21759B" font-size="13" font-family="'Space Mono',monospace" opacity="0.7">POWER USER PLAYBOOK</text>
+  <line x1="365" y1="200" x2="365" y2="200" stroke="url(#wp-grad1)" stroke-width="2">
+    <animate attributeName="x2" values="365;750;750" dur="1.5s" fill="freeze"/>
+  </line>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The WordPress.com Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span><span>·</span>
+  <span>April 6, 2026</span><span>·</span>
+  <span>20 min read</span><span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#com-vs-org">WordPress.com vs WordPress.org: The Real Difference</a></li>
+    <li><a href="#themes">Theme Selection That Won't Haunt You</a></li>
+    <li><a href="#plugins">Essential Plugins</a></li>
+    <li><a href="#speed">Speed Optimization</a></li>
+    <li><a href="#seo">SEO Setup</a></li>
+    <li><a href="#gutenberg">Gutenberg Editor Tips</a></li>
+    <li><a href="#vs-alternatives">vs Webflow vs Squarespace</a></li>
+    <li><a href="#pricing">Pricing Tiers</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>WordPress powers 43% of all websites on the internet. That market share comes from two things: a 20-year head start and a plugin ecosystem so large that you can build almost anything without custom code. But that scale also creates confusion — the difference between WordPress.com and WordPress.org trips up beginners, the plugin ecosystem has landmines, and performance problems accumulate slowly until your site loads in 8 seconds. This guide navigates all of it.</p>
+
+<h2 id="com-vs-org">WordPress.com vs WordPress.org: The Real Difference</h2>
+<p>This is the question that confuses everyone starting out, and getting it wrong costs time and migration headaches later.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Aspect</th><th>WordPress.com</th><th>WordPress.org (self-hosted)</th></tr></thead>
+<tbody>
+<tr><td>Hosting</td><td>Managed by Automattic</td><td>You choose your host ($4-50/mo)</td></tr>
+<tr><td>Updates</td><td>Automatic, handled for you</td><td>You manage core, theme, plugin updates</td></tr>
+<tr><td>Security</td><td>Handled by Automattic</td><td>You manage (or pay for managed hosting)</td></tr>
+<tr><td>Custom plugins</td><td>Business plan ($25/mo) and up only</td><td>Install any of 60,000+ plugins</td></tr>
+<tr><td>Custom themes</td><td>Business plan and up only</td><td>Full access, any theme</td></tr>
+<tr><td>Code access</td><td>Very limited (no FTP, no file manager)</td><td>Full access to all files</td></tr>
+<tr><td>Cost floor</td><td>Free (but limited) to $25/mo</td><td>$4-10/mo for shared hosting</td></tr>
+<tr><td>Best for</td><td>Blogs, simple sites, non-technical users</td><td>Any serious site needing full control</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout yellow"><strong>⚠️ The trap people fall into:</strong> Starting on WordPress.com Free or Personal, building a site, then realizing they can't install the plugins they need. Migrating is possible but annoying. If you know you'll want a contact form beyond the basics, e-commerce, advanced SEO, or any custom functionality — start with WordPress.org on a quality host from day one.</div>
+
+<h3>When WordPress.com Is Actually the Right Choice</h3>
+<p>WordPress.com makes genuine sense when:</p>
+<ul>
+  <li>You want a personal blog or portfolio and don't need custom functionality</li>
+  <li>You're a non-technical user who values zero maintenance overhead</li>
+  <li>Your organization's IT policy prohibits self-managed servers</li>
+  <li>You're a journalist or writer on a WordPress.com publication network</li>
+</ul>
+<p>For business sites that will grow, need e-commerce, require advanced SEO plugins, or want custom integrations — WordPress.org on a quality host (Kinsta, WP Engine, SiteGround, Cloudways) is the right foundation.</p>
+
+<h2 id="themes">Theme Selection That Won't Haunt You</h2>
+<p>Choosing a theme is the most consequential early decision you'll make on WordPress. A bad theme choice means slow load times, poor mobile experience, and potentially years of technical debt.</p>
+
+<h3>The Framework vs. Full-Theme Decision</h3>
+<p>Two approaches dominate professional WordPress development:</p>
+<ul>
+  <li><strong>Framework + Page Builder:</strong> A lightweight "starter" theme (like Astra, GeneratePress, or Kadence) combined with a page builder (Elementor, Beaver Builder, or Bricks). Maximum design flexibility. More learning curve.</li>
+  <li><strong>Full-site editing themes:</strong> Block themes compatible with WordPress's native Full Site Editor. Examples: Twenty Twenty-Four, Ollie, Blocksy. The "native WordPress" direction for the future.</li>
+</ul>
+
+<h3>Themes to Avoid</h3>
+<div class="callout red"><strong>❌ Avoid these patterns:</strong> Themes with 50+ bundled plugins, any theme that includes its own page builder (you're locked in), free themes from developers with no track record (security risk), themes that haven't been updated in 2+ years, and "multipurpose themes" with 200+ demo sites (bloated, slow).</div>
+
+<h3>Recommended Starting Points</h3>
+<ul>
+  <li><strong>Astra + Elementor:</strong> Most popular combination for business sites. Extensive documentation, huge community, reasonable performance with proper caching.</li>
+  <li><strong>GeneratePress:</strong> Fastest lightweight theme available. Excellent for performance-sensitive sites where Core Web Vitals matter. Less visual, more functional.</li>
+  <li><strong>Kadence:</strong> Strong middle ground — full-site editing compatible, good defaults, active development.</li>
+  <li><strong>Blocksy:</strong> Best free theme for pure block-based design. Growing fast in the full-site editing ecosystem.</li>
+</ul>
+
+<h2 id="plugins">Essential Plugins</h2>
+<p>WordPress.org has 60,000+ plugins. The majority range from mediocre to actively harmful. Here are the categories that matter and the specific plugins worth trusting:</p>
+
+<h3>The Non-Negotiable Stack</h3>
+
+<pre><code>SEO:
+→ Yoast SEO (most established) or Rank Math (more features, faster)
+  Both handle: XML sitemaps, meta tags, schema markup, readability
+
+CACHING/PERFORMANCE:
+→ WP Rocket ($59/year) — best caching plugin, least setup required
+→ LiteSpeed Cache (free) — best if your host runs LiteSpeed server
+→ W3 Total Cache (free) — more complex, but free and powerful
+
+SECURITY:
+→ Wordfence Security (free/premium) — firewall + malware scanner
+→ WP Activity Log (free) — audit trail of who changed what
+
+BACKUPS:
+→ UpdraftPlus (free for basics) — backup to Google Drive, Dropbox, S3
+→ Duplicator (free) — best for full site migration
+
+IMAGE OPTIMIZATION:
+→ Smush (free) or Imagify (paid) — automatic compression on upload
+  Images are the #1 performance killer on most WordPress sites
+
+FORMS:
+→ WPForms Lite (free) or Gravity Forms ($59/year for complex forms)
+
+DATABASE MAINTENANCE:
+→ WP-Optimize (free) — cleans post revisions, transients, spam comments</code></pre>
+
+<div class="tip"><strong>💡 Plugin discipline rule:</strong> Every active plugin is a security surface, a performance cost, and a potential conflict. Before installing, ask: does WordPress core or my theme already do this? Can one plugin replace two others? Audit your plugins quarterly and deactivate anything unused.</div>
+
+<h2 id="speed">Speed Optimization</h2>
+<p>A slow WordPress site isn't a theme problem or a hosting problem — it's usually a combination of too many plugins, unoptimized images, no caching, and bad hosting. Fix these in order:</p>
+
+<h3>The Performance Checklist</h3>
+<pre><code>1. HOSTING (biggest impact):
+   → Shared hosting on Bluehost/GoDaddy: terrible performance
+   → Upgrade to: SiteGround Business ($10/mo), Cloudways ($12/mo),
+     or managed hosting (Kinsta $35/mo) for production sites
+
+2. CACHING:
+   → Install WP Rocket or LiteSpeed Cache
+   → Enable page caching, browser caching, GZIP compression
+   → Enable lazy loading for images
+
+3. IMAGES (second biggest culprit):
+   → Install Smush or Imagify — auto-compress all uploads
+   → Convert images to WebP format (WP Rocket does this)
+   → Never upload images wider than 1920px for web use
+
+4. DATABASE:
+   → Run WP-Optimize monthly
+   → Limit post revisions in wp-config.php:
+     define('WP_POST_REVISIONS', 5);
+
+5. EXTERNAL SCRIPTS:
+   → Every third-party script (analytics, chat widgets, social buttons)
+     adds latency. Audit what you're loading in Tools → Site Health</code></pre>
+
+<h3>Core Web Vitals: What Google Actually Measures</h3>
+<p>Since Google's 2021 Page Experience update, Core Web Vitals directly affect search rankings. The three metrics:</p>
+<ul>
+  <li><strong>LCP (Largest Contentful Paint):</strong> Time to render the largest visible element. Target: under 2.5 seconds. Biggest fix: optimize your hero image (compress, use WebP, add fetchpriority="high" attribute).</li>
+  <li><strong>INP (Interaction to Next Paint):</strong> Responsiveness to user interactions. Target: under 200ms. Biggest fix: reduce JavaScript execution, defer non-critical JS.</li>
+  <li><strong>CLS (Cumulative Layout Shift):</strong> Visual stability (elements jumping around). Target: under 0.1. Biggest fix: define explicit width and height on all images.</li>
+</ul>
+
+<h2 id="seo">SEO Setup</h2>
+<p>WordPress is exceptionally SEO-friendly when configured correctly. The platform's CMS advantages — clean URL structure, easy internal linking, fast page creation — are significant. Squandering them with bad configuration is common.</p>
+
+<h3>Yoast SEO / Rank Math Configuration</h3>
+<pre><code>CRITICAL SETTINGS ON INSTALL:
+✓ Verify XML sitemap is generated and submitted to Google Search Console
+✓ Set canonical URLs to prevent duplicate content
+✓ Configure breadcrumbs (improve navigation + SEO signals)
+✓ Enable schema markup for your content type (Article, Product, etc.)
+✓ Set noindex on: author archives, date archives, tag pages
+  (unless you have significant content there)
+✓ Connect to Google Search Console (both plugins support this)</code></pre>
+
+<h3>Content SEO Practices That Drive Traffic</h3>
+<ul>
+  <li><strong>Cornerstone content:</strong> Identify your 5-10 most important articles (the ones you want to rank for competitive terms) and mark them as "Cornerstone Content" in Yoast. This tells Yoast to prioritize internal link suggestions to these pages.</li>
+  <li><strong>Category page optimization:</strong> Category pages rank well when they have unique introductory text (200+ words describing the category) and well-organized listings. Most WordPress sites leave category descriptions blank.</li>
+  <li><strong>URL structure:</strong> Settings → Permalinks → Post name (%postname%). Never use the default ?p=123 structure. Do this before your first post — changing later breaks all existing URLs.</li>
+</ul>
+
+<h2 id="gutenberg">Gutenberg Editor Tips</h2>
+<p>Gutenberg (WordPress's block editor, introduced in 5.0) gets more capable with every release. Here are the features most users don't know:</p>
+
+<h3>Patterns (Reusable Block Layouts)</h3>
+<p>Create a call-to-action section you like. Select all those blocks. Click the three-dot menu → Create Pattern. Give it a name. Now you can insert that exact layout in any page or post with one click. This is the most time-saving Gutenberg feature for sites with repetitive section layouts.</p>
+
+<h3>Global Styles (Full Site Editing)</h3>
+<p>On block themes (or WordPress.com Business+), the Styles panel (paintbrush icon in the site editor) lets you set global typography, colors, and spacing that apply site-wide. Change your primary color in Global Styles and it updates everywhere. This is what modern WordPress theming looks like — no more editing CSS files for basic brand changes.</p>
+
+<h3>Keyboard Shortcuts That Save Time</h3>
+<pre><code>/ (forward slash)     → Quick block inserter — type to find any block
+Ctrl+Shift+D          → Duplicate current block
+Ctrl+Alt+T            → Insert block before current block
+Ctrl+Shift+Z          → Redo
+Ctrl+Shift+Alt+M      → Toggle visual/code editor
+Alt+F10               → Focus toolbar (keyboard navigation)
+Shift+Alt+H           → Show all keyboard shortcuts</code></pre>
+
+<h3>Query Loop Block (The Powerful One Nobody Uses)</h3>
+<p>The Query Loop block lets you display any filtered list of posts anywhere on your site — latest posts from a specific category on your homepage, recent products in a specific tag on a landing page. It replaces dozens of "Recent Posts" plugins with a native, flexible, fast solution. Learn this block; it solves 80% of "I need dynamic content on this page" problems without a plugin.</p>
+
+<h2 id="vs-alternatives">vs Webflow vs Squarespace</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Dimension</th><th>WordPress.com/org</th><th>Webflow</th><th>Squarespace</th></tr></thead>
+<tbody>
+<tr><td>Design flexibility</td><td>⭐⭐⭐⭐ (with page builder)</td><td>⭐⭐⭐⭐⭐ Best</td><td>⭐⭐⭐ Good templates</td></tr>
+<tr><td>Content management</td><td>⭐⭐⭐⭐⭐ Best CMS</td><td>⭐⭐⭐⭐ Strong CMS</td><td>⭐⭐⭐ Basic</td></tr>
+<tr><td>SEO capability</td><td>⭐⭐⭐⭐⭐ With Yoast/Rank Math</td><td>⭐⭐⭐⭐ Good native</td><td>⭐⭐⭐ Adequate</td></tr>
+<tr><td>Developer freedom</td><td>⭐⭐⭐⭐⭐ (self-hosted)</td><td>⭐⭐⭐⭐ No server access</td><td>⭐⭐ Limited</td></tr>
+<tr><td>Ease of use</td><td>⭐⭐⭐ Learning curve</td><td>⭐⭐ Steep for non-designers</td><td>⭐⭐⭐⭐⭐ Easiest</td></tr>
+<tr><td>E-commerce</td><td>⭐⭐⭐⭐⭐ (WooCommerce)</td><td>⭐⭐⭐⭐ Webflow Commerce</td><td>⭐⭐⭐ Basic</td></tr>
+<tr><td>Price/mo</td><td>$9-45 (.com) or $4+ self-hosted</td><td>$14-39/mo</td><td>$16-52/mo</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>WordPress wins on content management depth, plugin ecosystem, SEO, and e-commerce (WooCommerce). Webflow wins on design precision — pixel-perfect control without code. Squarespace wins on simplicity and out-of-box aesthetics. Choose based on your primary pain point: if you're writing lots of content and need SEO traction, WordPress. If you're designing a marketing site and care about visual precision, Webflow. If you just want something that looks good without fuss, Squarespace.</p>
+
+<h2 id="pricing">Pricing Tiers</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Price</th><th>Key Limits</th><th>Right For</th></tr></thead>
+<tbody>
+<tr><td><strong>Free</strong></td><td>$0</td><td>yoursite.wordpress.com subdomain, Automattic ads shown, 1GB storage</td><td>Learning, personal blogs with no audience ambitions</td></tr>
+<tr><td><strong>Personal</strong></td><td>$9/mo</td><td>Custom domain, no ads, 6GB storage, no plugins</td><td>Personal blogs and portfolios</td></tr>
+<tr><td><strong>Explorer</strong></td><td>$12/mo</td><td>50GB storage, free themes only</td><td>Simple business sites with modest needs</td></tr>
+<tr><td><strong>Creator</strong></td><td>$25/mo</td><td>50K monthly visits, premium themes</td><td>Content creators and growing blogs</td></tr>
+<tr><td><strong>Entrepreneur</strong></td><td>$45/mo</td><td>WooCommerce, unlimited plugins, full customization</td><td>E-commerce and feature-rich business sites</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout"><strong>💡 The self-hosted math:</strong> WordPress.org on SiteGround Business costs $10/month and gives you everything the $45/month Entrepreneur plan does, plus more control. The only reason to choose WordPress.com Entrepreneur over self-hosted is if you genuinely don't want to manage hosting. For most serious sites, self-hosted wins on value.</div>
+
+<div class="key-takeaway">
+  <h4>🎯 Key Takeaway</h4>
+  <p>WordPress.com is great for uncomplicated sites where you value managed hosting over control. For anything serious — e-commerce, SEO-driven content, custom functionality — WordPress.org on a quality host gives you significantly more power for less money. Speed optimization and plugin discipline are the two areas where most WordPress sites fail. Fix those and you'll outperform most WordPress sites in the wild.</p>
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">What is the real difference between WordPress.com and WordPress.org?</div>
+  <div class="faq-a">WordPress.com is a hosted service managed by Automattic — no hosting, updates, or security to manage. WordPress.org is open-source software you host yourself with full control. WordPress.org lets you install any plugin, modify any code, and choose your own hosting. WordPress.com restricts plugin installation to Business plan and up. For most serious sites, WordPress.org on a quality host ($4-20/month) is the better choice.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Does WordPress.com work for SEO?</div>
+  <div class="faq-a">On Business plan and higher, WordPress.com supports Yoast SEO and gives you competitive SEO capabilities. On lower plans, you get basic meta settings but no advanced schema markup or technical SEO plugins. For serious SEO, WordPress.org with full plugin access is significantly more powerful and worth the additional hosting cost of $4-20/month.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">How does WordPress.com compare to Squarespace for beginners?</div>
+  <div class="faq-a">Squarespace wins on design consistency and ease of use — every template looks professional and the editor is more intuitive than Gutenberg. WordPress.com wins on flexibility, content management depth, and SEO potential. For a portfolio or small business site, Squarespace delivers a better result faster. For a content-heavy site (blog, news, knowledge base), WordPress's CMS capabilities are stronger.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">What are the best plugins to install first on WordPress?</div>
+  <div class="faq-a">Essential first plugins on WordPress.org (or WordPress.com Business+): Yoast SEO or Rank Math (SEO), WP Rocket or LiteSpeed Cache (speed), Wordfence Security (security), UpdraftPlus (backups), WPForms (contact forms), and Smush or Imagify (image optimization). These six categories cover 90% of what a professional WordPress site needs before adding feature-specific plugins.</div>
+</div>
+
+<div style="margin-top:40px"><a class="cta" href="https://comparedge.com/tools/wordpress">View WordPress on ComparEdge →</a></div>
+<div class="newsletter">
+  <h3>Get the Weekly Website Builder Update</h3>
+  <p>WordPress releases, plugin security alerts, and performance tips.</p>
+  <div class="newsletter-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><svg width="22" height="20" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="wp-lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#wp-lgf)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col"><h4>Playbooks</h4><a href="/playbooks/chatgpt.html">ChatGPT</a><a href="/playbooks/wordpress.html">WordPress</a><a href="/playbooks/notion.html">Notion</a><a href="/playbooks/figma.html">Figma</a></div>
+    <div class="footer-col"><h4>Topics</h4><a href="https://blog.comparedge.com/chatgpt-vs-claude.html">ChatGPT vs Claude</a><a href="https://blog.comparedge.com/best-free-llm.html">Free LLMs</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a><a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span><span>Updated April 24, 2026</span></div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('progressBar'),thumb=document.getElementById('progressThumb');
+  function updateProgress(){var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight,pct=dh>0?Math.min(st/dh,1):0;if(bar)bar.style.width=(pct*100)+'%';if(thumb)thumb.style.height=(pct*100)+'%';}
+  var sidebar=document.getElementById('sidebarToc'),inlineToc=document.querySelector('.toc'),tocLinks=document.querySelectorAll('.sidebar-toc a'),sections=[];
+  tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
+  function updateActive(){var sp=window.scrollY+120;if(sidebar&&inlineToc){sidebar.classList.toggle('visible',sp>inlineToc.offsetTop+inlineToc.offsetHeight);}var active=null;for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=sp){active=sections[i].id;break}}tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});}
+  var ticking=false;window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateActive();ticking=false});ticking=true}});updateProgress();updateActive();
+})();
+</script>
+</body>
+</html>

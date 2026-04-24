@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AWS Playbook: Amazon Web Services Guide 2026</title>
+<meta name="description" content="Master AWS with expert tips on EC2, S3, Lambda, RDS, cost optimization, security, serverless architecture. Honest comparison vs Google Cloud and Azure with pricing trap warnings.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/aws.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="AWS Playbook: Amazon Web Services Guide 2026">
+<meta property="og:description" content="AWS power user guide: EC2, S3, Lambda, RDS, cost optimization, security best practices, serverless architecture, vs Google Cloud vs Azure.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/aws.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWS Playbook: Amazon Web Services Guide 2026">
+<meta name="twitter:description" content="AWS guide: EC2, S3, Lambda, RDS, cost optimization, security, serverless architecture, vs GCP vs Azure pricing traps.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-04-08","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"AWS Playbook: Amazon Web Services Guide 2026","description":"Master AWS core services, cost optimization, security best practices, serverless architecture, and compare vs Google Cloud and Azure.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/aws.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"AWS Playbook","item":"https://blog.comparedge.com/playbooks/aws.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What are the biggest AWS pricing traps to avoid?","acceptedAnswer":{"@type":"Answer","text":"The most expensive AWS surprises: data transfer OUT costs (ingress is free, egress is $0.09/GB — a 1TB download costs $90), NAT Gateway charges ($0.045/hour plus $0.045/GB processed — expensive for high-traffic VPCs), EC2 instances left running that you forgot about, S3 request fees on high-frequency read/write patterns, and CloudWatch detailed monitoring enabled on many instances. Set up AWS Budgets with alerts at $50 and $100 before your first month."}},
+{"@type":"Question","name":"When should I use Lambda vs EC2?","acceptedAnswer":{"@type":"Answer","text":"Use Lambda for event-driven workloads, sporadic tasks, and anything that runs in under 15 minutes. Lambda bills per invocation (first 1M free), scales automatically, and requires zero server management. Use EC2 for always-on applications, workloads requiring specific hardware (GPU, high memory), persistent processes, or anything needing full OS access. The cross-over point in cost is roughly 1M-5M invocations per month for most use cases — above that, reserved EC2 becomes cheaper."}},
+{"@type":"Question","name":"Is AWS more expensive than Google Cloud or Azure?","acceptedAnswer":{"@type":"Answer","text":"AWS compute is typically 5-15% more expensive than equivalent GCP and Azure instances for raw VMs. However, AWS's breadth of services (the most of any cloud), global infrastructure, and ecosystem maturity often justify the premium. GCP has a strong price advantage in sustained use discounts (automatic, no reservation required) and is significantly cheaper for BigQuery and data workloads. Azure wins on Microsoft integration (Active Directory, Office 365, SQL Server licensing benefits). For most startups, the price difference is dwarfed by ecosystem and talent availability advantages."}},
+{"@type":"Question","name":"What is the AWS Free Tier and what are its gotchas?","acceptedAnswer":{"@type":"Answer","text":"AWS Free Tier offers 12-month free access to core services: 750 hours/month of EC2 t2.micro or t3.micro, 5GB S3 Standard, 25GB DynamoDB, 1M Lambda invocations. The gotchas: Free Tier only applies to specific resource types (t2.micro, not t3.small), combining multiple free-tier resources can exceed limits, data transfer costs are not covered, and after 12 months everything charges normally. Set Budget Alerts before you start — it's the single most important step."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#FF9900;--accent2:#ffb340;--accent3:#cc7a00;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+.progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
+.sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
+.sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
+.sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
+.sidebar-toc li a{display:block;font-size:.72rem;color:var(--text-muted);padding:4px 8px 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.3}
+.sidebar-toc li a::before{content:counter(stoc) ". ";color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.6rem}
+.sidebar-toc li a:hover,.sidebar-toc li a.active{color:var(--accent);border-left-color:var(--accent)}
+.sidebar-toc li a.active{background:rgba(255,153,0,.05);border-radius:0 6px 6px 0}
+.progress-track{position:fixed;top:90px;right:max(16px,calc((100vw - 1200px)/2 - 10px));width:4px;height:calc(100vh - 120px);background:var(--border);border-radius:2px;z-index:50}
+.progress-thumb{width:4px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;min-height:20px;transition:height .1s}
+@media(max-width:1400px){.sidebar-toc,.progress-track{display:none}}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--accent)}.mobile-menu a.primary-link{color:var(--accent);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);max-height:280px}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(255,153,0,.08);border:1px solid rgba(255,153,0,.25);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}.toc li{margin-bottom:6px}.toc a{color:var(--accent);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#1a0f00;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#fcd34d}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.red{border-color:#ef4444;background:#1a0808}.callout.red strong{color:#fca5a5}
+.callout.blue{border-color:#3b82f6;background:#0a0f20}.callout.blue strong{color:#93c5fd}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#fcd34d}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#fef3c7}
+pre code{background:none;border:none;padding:0}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(255,255,255,.02)}
+.tip{background:rgba(255,153,0,.07);border:1px solid rgba(255,153,0,.2);border-radius:10px;padding:16px 20px;margin:20px 0}
+.tip strong{color:var(--accent2)}
+.key-takeaway{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:32px 0}
+.key-takeaway h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+.newsletter{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;margin:40px 0;text-align:center}
+.newsletter h3{color:var(--text);margin-bottom:8px}.newsletter p{color:var(--text-dim);margin-bottom:20px}
+.newsletter-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.newsletter-form input{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-size:15px;width:280px}
+.newsletter-form button{background:var(--accent);color:#1a0f00;border:none;padding:10px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:15px}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#cc7a00,#FF9900);color:#1a0f00!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-links{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo">
+    <svg width="26" height="24" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="aws-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#aws-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+    <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('aws-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div class="progress-bar" id="progressBar"></div>
+<div id="aws-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('aws-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<nav class="sidebar-toc" id="sidebarToc">
+  <h4>Navigation</h4>
+  <ol>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#core-services">Core Services</a></li>
+    <li><a href="#cost-optimization">Cost Optimization</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#serverless">Serverless</a></li>
+    <li><a href="#vs-alternatives">vs GCP vs Azure</a></li>
+    <li><a href="#pricing-traps">Pricing Traps</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+<div class="progress-track" id="progressTrack"><div class="progress-thumb" id="progressThumb"></div></div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / AWS</nav>
+
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="aws-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9900"/><stop offset="100%" stop-color="#ffb340"/></linearGradient>
+  </defs>
+  <!-- Cloud -->
+  <ellipse cx="160" cy="120" rx="90" ry="55" fill="#1a0f00" stroke="#FF9900" stroke-width="1.5" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="120" cy="145" rx="60" ry="38" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="200" cy="145" rx="60" ry="38" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0.4"/>
+  <!-- Server racks -->
+  <rect x="80" y="180" width="30" height="60" rx="3" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0.7"/>
+  <rect x="84" y="186" width="22" height="6" rx="1" fill="#FF9900" opacity="0.3"/>
+  <rect x="84" y="196" width="22" height="6" rx="1" fill="#FF9900" opacity="0.2"/>
+  <rect x="84" y="206" width="22" height="6" rx="1" fill="#FF9900" opacity="0.3"/>
+
+  <rect x="120" y="180" width="30" height="60" rx="3" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0.7"/>
+  <rect x="124" y="186" width="22" height="6" rx="1" fill="#ffb340" opacity="0.3"/>
+  <rect x="124" y="196" width="22" height="6" rx="1" fill="#ffb340" opacity="0.2"/>
+
+  <rect x="160" y="180" width="30" height="60" rx="3" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0.7"/>
+  <rect x="164" y="186" width="22" height="6" rx="1" fill="#FF9900" opacity="0.3"/>
+
+  <!-- Lambda execution -->
+  <rect x="240" y="140" width="70" height="35" rx="6" fill="#1a0f00" stroke="#FF9900" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="248" y="163" fill="#FF9900" font-size="10" font-family="monospace" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+    λ execute
+  </text>
+  <!-- Data flow arrows -->
+  <path d="M200 155 L235 155" stroke="#FF9900" stroke-width="1.5" stroke-dasharray="4,3">
+    <animate attributeName="stroke-dashoffset" values="0;-14" dur="1s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Product label -->
+  <text x="350" y="145" fill="url(#aws-grad1)" font-size="64" font-weight="800" font-family="system-ui,sans-serif" letter-spacing="-2">AWS</text>
+  <text x="350" y="172" fill="#FF9900" font-size="13" font-family="'Space Mono',monospace" opacity="0.7">POWER USER PLAYBOOK</text>
+  <line x1="350" y1="182" x2="350" y2="182" stroke="url(#aws-grad1)" stroke-width="2">
+    <animate attributeName="x2" values="350;700;700" dur="1.5s" fill="freeze"/>
+  </line>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The AWS Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span><span>·</span>
+  <span>April 8, 2026</span><span>·</span>
+  <span>22 min read</span><span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#getting-started">Getting Started: First Account Setup</a></li>
+    <li><a href="#core-services">Core Services: EC2, S3, Lambda, RDS</a></li>
+    <li><a href="#cost-optimization">Cost Optimization</a></li>
+    <li><a href="#security">Security Best Practices</a></li>
+    <li><a href="#serverless">Serverless Architecture</a></li>
+    <li><a href="#vs-alternatives">vs Google Cloud vs Azure</a></li>
+    <li><a href="#pricing-traps">Pricing Traps to Avoid</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>AWS has over 200 services. The good news: most real-world applications use 5-10 of them. The overwhelming feeling you get navigating the AWS console for the first time is normal — the console is genuinely poorly organized, the naming is cryptic, and the pricing documentation is a maze. This guide cuts through to what actually matters for the majority of use cases, from a solo developer deploying their first app to an engineering team scaling a production system.</p>
+
+<h2 id="getting-started">Getting Started: First Account Setup</h2>
+<p>Don't just sign up and start clicking. The first 30 minutes you spend on account configuration will save you from expensive surprises and security incidents.</p>
+
+<h3>The 5-Minute Security Checklist Before Anything Else</h3>
+<pre><code>1. ENABLE MFA ON ROOT ACCOUNT (mandatory)
+   → AWS Console → Your account → Security credentials
+   → Never use root credentials for day-to-day work
+   → Use root ONLY for account-level tasks (billing, closing account)
+
+2. CREATE AN IAM USER for your work
+   → Attach policies: AdministratorAccess (for now, tighten later)
+   → Generate access keys ONLY if programmatic access is needed
+   → Never store access keys in code or commit to git
+
+3. SET UP AWS BUDGETS (do this before anything else)
+   → Billing → Budgets → Create budget
+   → Set alerts at $10, $50, $100/month
+   → Email alert to your billing email
+   → This is the single most important "no surprises" step
+
+4. ENABLE CLOUDTRAIL
+   → Creates an audit log of all API calls
+   → Free tier: 90 days of management event history
+   → Critical for debugging "who deleted that resource" incidents
+
+5. CHECK DEFAULT VPC SETTINGS
+   → EC2 → Security Groups → Default security group
+   → Ensure inbound rules don't allow 0.0.0.0/0 on all ports</code></pre>
+
+<div class="callout red"><strong>⚠️ Root account horror stories are real:</strong> Exposed root credentials have led to $50,000+ surprise AWS bills from cryptomining within hours. MFA on root + Budget Alerts are non-negotiable first steps. AWS will negotiate some fraudulent charges but not all.</div>
+
+<h2 id="core-services">Core Services: EC2, S3, Lambda, RDS</h2>
+<p>These four services handle 80% of what most applications need. Understanding their strengths and limitations is foundational.</p>
+
+<h3>EC2: Virtual Machines in the Cloud</h3>
+<p>EC2 is AWS's virtual machine service. You choose the instance type (CPU/RAM), operating system, and storage. Pay by the hour (or second for Linux).</p>
+
+<p><strong>Instance type quick guide:</strong></p>
+<ul>
+  <li><strong>t3/t4g (burstable):</strong> Start here for web apps, APIs, dev environments. CPU "bursts" above baseline for short periods — great for variable workloads, cheap ($0.008-0.16/hour).</li>
+  <li><strong>m6i/m7i (general purpose):</strong> Production web servers and application servers with consistent CPU needs. No bursting — predictable performance.</li>
+  <li><strong>c6i/c7i (compute optimized):</strong> CPU-intensive work: video encoding, batch processing, ML inference.</li>
+  <li><strong>r6i/r7i (memory optimized):</strong> Databases, caching, in-memory analytics. When your workload needs more RAM than a standard instance provides.</li>
+  <li><strong>p3/p4/g4 (GPU):</strong> ML training, graphics, CUDA workloads. Expensive. Only use when you actually need GPU.</li>
+</ul>
+
+<div class="tip"><strong>💡 Sizing advice:</strong> Start smaller than you think you need. EC2 is easy to resize. The temptation to "get a big instance to be safe" doubles or triples your bill unnecessarily. Start with t3.medium for most web apps, monitor CPU/memory for 2 weeks, then right-size.</div>
+
+<h3>S3: Object Storage</h3>
+<p>S3 is one of AWS's most reliable and most misunderstood services. It's not a filesystem — it's an object store. Objects are stored with unique keys; there's no real directory structure (the "/" in key names is cosmetic).</p>
+
+<pre><code>KEY S3 CONCEPTS:
+Bucket: Container for objects (one bucket per project/environment is common)
+Object: File + metadata, identified by key
+Prefix: Simulated "folder" using "/" in key names
+Storage class: Standard, Intelligent-Tiering, Glacier, etc.
+
+CRITICAL BUCKET SETTINGS:
+✓ Block all public access (unless you're hosting a static website)
+✓ Enable versioning for important buckets (recovers deleted objects)
+✓ Enable server-side encryption (SSE-S3 or SSE-KMS)
+✓ Set lifecycle policies to move old objects to cheaper storage
+✓ Enable access logging for security auditing
+
+S3 STORAGE CLASSES (when to use each):
+Standard: $0.023/GB — active, frequently accessed data
+Intelligent-Tiering: ~$0.023/GB — automatic tier shifting, good for unpredictable access
+Standard-IA: $0.0125/GB — accessed monthly, retrieval fee applies
+Glacier Instant: $0.004/GB — accessed quarterly
+Glacier Deep Archive: $0.00099/GB — rarely accessed, 12-48hr retrieval</code></pre>
+
+<h3>Lambda: Serverless Functions</h3>
+<p>Lambda runs code without managing servers. You write a function, deploy it, and AWS handles scaling, availability, and infrastructure. You pay only when code runs — idle functions cost nothing.</p>
+
+<pre><code>LAMBDA LIMITS TO KNOW:
+Max execution time: 15 minutes per invocation
+Max memory: 10GB
+Max package size: 50MB (250MB unzipped)
+Concurrency: 1,000 concurrent executions by default (can be increased)
+
+WHEN LAMBDA WINS:
+- Event-driven tasks (S3 file processing, DynamoDB streams)
+- API backends with variable traffic
+- Scheduled jobs (replace cron servers)
+- Webhooks and real-time data processing
+- Tasks that run infrequently (cold start is acceptable)
+
+WHEN LAMBDA LOSES:
+- Long-running processes (over 15 min)
+- Very latency-sensitive requests (cold starts add 100ms-1s)
+- Workloads requiring persistent connections (WebSockets, streaming)
+- GPU workloads</code></pre>
+
+<h3>RDS: Managed Relational Databases</h3>
+<p>RDS manages PostgreSQL, MySQL, MariaDB, Oracle, SQL Server, and Amazon Aurora. AWS handles backups, patches, failover, and replication. You pay more than self-managed but save significant operational overhead.</p>
+
+<p>Aurora specifically deserves attention: it's AWS's MySQL/PostgreSQL-compatible database with up to 3x MySQL performance and built-in clustering. For new projects choosing between RDS PostgreSQL and Aurora PostgreSQL, Aurora wins for production workloads — the performance and HA advantages outweigh the slightly higher cost.</p>
+
+<h2 id="cost-optimization">Cost Optimization</h2>
+<p>AWS cost optimization is a discipline. Left unmanaged, AWS bills grow continuously as teams add resources and forget to clean up. Here are the highest-leverage optimizations:</p>
+
+<h3>Savings Plans and Reserved Instances</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Option</th><th>Commitment</th><th>Discount</th><th>Flexibility</th></tr></thead>
+<tbody>
+<tr><td>On-Demand</td><td>None</td><td>0%</td><td>Maximum — no commitment</td></tr>
+<tr><td>Compute Savings Plan</td><td>1 or 3 year spend commitment</td><td>Up to 66%</td><td>Applies to any EC2, Lambda, Fargate</td></tr>
+<tr><td>EC2 Instance Savings Plan</td><td>1 or 3 year, specific instance family</td><td>Up to 72%</td><td>Same instance family, any size, any AZ</td></tr>
+<tr><td>Reserved Instances (EC2)</td><td>1 or 3 year, specific instance</td><td>Up to 75%</td><td>Least flexible — specific instance type and region</td></tr>
+<tr><td>Spot Instances</td><td>None (can be interrupted)</td><td>Up to 90%</td><td>High — but workload must tolerate interruption</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The practical strategy: run Spot Instances for batch workloads and dev/test environments. Use Compute Savings Plans for baseline production load you know will exist. Use On-Demand for the variable portion. Never over-reserve — Savings Plans are more flexible than Reserved Instances and usually the right choice for most teams.</p>
+
+<h3>The Quick-Win Cost Cuts</h3>
+<ul>
+  <li><strong>Delete unused EBS volumes:</strong> When you terminate an EC2 instance, the attached EBS volume persists unless you set "delete on termination." These orphaned volumes accumulate. Run: <code>aws ec2 describe-volumes --filters "Name=status,Values=available"</code> to find them.</li>
+  <li><strong>Release unused Elastic IPs:</strong> Elastic IPs cost $0.005/hour when NOT attached to a running instance. It adds up.</li>
+  <li><strong>Enable S3 Intelligent-Tiering:</strong> For S3 buckets with mixed access patterns, Intelligent-Tiering automatically moves objects to cheaper storage tiers after 30 days of inactivity. Zero retrieval fee. Usually saves 30-50% on S3 costs for typical application buckets.</li>
+  <li><strong>Right-size instances:</strong> AWS Compute Optimizer (free service) analyzes EC2, Lambda, and RDS usage and recommends right-sized instances. Most accounts have 20-40% of instances significantly over-provisioned.</li>
+  <li><strong>Use CloudFront in front of S3:</strong> S3 data transfer to the internet costs $0.09/GB. CloudFront's first 1TB/month is free (then $0.085/GB), and cached content is even cheaper. For any static assets, CloudFront in front of S3 reduces both cost and latency.</li>
+</ul>
+
+<h2 id="security">Security Best Practices</h2>
+
+<h3>IAM: Least Privilege Is Not Optional</h3>
+<pre><code>GOLDEN RULES FOR IAM:
+1. No root credentials for applications or scripts
+2. Each service/application gets its own IAM role with minimal permissions
+3. Use IAM roles for EC2 instances (not access keys stored on the instance)
+4. Rotate access keys every 90 days (or better, eliminate them via roles)
+5. Use AWS Organizations + Service Control Policies for multi-account setups
+6. Enable AWS Config to detect IAM policy drift
+
+PERMISSION BOUNDARY PATTERN:
+Application needs to read from S3 bucket "my-app-data":
+→ Create IAM policy: Allow s3:GetObject on arn:aws:s3:::my-app-data/*
+→ Attach to IAM role (not user)
+→ Assign role to EC2 instance profile or Lambda execution role
+→ Application code uses the role automatically — no keys needed</code></pre>
+
+<h3>Network Security</h3>
+<ul>
+  <li><strong>VPC design:</strong> Public subnets (load balancers only), private subnets (application servers), isolated subnets (databases). Traffic from the internet should hit load balancers only — never expose application servers or databases directly.</li>
+  <li><strong>Security Groups are stateful firewalls:</strong> Inbound rules only allow what you explicitly permit. If port 443 isn't in the inbound rules, HTTPS traffic can't reach the instance. Common mistake: opening 0.0.0.0/0 on ports 22 (SSH) or 3389 (RDP) to "make it easier." Don't. Use AWS Systems Manager Session Manager instead — no open ports needed.</li>
+  <li><strong>Enable GuardDuty:</strong> AWS's threat detection service monitors CloudTrail, VPC Flow Logs, and DNS logs for suspicious patterns. $1-3/month for small accounts. Catches credential theft, cryptomining, and data exfiltration attempts. Always worth it.</li>
+</ul>
+
+<h2 id="serverless">Serverless Architecture</h2>
+<p>Serverless on AWS isn't just Lambda — it's a pattern. The full serverless stack for a typical web API:</p>
+
+<pre><code>SERVERLESS API PATTERN:
+Client → API Gateway → Lambda → DynamoDB
+
+Benefits:
+- Zero servers to manage
+- Automatic scaling (Lambda scales to thousands of concurrent requests)
+- Pay only for actual usage ($0 when idle)
+- No patching, no capacity planning
+
+REAL COST EXAMPLE (medium traffic API, 1M requests/month):
+API Gateway: 1M × $3.50/million = $3.50
+Lambda: 1M invocations × 200ms × 512MB = ~$0.83
+DynamoDB (on-demand): depends on read/write volume, ~$5-20
+Total: ~$10-25/month vs $50-150+/month for equivalent EC2 setup
+
+WHEN SERVERLESS FALLS SHORT:
+- Latency requirements under 50ms (cold starts)
+- Long-running processes (ETL jobs, video processing)
+- Stateful connections (use ECS/EC2 instead)
+- Complex in-process caching needs</code></pre>
+
+<h3>AWS SAM and CDK: Infrastructure as Code</h3>
+<p>If you're doing anything beyond a single Lambda function, use Infrastructure as Code (IaC). Two options:</p>
+<ul>
+  <li><strong>AWS SAM (Serverless Application Model):</strong> YAML templates purpose-built for serverless. Simpler than CloudFormation for Lambda/API Gateway/DynamoDB patterns. Excellent for getting started.</li>
+  <li><strong>AWS CDK (Cloud Development Kit):</strong> Write infrastructure in TypeScript, Python, or Java. More powerful, more testable, better for complex applications. The direction AWS is pushing for new development.</li>
+</ul>
+
+<p>IaC isn't optional for production — it's the difference between reproducible deployments and "I don't remember why I changed that setting six months ago."</p>
+
+<h2 id="vs-alternatives">vs Google Cloud vs Azure</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Dimension</th><th>AWS</th><th>Google Cloud</th><th>Azure</th></tr></thead>
+<tbody>
+<tr><td>Service breadth</td><td>⭐⭐⭐⭐⭐ Most services</td><td>⭐⭐⭐⭐ Strong</td><td>⭐⭐⭐⭐ Strong</td></tr>
+<tr><td>ML/AI services</td><td>⭐⭐⭐⭐ SageMaker, Bedrock</td><td>⭐⭐⭐⭐⭐ Vertex AI, TPUs</td><td>⭐⭐⭐⭐ Azure OpenAI</td></tr>
+<tr><td>Data/Analytics</td><td>⭐⭐⭐⭐ Redshift, Athena</td><td>⭐⭐⭐⭐⭐ BigQuery is best</td><td>⭐⭐⭐⭐ Synapse</td></tr>
+<tr><td>Microsoft integration</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐ Native AD, Office 365</td></tr>
+<tr><td>Sustained use discounts</td><td>Requires reservations</td><td>Automatic after 25%+ month use</td><td>Requires reservations</td></tr>
+<tr><td>Global infrastructure</td><td>⭐⭐⭐⭐⭐ Most regions</td><td>⭐⭐⭐⭐ Strong</td><td>⭐⭐⭐⭐ Strong</td></tr>
+<tr><td>Talent pool</td><td>⭐⭐⭐⭐⭐ Largest</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>Startup credits</td><td>AWS Activate: up to $100K</td><td>Google for Startups: up to $200K</td><td>Azure for Startups: up to $150K</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="pricing-traps">Pricing Traps to Avoid</h2>
+<p>These are the charges that surprise people most often:</p>
+
+<ul>
+  <li><strong>Data transfer OUT to internet:</strong> Ingress is free. Egress costs $0.09/GB. Moving 1TB of data out per month = $90/month. For high-egress workloads, use CloudFront (cheaper rates, caching) or consider if you're in the right region.</li>
+  <li><strong>NAT Gateway:</strong> $0.045/hour ($32/month) PLUS $0.045/GB processed. A NAT Gateway processing 1TB/month costs $77/month. Use VPC Endpoints instead for S3, DynamoDB, and other AWS services to avoid routing traffic through NAT.</li>
+  <li><strong>EC2 instances left running:</strong> Set up AWS Instance Scheduler to stop dev/staging instances outside business hours. A t3.large running 24/7 costs $60/month; stopped nights and weekends, it's $22/month.</li>
+  <li><strong>RDS storage autoscaling:</strong> RDS can auto-scale storage, but scaling down requires snapshot + restore. Teams accumulate large RDS instances without realizing storage isn't elastic downward.</li>
+  <li><strong>CloudWatch detailed monitoring:</strong> Enabled by default on some services, $0.30/metric/month extra. Audit your CloudWatch metrics and alarms quarterly.</li>
+</ul>
+
+<div class="key-takeaway">
+  <h4>🎯 Key Takeaway</h4>
+  <p>AWS's power comes from its service breadth and reliability. The learning curve is real but manageable if you start with five core services (EC2, S3, Lambda, RDS, IAM) and only expand as you need to. Cost and security are not optional concerns — set up Budget Alerts on day one, enable MFA on root, and use IAM roles instead of access keys. The serverless pattern (API Gateway + Lambda + DynamoDB) delivers remarkable economics for most API workloads and eliminates server management entirely.</p>
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">What are the biggest AWS pricing traps to avoid?</div>
+  <div class="faq-a">The most expensive AWS surprises: data transfer OUT costs ($0.09/GB — a 1TB egress costs $90), NAT Gateway charges ($0.045/hr plus $0.045/GB), EC2 instances left running in dev environments, S3 request fees on high-frequency patterns, and CloudWatch detailed monitoring on many instances. Set Budget Alerts at $50 and $100 before your first month — this is non-negotiable.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">When should I use Lambda vs EC2?</div>
+  <div class="faq-a">Use Lambda for event-driven workloads, sporadic tasks, and anything running under 15 minutes. Lambda bills per invocation (first 1M free), scales automatically, and requires zero server management. Use EC2 for always-on applications, workloads needing specific hardware, persistent processes, or full OS access. The cost crossover is roughly 1M-5M invocations per month — above that, reserved EC2 becomes cheaper.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Is AWS more expensive than Google Cloud or Azure?</div>
+  <div class="faq-a">AWS compute is typically 5-15% more expensive than equivalent GCP and Azure instances. However, AWS's breadth, ecosystem maturity, and talent availability often justify the premium. GCP has strong advantages for data workloads (BigQuery) and automatic sustained use discounts. Azure wins on Microsoft integration. For most startups, talent availability and ecosystem richness matter more than the per-instance price difference.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">What is the AWS Free Tier and what are its gotchas?</div>
+  <div class="faq-a">AWS Free Tier provides 12 months of free access to core services: 750 hours/month t2.micro EC2, 5GB S3, 25GB DynamoDB, 1M Lambda invocations. Gotchas: Free Tier only applies to specific resource types (t2.micro, not t3.small), combining resources can exceed limits, data transfer costs aren't covered, and after 12 months everything charges at normal rates. Set Budget Alerts before you start — it's the most important first step.</div>
+</div>
+
+<div style="margin-top:40px"><a class="cta" href="https://comparedge.com/tools/aws">View AWS on ComparEdge →</a></div>
+<div class="newsletter">
+  <h3>Get the Weekly Cloud Cost & Architecture Update</h3>
+  <p>AWS pricing changes, new services, and architecture tips for builders.</p>
+  <div class="newsletter-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><svg width="22" height="20" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="aws-lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#aws-lgf)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col"><h4>Playbooks</h4><a href="/playbooks/chatgpt.html">ChatGPT</a><a href="/playbooks/aws.html">AWS</a><a href="/playbooks/cursor.html">Cursor</a><a href="/playbooks/salesforce.html">Salesforce</a></div>
+    <div class="footer-col"><h4>Topics</h4><a href="https://blog.comparedge.com/chatgpt-vs-claude.html">ChatGPT vs Claude</a><a href="https://blog.comparedge.com/best-free-llm.html">Free LLMs</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a><a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span><span>Updated April 24, 2026</span></div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('progressBar'),thumb=document.getElementById('progressThumb');
+  function updateProgress(){var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight,pct=dh>0?Math.min(st/dh,1):0;if(bar)bar.style.width=(pct*100)+'%';if(thumb)thumb.style.height=(pct*100)+'%';}
+  var sidebar=document.getElementById('sidebarToc'),inlineToc=document.querySelector('.toc'),tocLinks=document.querySelectorAll('.sidebar-toc a'),sections=[];
+  tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
+  function updateActive(){var sp=window.scrollY+120;if(sidebar&&inlineToc){sidebar.classList.toggle('visible',sp>inlineToc.offsetTop+inlineToc.offsetHeight);}var active=null;for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=sp){active=sections[i].id;break}}tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});}
+  var ticking=false;window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateActive();ticking=false});ticking=true}});updateProgress();updateActive();
+})();
+</script>
+</body>
+</html>

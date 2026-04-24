@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Figma Playbook: Design Tool Power User Guide 2026</title>
+<meta name="description" content="Master Figma with expert tips on Auto Layout, design systems, components, Dev Mode, Figma AI, must-have plugins, and honest comparison vs Sketch and Adobe XD.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/figma.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Figma Playbook: Design Tool Power User Guide 2026">
+<meta property="og:description" content="Figma power user guide: Auto Layout mastery, design systems, components, Dev Mode, Figma AI, must-have plugins, vs Sketch vs Adobe XD.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/figma.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Figma Playbook: Design Tool Power User Guide 2026">
+<meta name="twitter:description" content="Figma Auto Layout, design systems, Dev Mode, AI features, plugins, vs Sketch vs Adobe XD — real tips from power users.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-04-11","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"Figma Playbook: Design Tool Power User Guide 2026","description":"Master Figma Auto Layout, design systems, components, Dev Mode, AI features, and must-have plugins.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/figma.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"Figma Playbook","item":"https://blog.comparedge.com/playbooks/figma.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is Figma Auto Layout and why is it essential?","acceptedAnswer":{"@type":"Answer","text":"Auto Layout turns Figma frames into dynamic containers that resize based on their content — like CSS Flexbox. When you add text to a button with Auto Layout, the button automatically expands. When you add a card to a row, the row expands. This eliminates manual resizing and makes responsive design work at design time, not just in the browser. Any designer not using Auto Layout is spending 3x as long on layout changes as they need to."}},
+{"@type":"Question","name":"How does Figma Dev Mode work and is it worth the cost?","acceptedAnswer":{"@type":"Answer","text":"Dev Mode (requires paid plan or separate Dev Mode seat at $15/month) gives developers a dedicated inspection interface: CSS properties, spacing values, font details, export assets, and component documentation — all clickable. It eliminates the 'measure everything manually' workflow. Most engineering teams report saving 2-4 hours per sprint when developers use Dev Mode instead of eyeballing designs. Worth it for any team shipping product regularly."}},
+{"@type":"Question","name":"Should I migrate from Sketch to Figma in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes, almost certainly. Figma has overtaken Sketch in features, ecosystem, and team collaboration. Sketch's key advantage — native Mac performance — has narrowed as Figma's desktop app improved. Figma's real-time collaboration, cross-platform access, better component APIs, and larger plugin ecosystem make it the clear winner for most teams. The only reason to stay on Sketch: your team has deeply invested in Sketch libraries and tooling, and the migration cost outweighs the Figma advantages for your specific workflow."}},
+{"@type":"Question","name":"What are the best Figma plugins for professional designers?","acceptedAnswer":{"@type":"Answer","text":"The highest-value Figma plugins: Unsplash (free stock photos in-canvas), Iconify (100,000+ icons from any icon set), Content Reel (realistic dummy data for wireframes), Figma to HTML/CSS exporters for handoff, Autoflow (flow arrows between frames), Stark (accessibility contrast checking), and Figma Tokens (manage design tokens and sync to code). For AI: Magician adds AI text and icon generation directly in Figma."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#F24E1E;--accent2:#ff6b40;--accent3:#c03a0f;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+a{color:var(--accent2);text-decoration:none}a:hover{opacity:.85}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+.progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
+.sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
+.sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
+.sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
+.sidebar-toc li a{display:block;font-size:.72rem;color:var(--text-muted);padding:4px 8px 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.3}
+.sidebar-toc li a::before{content:counter(stoc) ". ";color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.6rem}
+.sidebar-toc li a:hover,.sidebar-toc li a.active{color:var(--accent2);border-left-color:var(--accent2)}
+.sidebar-toc li a.active{background:rgba(242,78,30,.05);border-radius:0 6px 6px 0}
+.progress-track{position:fixed;top:90px;right:max(16px,calc((100vw - 1200px)/2 - 10px));width:4px;height:calc(100vh - 120px);background:var(--border);border-radius:2px;z-index:50}
+.progress-thumb{width:4px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;min-height:20px;transition:height .1s}
+@media(max-width:1400px){.sidebar-toc,.progress-track{display:none}}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--accent2)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--accent2)}.mobile-menu a.primary-link{color:var(--accent2);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);max-height:280px}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(242,78,30,.08);border:1px solid rgba(242,78,30,.25);color:var(--accent2);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}.toc li{margin-bottom:6px}.toc a{color:var(--accent2);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#1f0a05;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#fca5a5}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.yellow{border-color:#f59e0b;background:#1a1505}.callout.yellow strong{color:#fcd34d}
+.callout.blue{border-color:#3b82f6;background:#0a0f20}.callout.blue strong{color:#93c5fd}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#ff8a70}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#fecaca}
+pre code{background:none;border:none;padding:0}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(255,255,255,.02)}
+.tip{background:rgba(242,78,30,.07);border:1px solid rgba(242,78,30,.2);border-radius:10px;padding:16px 20px;margin:20px 0}
+.tip strong{color:var(--accent2)}
+.key-takeaway{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:32px 0}
+.key-takeaway h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);margin-bottom:12px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+.newsletter{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;margin:40px 0;text-align:center}
+.newsletter h3{color:var(--text);margin-bottom:8px}.newsletter p{color:var(--text-dim);margin-bottom:20px}
+.newsletter-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.newsletter-form input{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-size:15px;width:280px}
+.newsletter-form button{background:var(--accent);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:15px}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent2)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#c03a0f,#F24E1E);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-links{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo">
+    <svg width="26" height="24" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="fg-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#fg-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+    <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('fg-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div class="progress-bar" id="progressBar"></div>
+<div id="fg-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('fg-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<nav class="sidebar-toc" id="sidebarToc">
+  <h4>Navigation</h4>
+  <ol>
+    <li><a href="#file-structure">File Structure</a></li>
+    <li><a href="#auto-layout">Auto Layout</a></li>
+    <li><a href="#design-system">Design System</a></li>
+    <li><a href="#prototyping">Prototyping</a></li>
+    <li><a href="#dev-mode">Dev Mode</a></li>
+    <li><a href="#figma-ai">Figma AI</a></li>
+    <li><a href="#plugins">Must-Have Plugins</a></li>
+    <li><a href="#vs-alternatives">vs Sketch vs XD</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+<div class="progress-track" id="progressTrack"><div class="progress-thumb" id="progressThumb"></div></div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / Figma</nav>
+
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fg-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F24E1E"/><stop offset="100%" stop-color="#ff6b40"/></linearGradient>
+  </defs>
+  <!-- Design frame -->
+  <rect x="30" y="50" width="280" height="200" rx="6" fill="#0f0a08" stroke="#F24E1E" stroke-width="1.5" opacity="0.7"/>
+  <!-- Grid of component shapes morphing -->
+  <rect x="50" y="70" width="50" height="50" rx="4" fill="#F24E1E" opacity="0.2">
+    <animate attributeName="rx" values="4;25;4" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="115" y="70" width="50" height="50" rx="25" fill="#ff6b40" opacity="0.2">
+    <animate attributeName="rx" values="25;4;25" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="180" y="70" width="50" height="50" rx="8" fill="#F24E1E" opacity="0.25">
+    <animate attributeName="width" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="50;40;50" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="245" y="70" width="50" height="50" rx="4" fill="#ff6b40" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Auto Layout boxes -->
+  <rect x="50" y="140" width="240" height="40" rx="6" fill="#1f0a05" stroke="#F24E1E" stroke-width="1"/>
+  <rect x="58" y="150" width="60" height="20" rx="4" fill="#F24E1E" opacity="0.4"/>
+  <rect x="126" y="150" width="60" height="20" rx="4" fill="#F24E1E" opacity="0.3"/>
+  <rect x="194" y="150" width="60" height="20" rx="4" fill="#F24E1E" opacity="0.4"/>
+  <!-- Cursor -->
+  <text x="260" y="140" fill="#F24E1E" font-size="16" opacity="0.8">↖</text>
+  <animateTransform attributeName="transform" type="translate" values="0 0;10 5;0 0" dur="2s" repeatCount="indefinite"/>
+  <!-- Component grid -->
+  <rect x="50" y="195" width="50" height="40" rx="4" fill="#1f0a05" stroke="#F24E1E" stroke-width="1" opacity="0.6"/>
+  <text x="68" y="220" fill="#F24E1E" font-size="10" opacity="0.5">⊞</text>
+  <rect x="112" y="195" width="50" height="40" rx="4" fill="#1f0a05" stroke="#F24E1E" stroke-width="1" opacity="0.6"/>
+  <rect x="174" y="195" width="50" height="40" rx="4" fill="#1f0a05" stroke="#F24E1E" stroke-width="1" opacity="0.6"/>
+
+  <!-- Product label -->
+  <text x="350" y="148" fill="url(#fg-grad1)" font-size="58" font-weight="800" font-family="system-ui,sans-serif" letter-spacing="-2">Figma</text>
+  <text x="350" y="175" fill="#F24E1E" font-size="13" font-family="'Space Mono',monospace" opacity="0.7">POWER USER PLAYBOOK</text>
+  <line x1="350" y1="185" x2="350" y2="185" stroke="url(#fg-grad1)" stroke-width="2">
+    <animate attributeName="x2" values="350;700;700" dur="1.5s" fill="freeze"/>
+  </line>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The Figma Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span><span>·</span>
+  <span>April 11, 2026</span><span>·</span>
+  <span>20 min read</span><span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#file-structure">File Structure & Components</a></li>
+    <li><a href="#auto-layout">Auto Layout Mastery</a></li>
+    <li><a href="#design-system">Design System Setup</a></li>
+    <li><a href="#prototyping">Prototyping Tips</a></li>
+    <li><a href="#dev-mode">Dev Mode</a></li>
+    <li><a href="#figma-ai">Figma AI Features</a></li>
+    <li><a href="#plugins">Must-Have Plugins</a></li>
+    <li><a href="#vs-alternatives">vs Sketch vs Adobe XD</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>Figma won the design tool war. The conversation isn't really "Figma vs Sketch" anymore — it's "how do we get the most out of Figma?" Teams that master Auto Layout, components, and design tokens build UIs 3-4x faster than teams that treat Figma like a fancier version of Photoshop. Here's what separates the power users from the rest.</p>
+
+<h2 id="file-structure">File Structure & Components</h2>
+<p>How you organize Figma files determines how much time you spend finding things and how consistent your designs stay across a project.</p>
+
+<h3>The Right File Architecture</h3>
+<pre><code>PROJECT STRUCTURE (recommended):
+├── 🎨 Design System Library
+│   ├── Page: Colors & Typography
+│   ├── Page: Components
+│   ├── Page: Icons
+│   └── Page: Patterns
+├── 📱 [Product Name] — Mobile
+│   ├── Page: Current Sprint
+│   ├── Page: Shipped (archive)
+│   └── Page: Prototypes
+├── 🖥 [Product Name] — Web
+│   ├── Page: Current Sprint
+│   ├── Page: Shipped
+│   └── Page: Prototypes
+└── 📋 Design Specs & Documentation</code></pre>
+
+<p>The most important principle: keep your Design System Library in a separate file published as a team library. Never mix your component library with your working design files — you'll end up with components that exist only in one file, inconsistency across screens, and painful refactors when you need to update a button across 50 frames.</p>
+
+<h3>Component Naming That Scales</h3>
+<p>Figma uses "/" as a hierarchy separator in component names. Use it:</p>
+
+<pre><code>GOOD NAMING CONVENTION:
+Button/Primary/Default
+Button/Primary/Hover
+Button/Primary/Disabled
+Button/Secondary/Default
+Input/Text/Default
+Input/Text/Error
+Input/Text/Disabled
+Navigation/TopBar/Desktop
+Navigation/TopBar/Mobile
+Card/Product/Standard
+Card/Product/Featured</code></pre>
+
+<p>With this naming, your Components panel shows a clean hierarchy. Searching for "Button" shows all button variants. Searching for "Navigation" shows all navigation components. This takes 5 minutes to set up and saves hours over the life of a project.</p>
+
+<h3>Variants vs. Multiple Components</h3>
+<p>Use Variants when you have a component with multiple states that share most properties (button states, input states, toggle states). Create separate components when the structure is fundamentally different (a card vs. a list item).</p>
+
+<p>The Variants panel lets you switch between states (Default, Hover, Active, Disabled) with a dropdown in the inspector. Developers love this — they can see all button states in one component and understand the interaction model without a separate spec document.</p>
+
+<h2 id="auto-layout">Auto Layout Mastery</h2>
+<p>Auto Layout is the most transformative Figma feature and the one most designers underuse. If you're manually adjusting frames every time text changes, you're not using Auto Layout properly.</p>
+
+<h3>The Four Auto Layout Settings That Matter</h3>
+<ul>
+  <li><strong>Direction:</strong> Horizontal (row) or Vertical (column). Like Flexbox flex-direction.</li>
+  <li><strong>Spacing mode:</strong> "Fixed" (all items get equal gap between them) or "Auto" (items distribute with space-between). Like justify-content.</li>
+  <li><strong>Padding:</strong> Top, right, bottom, left. Like CSS padding. Set different values for each side.</li>
+  <li><strong>Alignment:</strong> How items align on the cross axis — left/center/right for vertical layouts, top/center/bottom for horizontal. Like align-items.</li>
+</ul>
+
+<h3>The Button Example That Makes Auto Layout Click</h3>
+<pre><code>WITHOUT AUTO LAYOUT:
+1. Draw rectangle 120×40
+2. Add text "Submit"
+3. Center text manually
+4. When text changes to "Submit Order" → 
+   rectangle doesn't resize, text overflows
+5. Manually resize rectangle, re-center text
+6. Repeat 50x across all button instances
+
+WITH AUTO LAYOUT:
+1. Type "Submit"
+2. Shift+A → Apply Auto Layout
+3. Set padding: 12px top/bottom, 24px left/right
+4. When text changes to "Submit Order" →
+   button automatically resizes ✓
+5. Change ANY button's text anywhere →
+   every instance resizes automatically</code></pre>
+
+<h3>Nested Auto Layout: The Power Move</h3>
+<p>Auto Layout frames can contain other Auto Layout frames — this is how you build complex responsive components:</p>
+<ul>
+  <li>A card component: vertical Auto Layout (header + body + footer sections)</li>
+  <li>The card header: horizontal Auto Layout (avatar + name + metadata)</li>
+  <li>The card footer: horizontal Auto Layout with space-between (like + comment + share)</li>
+</ul>
+<p>Nest these and the entire card resizes gracefully when any content changes. This is the foundation of responsive component design in Figma.</p>
+
+<div class="tip"><strong>💡 Fill container tip:</strong> In Auto Layout, set child frames to "Fill container" width and they'll expand to fill the parent. This is the Figma equivalent of <code>flex: 1</code> or <code>width: 100%</code>. Combine with "Hug contents" height to get components that grow vertically but fill horizontally — perfect for list items, cards, and sidebar panels.</div>
+
+<h2 id="design-system">Design System Setup</h2>
+<p>A design system in Figma is more than a component library. It's the single source of truth for your product's visual language.</p>
+
+<h3>Design Tokens: Where to Start</h3>
+<p>Design tokens are named values for every design decision: colors, typography, spacing, border radius, shadows. Define them in Figma using Local Styles or Variables (the newer, more powerful system):</p>
+
+<pre><code>COLOR TOKENS (Variables in Figma):
+colors/brand/primary      → #6366F1
+colors/brand/secondary    → #8B5CF6
+colors/semantic/success   → #10B981
+colors/semantic/error     → #EF4444
+colors/neutral/background → #0A0A0F
+colors/neutral/surface    → #0F1119
+colors/neutral/border     → #1E2433
+colors/text/primary       → #E2E8F0
+colors/text/secondary     → #64748B
+
+SPACING TOKENS:
+spacing/1 → 4px
+spacing/2 → 8px
+spacing/3 → 12px
+spacing/4 → 16px
+spacing/6 → 24px
+spacing/8 → 32px</code></pre>
+
+<p>With Variables, you can also set up light/dark mode: one token for "background" that maps to different actual values in Light vs Dark mode collections. Switching a frame between modes updates every color simultaneously — no manual dark mode variants needed.</p>
+
+<h3>Typography Styles</h3>
+<p>Create Text Styles for every text role in your system, not every possible size:</p>
+<ul>
+  <li>Display/Large, Display/Small</li>
+  <li>Heading/H1 through H4</li>
+  <li>Body/Default, Body/Small</li>
+  <li>Label/Default, Label/Small</li>
+  <li>Code/Default (monospace)</li>
+</ul>
+<p>Link text styles to color tokens. When you update a text style, every instance updates. When you switch to dark mode variables, the text colors switch. This is systematic design at scale.</p>
+
+<h2 id="prototyping">Prototyping Tips</h2>
+<p>Figma's prototyping engine has grown significantly. Here's how to get the most out of it:</p>
+
+<h3>Smart Animate: The Magic Transition</h3>
+<p>Smart Animate creates smooth transitions between frames when matching layers exist by name. To use it: name the same element identically in two frames, connect them with a prototype link, set transition to "Smart Animate." Figma interpolates position, size, opacity, and rotation automatically. This creates animation-quality transitions without any motion design tool.</p>
+
+<h3>Component-Level Interactions</h3>
+<p>You can add interactions to component variants, not just prototype flows. A button with Default and Hover variants: add an interaction on the Default variant → "While Hovering" → Change to Hover variant. Now every instance of that button across all frames in the prototype has a hover state, without wiring every button individually. This is the correct approach to interactive components.</p>
+
+<div class="callout green"><strong>✅ Prototyping for user testing:</strong> When testing with real users, prototype fidelity matters less than task clarity. An interactive wireframe is better than a polished prototype where users can't find the primary task. Focus prototype effort on the flows you're testing, not full-screen polish.</div>
+
+<h2 id="dev-mode">Dev Mode</h2>
+<p>Dev Mode is Figma's dedicated interface for developers. It shows the design's implementation details: CSS properties, spacing, colors, font specifications, and exportable assets — all without the designer having to add annotations manually.</p>
+
+<h3>What Dev Mode Shows</h3>
+<ul>
+  <li><strong>CSS for selected elements:</strong> Not always production-ready, but gives accurate values for all properties. Particularly useful for colors (shows hex/RGB/HSL), typography (font family, size, weight, line height), and spacing.</li>
+  <li><strong>Assets for export:</strong> SVGs, PNGs, and other exportable assets with one-click download.</li>
+  <li><strong>Component documentation:</strong> Component description and usage notes that designers can add in the component master.</li>
+  <li><strong>Ready for Dev status:</strong> Designers can mark frames as "Ready for Dev" — a clear handoff signal that triggers Dev Mode status changes.</li>
+</ul>
+
+<div class="callout yellow"><strong>⚠️ Dev Mode pricing change:</strong> As of 2023, Dev Mode requires either a full editor seat or a separate Dev Mode viewer seat ($15/user/month). Viewer seats (free) can no longer access Dev Mode. This increased costs for companies with many developers who only needed inspect access. Factor this into team pricing calculations.</div>
+
+<h2 id="figma-ai">Figma AI Features</h2>
+<p>Figma's AI features (launched in 2024, expanded in 2025) are genuinely useful in some areas and marketing fluff in others:</p>
+
+<h3>What Actually Helps</h3>
+<ul>
+  <li><strong>Rename layers:</strong> AI renames messy layer names to descriptive ones based on content. Takes 10 seconds to transform "Frame 247 copy 3" into meaningful names. One of the highest-ROI AI features in Figma.</li>
+  <li><strong>Auto replace text:</strong> Replace placeholder text with realistic dummy data (names, emails, descriptions) across frames. Far faster than Content Reel plugin for quick wireframe population.</li>
+  <li><strong>Generate prototypes:</strong> Describe a flow and Figma AI creates basic wireframes. Useful for rapid ideation — creates structure you then refine, not final designs.</li>
+  <li><strong>Make design playful/professional/etc.:</strong> AI style transfer for selected frames. Inconsistent but occasionally useful for inspiration.</li>
+</ul>
+
+<h3>What Doesn't Impress Yet</h3>
+<ul>
+  <li>Generate full UI from a text prompt — results are generic and need heavy cleanup</li>
+  <li>AI asset search — less accurate than just using a dedicated plugin</li>
+</ul>
+
+<h2 id="plugins">Must-Have Plugins</h2>
+<p>The Figma plugin ecosystem has thousands of plugins. These are the ones with real workflow impact:</p>
+
+<ul>
+  <li><strong>Unsplash (Free):</strong> Insert stock photos directly into Figma without leaving the canvas. Essential for realistic mockups.</li>
+  <li><strong>Iconify (Free):</strong> Access to 100,000+ icons from every major icon set (Material, Feather, Phosphor, Heroicons, etc.). Replaces buying separate icon packs for most projects.</li>
+  <li><strong>Stark (Free/paid):</strong> Accessibility checker — contrast ratios, colorblind simulation, focus order visualization. Non-negotiable if you care about WCAG compliance.</li>
+  <li><strong>Figma Tokens (Free/paid):</strong> Manage design tokens in Figma and sync them to a JSON file in your codebase. Bridges the gap between design tokens and code tokens properly.</li>
+  <li><strong>Autoflow (Free):</strong> Draw flow arrows between frames for user flow documentation. Much cleaner than manual arrows or the built-in connector tool.</li>
+  <li><strong>Content Reel (Free):</strong> Populate text layers with realistic data (names, emails, addresses, phone numbers) from curated lists. Faster than typing dummy content manually.</li>
+  <li><strong>Magician (Paid):</strong> AI-powered design assistant — generate icons from text descriptions, suggest copy, create variations. The best AI plugin currently in the Figma ecosystem.</li>
+</ul>
+
+<h2 id="vs-alternatives">vs Sketch vs Adobe XD</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Dimension</th><th>Figma</th><th>Sketch</th><th>Adobe XD</th></tr></thead>
+<tbody>
+<tr><td>Collaboration</td><td>⭐⭐⭐⭐⭐ Real-time multiplayer</td><td>⭐⭐⭐ Cloud collaboration</td><td>⭐⭐⭐ Co-editing</td></tr>
+<tr><td>Platform</td><td>Browser + desktop app</td><td>Mac only</td><td>Mac + Windows</td></tr>
+<tr><td>Auto Layout</td><td>⭐⭐⭐⭐⭐ Best</td><td>⭐⭐⭐⭐ Smart Layout</td><td>⭐⭐⭐ Responsive resize</td></tr>
+<tr><td>Plugin ecosystem</td><td>⭐⭐⭐⭐⭐ Largest</td><td>⭐⭐⭐⭐ Strong</td><td>⭐⭐ Limited</td></tr>
+<tr><td>Dev handoff</td><td>⭐⭐⭐⭐⭐ Dev Mode</td><td>⭐⭐⭐ Zeplin integration</td><td>⭐⭐⭐ Design Specs</td></tr>
+<tr><td>Performance</td><td>⭐⭐⭐ Browser limitations</td><td>⭐⭐⭐⭐⭐ Native Mac speed</td><td>⭐⭐⭐</td></tr>
+<tr><td>Price</td><td>Free (limited) / $15/editor/mo</td><td>$9/mo</td><td>Discontinued 2023</td></tr>
+<tr><td>Future</td><td>⭐⭐⭐⭐⭐ Active development</td><td>⭐⭐⭐ Smaller team</td><td>❌ Discontinued</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Adobe XD was discontinued in 2023 — if you're still using it, migrate now. Sketch is still viable for Mac-only teams who prefer native performance and don't need heavy collaboration. For everyone else, Figma is the clear choice: better collaboration, larger ecosystem, active development, and platform independence.</p>
+
+<div class="key-takeaway">
+  <h4>🎯 Key Takeaway</h4>
+  <p>The highest-leverage Figma skills are Auto Layout, component architecture, and design tokens — in that order. Master these three and you'll build UIs 3-4x faster than designers who work without them. Auto Layout eliminates manual resizing forever. A properly structured component library eliminates inconsistency. Design tokens eliminate the "update this color in 200 places" problem. Everything else in Figma is amplified by getting these fundamentals right.</p>
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">What is Figma Auto Layout and why is it essential?</div>
+  <div class="faq-a">Auto Layout turns Figma frames into dynamic containers that resize based on content — like CSS Flexbox. When you add text to a button with Auto Layout, the button automatically expands. When you add a card to a row, the row expands. This eliminates manual resizing entirely. Any designer not using Auto Layout is spending 3-4x as long on layout changes as they need to.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">How does Figma Dev Mode work and is it worth the cost?</div>
+  <div class="faq-a">Dev Mode (requires paid plan or separate seat at $15/month) gives developers a dedicated inspection interface with CSS properties, spacing values, font details, exportable assets, and component documentation — all clickable. Most engineering teams save 2-4 hours per sprint when developers use Dev Mode instead of guessing from visual inspection. Worth it for any team shipping product regularly.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Should I migrate from Sketch to Figma in 2026?</div>
+  <div class="faq-a">Yes, almost certainly. Figma has overtaken Sketch in features, ecosystem, and collaboration. Sketch's advantage — native Mac performance — has narrowed as Figma's desktop app improved. Figma's real-time collaboration, cross-platform access, and larger plugin ecosystem make it the clear winner for most teams. The only reason to stay on Sketch: your team has deeply invested tooling built on it and the migration ROI isn't positive yet.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">What are the best Figma plugins for professional designers?</div>
+  <div class="faq-a">Highest-value plugins: Unsplash (free stock photos), Iconify (100K+ icons), Stark (accessibility checking), Figma Tokens (design token sync to code), Autoflow (flow arrows), Content Reel (realistic dummy data), and Magician (AI-powered design assistance). These six cover the most common workflow gaps that Figma's core doesn't address natively.</div>
+</div>
+
+<div style="margin-top:40px"><a class="cta" href="https://comparedge.com/tools/figma">View Figma on ComparEdge →</a></div>
+<div class="newsletter">
+  <h3>Get the Weekly Design Tools Update</h3>
+  <p>Figma features, plugin releases, and design system tips from practitioners.</p>
+  <div class="newsletter-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><svg width="22" height="20" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="fg-lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#fg-lgf)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col"><h4>Playbooks</h4><a href="/playbooks/chatgpt.html">ChatGPT</a><a href="/playbooks/figma.html">Figma</a><a href="/playbooks/cursor.html">Cursor</a><a href="/playbooks/notion.html">Notion</a></div>
+    <div class="footer-col"><h4>Topics</h4><a href="https://blog.comparedge.com/chatgpt-vs-claude.html">ChatGPT vs Claude</a><a href="https://blog.comparedge.com/dalle-vs-midjourney.html">DALL-E vs Midjourney</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a><a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span><span>Updated April 24, 2026</span></div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('progressBar'),thumb=document.getElementById('progressThumb');
+  function updateProgress(){var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight,pct=dh>0?Math.min(st/dh,1):0;if(bar)bar.style.width=(pct*100)+'%';if(thumb)thumb.style.height=(pct*100)+'%';}
+  var sidebar=document.getElementById('sidebarToc'),inlineToc=document.querySelector('.toc'),tocLinks=document.querySelectorAll('.sidebar-toc a'),sections=[];
+  tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
+  function updateActive(){var sp=window.scrollY+120;if(sidebar&&inlineToc){sidebar.classList.toggle('visible',sp>inlineToc.offsetTop+inlineToc.offsetHeight);}var active=null;for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=sp){active=sections[i].id;break}}tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});}
+  var ticking=false;window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateActive();ticking=false});ticking=true}});updateProgress();updateActive();
+})();
+</script>
+</body>
+</html>
