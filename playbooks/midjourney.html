@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Midjourney Playbook: Master AI Image Generation</title>
+<meta name="description" content="The definitive Midjourney power user guide. Real prompt formulas, --sref style references, brand identity workflows, e-commerce mockups, and honest DALL-E comparison.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/midjourney.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Midjourney Playbook: Master AI Image Generation">
+<meta property="og:description" content="Real prompt formulas, style references, brand identity workflows, e-commerce mockups, and honest Midjourney vs DALL-E vs Stable Diffusion comparison.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/midjourney.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Midjourney Playbook: Master AI Image Generation">
+<meta name="twitter:description" content="Real Midjourney techniques: prompt formulas, --sref, --cref, brand workflows, and when to use competitors instead.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-04-10","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"Midjourney Playbook: Master AI Image Generation","description":"The definitive Midjourney power user guide with real prompt formulas, style techniques, brand workflows, and honest comparisons.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/midjourney.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"Midjourney Playbook","item":"https://blog.comparedge.com/playbooks/midjourney.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What Midjourney plan should I start with?","acceptedAnswer":{"@type":"Answer","text":"Start with Basic ($10/mo) to test if Midjourney fits your workflow. If you use it more than a few times per week, Standard ($30/mo) with unlimited relaxed generations is the right tier. Pro ($60/mo) is only for studios or professionals who need fast mode for client deadlines or stealth mode for privacy."}},
+{"@type":"Question","name":"How do I maintain consistent characters across Midjourney images?","acceptedAnswer":{"@type":"Answer","text":"Use --cref (character reference) with an image URL of your character. Combine with --cw (character weight, 0-100) to control how strictly it follows the reference. For full consistency, keep the same base prompt and only change the scene/action. --sref for style + --cref for character is the professional brand consistency workflow."}},
+{"@type":"Question","name":"What is the difference between --stylize and --chaos in Midjourney?","acceptedAnswer":{"@type":"Answer","text":"--stylize (0-1000, default 100) controls how strongly Midjourney applies its aesthetic preferences to your prompt. Higher values = more artistic interpretation, lower values = closer to your literal prompt. --chaos (0-100) controls variety between the 4 initial images. High chaos gives wildly different options; low chaos gives variations on the same concept."}},
+{"@type":"Question","name":"Is Midjourney worth it over DALL-E or Stable Diffusion?","acceptedAnswer":{"@type":"Answer","text":"Midjourney produces consistently higher-quality artistic and photorealistic images than DALL-E 3. Stable Diffusion (local) is free and gives you full control but requires technical setup. Choose Midjourney for professional-quality output with minimal friction. Choose DALL-E for quick ChatGPT integration. Choose Stable Diffusion if you need custom training or no per-image costs."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#00e5ff;--accent2:#8b5cf6;--accent3:#3b82f6;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:3px}
+a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
+.site-logo:hover{opacity:1!important}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:center;height:100%;max-width:1200px;margin:0 auto;padding:0 24px;gap:40px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-center{display:flex;gap:28px;align-items:center}
+.nav-center a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-center a:hover{color:#00e5ff}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:#00e5ff}
+.mobile-menu a.primary-link{color:var(--accent);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}
+.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border)}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}
+.toc li{margin-bottom:6px}
+.toc a{color:var(--accent);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}
+strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}
+li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#050d10;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#67e8f9}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.yellow{border-color:#f59e0b;background:#1a1505}.callout.yellow strong{color:#fcd34d}
+.callout.red{border-color:#ef4444;background:#1a0808}.callout.red strong{color:#fca5a5}
+.callout.purple{border-color:#8b5cf6;background:#0f0a1f}.callout.purple strong{color:#c4b5fd}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#67e8f9}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#a5f3fc}
+pre code{background:none;border:none;padding:0;font-size:1em}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0369a1,#7c3aed);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-center{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo"><svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mj-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#mj-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg><span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+  <div class="nav-center">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('mj-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div id="mj-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="https://blog.comparedge.com/" style="text-decoration:none"><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span></a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mj-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / Midjourney</nav>
+
+<!-- Animated SVG Hero: Canvas with shapes morphing, colors cycling -->
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a">
+  <defs>
+    <filter id="mj-glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="mj-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f97316"/><stop offset="50%" stop-color="#ec4899"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="mj-grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
+  </defs>
+  <!-- Canvas frame -->
+  <rect x="30" y="30" width="380" height="240" rx="6" fill="#0d1117" stroke="#1e2433" stroke-width="1"/>
+  <!-- Morphing shape 1 -->
+  <circle cx="130" cy="150" r="60" fill="none" stroke="url(#mj-grad1)" stroke-width="2" opacity="0.6" filter="url(#mj-glow)">
+    <animate attributeName="r" values="60;45;70;55;60" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.9;0.5;0.8;0.6" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Shape 2 - triangle morphing -->
+  <polygon points="230,90 280,190 180,190" fill="none" stroke="url(#mj-grad2)" stroke-width="2" opacity="0.5" filter="url(#mj-glow)">
+    <animateTransform attributeName="transform" type="rotate" values="0 230 150;20 230 150;-10 230 150;5 230 150;0 230 150" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.8;0.4;0.7;0.5" dur="8s" repeatCount="indefinite"/>
+  </polygon>
+  <!-- Color palette dots -->
+  <circle cx="320" cy="70" r="12" fill="#f97316" opacity="0.8">
+    <animate attributeName="fill" values="#f97316;#ec4899;#8b5cf6;#06b6d4;#10b981;#f97316" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="345" cy="70" r="12" fill="#ec4899" opacity="0.8">
+    <animate attributeName="fill" values="#ec4899;#8b5cf6;#06b6d4;#10b981;#f97316;#ec4899" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="370" cy="70" r="12" fill="#8b5cf6" opacity="0.8">
+    <animate attributeName="fill" values="#8b5cf6;#06b6d4;#10b981;#f97316;#ec4899;#8b5cf6" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Brush strokes appearing -->
+  <path d="M50 200 Q100 180 150 195 Q200 210 250 200" fill="none" stroke="url(#mj-grad1)" stroke-width="4" stroke-linecap="round" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="d" values="M50 200 Q100 180 150 195 Q200 210 250 200;M50 215 Q100 195 150 210 Q200 225 250 215;M50 200 Q100 180 150 195 Q200 210 250 200" dur="7s" repeatCount="indefinite"/>
+  </path>
+  <!-- Generate button -->
+  <rect x="50" y="235" width="100" height="26" rx="5" fill="rgba(139,92,246,0.3)" stroke="#8b5cf6" stroke-width="1">
+    <animate attributeName="fill" values="rgba(139,92,246,0.3);rgba(139,92,246,0.6);rgba(139,92,246,0.3)" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="100" y="253" fill="#c4b5fd" font-size="12" font-family="monospace" text-anchor="middle">/imagine</text>
+  <!-- Product label -->
+  <text x="460" y="110" fill="url(#mj-grad1)" font-size="42" font-weight="800" font-family="system-ui,sans-serif" filter="url(#mj-glow)">Midjourney</text>
+  <text x="460" y="140" fill="#f97316" font-size="14" font-family="'Space Mono',monospace" opacity="0.7">AI IMAGE GENERATOR</text>
+  <line x1="460" y1="150" x2="460" y2="150" stroke="url(#mj-grad1)" stroke-width="2">
+    <animate attributeName="x2" values="460;760;760" dur="1.5s" fill="freeze"/>
+  </line>
+  <!-- Stats -->
+  <text x="460" y="195" fill="#64748b" font-size="12" font-family="monospace">v6.1 model · --ar 16:9 · --stylize 750</text>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The Midjourney Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span>
+  <span>·</span>
+  <span>April 10, 2026</span>
+  <span>·</span>
+  <span>17 min read</span>
+  <span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#prompt-formula">The Prompt Formula That Actually Works</a></li>
+    <li><a href="#style-references">Style & Character Reference Techniques</a></li>
+    <li><a href="#brand-workflow">Workflow: Brand Identity with Midjourney</a></li>
+    <li><a href="#ecommerce-workflow">Workflow: E-Commerce Product Mockups</a></li>
+    <li><a href="#advanced-params">Advanced Parameters Most People Ignore</a></li>
+    <li><a href="#vs-dalle-sd">Midjourney vs DALL-E vs Stable Diffusion</a></li>
+    <li><a href="#cost-breakdown">Cost Per Image Breakdown</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>Most Midjourney users type a description and hit enter. Power users understand that Midjourney responds to a specific language — a combination of subject, style references, technical parameters, and compositional guidance. Here's how to speak it fluently.</p>
+
+<h2 id="prompt-formula">The Prompt Formula That Actually Works</h2>
+<p>The structure that consistently produces professional-quality images:</p>
+
+<pre><code>[SUBJECT + ACTION] [ENVIRONMENT/SETTING] [STYLE/AESTHETIC] 
+[LIGHTING] [CAMERA/PERSPECTIVE] [MOOD] [TECHNICAL PARAMS]</code></pre>
+
+<h3>Working Examples</h3>
+
+<p><strong>Commercial photography style:</strong></p>
+<pre><code>glass perfume bottle with minimalist gold cap, floating on black marble surface, 
+editorial product photography, rim lighting with soft fill, macro lens 85mm, 
+luxury brand aesthetic, photorealistic --ar 4:5 --stylize 200 --v 6.1</code></pre>
+
+<p><strong>Brand illustration style:</strong></p>
+<pre><code>confident woman using laptop in modern coworking space, flat design illustration, 
+teal and coral color palette, bold geometric shapes, positive professional mood, 
+Dribbble aesthetic --ar 16:9 --stylize 500 --v 6.1</code></pre>
+
+<p><strong>Cinematic scene:</strong></p>
+<pre><code>abandoned lighthouse on rocky coast at golden hour, storm approaching from behind, 
+dramatic atmospheric perspective, shot on 35mm film, Kodak Portra 400 grain, 
+cinematic widescreen, moody isolation --ar 21:9 --stylize 300 --v 6.1</code></pre>
+
+<h3>What Each Part Does</h3>
+<ul>
+  <li><strong>Subject first, adjectives close to what they modify.</strong> "a sleek black electric car" works better than "a car that is electric and black and sleek."</li>
+  <li><strong>Style references before technical params.</strong> Midjourney weights earlier prompt elements more heavily — put style guidance before camera specs.</li>
+  <li><strong>Lighting matters enormously.</strong> "rim lighting," "golden hour," "overcast diffused light," "dramatic studio lighting" — these single phrases transform the output more than almost anything else.</li>
+  <li><strong>Camera/lens references for photography.</strong> "shot on 35mm," "50mm f/1.4," "aerial drone perspective" — these ground photorealistic images in recognizable visual languages.</li>
+</ul>
+
+<div class="callout"><strong>💡 The comma matters:</strong> Commas in Midjourney prompts act as emphasis separators. More commas = each concept treated with roughly equal weight. Run-on descriptions = earlier words dominate.</div>
+
+<h3>What NOT to Include</h3>
+<ul>
+  <li>Negation in the main prompt ("not dark," "without people") — use <code>--no</code> parameter instead</li>
+  <li>Overly abstract concepts without visual anchors ("freedom," "happiness" alone)</li>
+  <li>Too many competing styles — pick one primary aesthetic</li>
+  <li>Exact color hex codes — Midjourney doesn't read these; use color names or references</li>
+</ul>
+
+<h2 id="style-references">Style & Character Reference Techniques</h2>
+
+<h3>/describe: Reverse-Engineer Any Image</h3>
+<p>Upload any image with <code>/describe [image]</code> and Midjourney gives you 4 prompt variations that would produce similar results. This is invaluable for:</p>
+<ul>
+  <li>Replicating a style you found somewhere</li>
+  <li>Understanding why your image looks the way it does</li>
+  <li>Building a prompt vocabulary for styles you like</li>
+</ul>
+
+<h3>--sref: Style References (The Consistency Tool)</h3>
+<p>Use <code>--sref [image URL]</code> to pull style (colors, textures, mood, artistic technique) from a reference image without copying subject matter. This is how professionals maintain visual consistency.</p>
+
+<pre><code>product packaging design for artisan coffee, kraft paper texture, hand-lettered typography 
+--sref https://[your-style-reference-image.jpg] --sw 500 --ar 2:3</code></pre>
+
+<p><code>--sw</code> (style weight, 0-1000) controls how strongly the style reference influences output. Start at 500 and adjust. High values can override your text prompt significantly.</p>
+
+<h3>--cref: Character References (Consistent Faces)</h3>
+<p>The problem Midjourney struggled with longest: consistent characters across images. <code>--cref [image URL]</code> locks in a character's appearance:</p>
+
+<pre><code>same character from --cref [URL], now in a coffee shop, casual weekend mood, 
+candid portrait --cref [character-reference.jpg] --cw 75 --ar 4:5</code></pre>
+
+<p><code>--cw</code> (character weight, 0-100): 100 = strict face match but may override clothing/style; 75 = good balance for most use cases; 0-50 = loose inspiration only.</p>
+
+<h3>Combining --sref + --cref</h3>
+<p>This is the professional brand photography workflow:</p>
+<pre><code>[scene description] --sref [brand-style-image.jpg] --cref [brand-character.jpg] 
+--sw 300 --cw 75 --ar 16:9 --v 6.1</code></pre>
+<p>You get consistent character + consistent brand aesthetic across an entire campaign. This used to require a professional photo shoot; now it's a Discord command.</p>
+
+<h2 id="brand-workflow">Workflow: Creating Brand Identity with Midjourney</h2>
+<p>This is how design agencies are actually using Midjourney — not as a final deliverable but as a rapid ideation and client presentation tool.</p>
+
+<h3>Phase 1: Mood Board Generation (30 min)</h3>
+<ol>
+  <li>Start with <code>--chaos 70</code> and 5-6 concept directions in the same prompt session to see wildly different interpretations</li>
+  <li>Use high <code>--stylize</code> (700-900) in this phase — you want Midjourney's aesthetic intelligence, not literal interpretation</li>
+  <li>Collect the promising seeds (copy the seed number from successful images)</li>
+</ol>
+
+<h3>Phase 2: Direction Refinement</h3>
+<p>Once you have 2-3 promising directions:</p>
+<pre><code>minimalist tech brand visual identity, primary color electric blue #1 of 4 variations, 
+geometric sans-serif logo concept, clean white space, professional B2B aesthetic,
+Silicon Valley startup energy --stylize 300 --chaos 20 --ar 1:1</code></pre>
+
+<p>Lower <code>--chaos</code> (20-30) now — you want variations on a theme, not wild divergence.</p>
+
+<h3>Phase 3: Asset Generation</h3>
+<p>Once the direction is locked, generate the full asset set:</p>
+<ul>
+  <li>Hero image: <code>--ar 16:9</code> with your established style reference <code>--sref</code></li>
+  <li>Social media: <code>--ar 1:1</code> and <code>--ar 4:5</code></li>
+  <li>Email header: <code>--ar 3:1</code></li>
+  <li>Favicon concept: <code>--ar 1:1 --stylize 50</code> (lower stylize for simpler, icon-appropriate output)</li>
+</ul>
+
+<h3>Phase 4: Variation and Zoom</h3>
+<ul>
+  <li><strong>Vary (Region):</strong> Inpainting — select specific areas of an image to regenerate while keeping the rest. Perfect for fixing hands, faces, or background elements.</li>
+  <li><strong>Zoom Out:</strong> Extends the canvas outward, adding more scene. Great for creating wider crops of a tight shot.</li>
+  <li><strong>Pan:</strong> Extends in one direction — useful for creating wider banner formats from square images.</li>
+</ul>
+
+<h2 id="ecommerce-workflow">Workflow: Product Mockups for E-Commerce</h2>
+<p>Product photography is one of the clearest ROI use cases for Midjourney. A professional product photo shoot costs $500-5,000. Midjourney delivers usable results for $0.01-0.05 per image at the Standard plan rate.</p>
+
+<h3>The Product Photography Prompt Stack</h3>
+<pre><code>[product description], product photography, [surface], [background], 
+[lighting setup], photorealistic, high detail, commercial quality 
+--ar 1:1 --stylize 150 --v 6.1 --no hands, people, text</code></pre>
+
+<p>Real example:</p>
+<pre><code>minimalist white ceramic mug with subtle blue geometric pattern, 
+product photography, white marble surface, white background, 
+soft studio lighting with slight shadow, photorealistic, Shopify hero image quality,
+beverage branding --ar 1:1 --stylize 150 --v 6.1 --no hands, people</code></pre>
+
+<h3>Lifestyle Shots Without Models</h3>
+<pre><code>artisan coffee mug on wooden table near window, cozy home office setting, 
+morning light, bokeh background showing plants and books, lifestyle product photography,
+Canon 5D Mark IV look, warm color grade --ar 4:5 --stylize 200 --v 6.1</code></pre>
+
+<h3>Upload Your Product for Consistent Results</h3>
+<p>Upload your actual product image and use it as a reference:</p>
+<pre><code>/imagine [your-product-image.jpg] placed on marble kitchen counter, 
+luxury lifestyle setting, natural window light, editorial product placement,
+photorealistic --iw 0.8 --stylize 100</code></pre>
+
+<p><code>--iw</code> (image weight, 0-3): Controls how strongly your uploaded image influences the result. 0.5-1.0 for product consistency; lower for more creative interpretation.</p>
+
+<div class="callout green"><strong>💡 Real-world result:</strong> A typical Shopify store owner can generate 40-50 usable product images in a 2-hour Midjourney session that would have cost $2,000-3,000 with a professional photographer. The images aren't always perfect but they're good enough for testing and often better than stock photos.</div>
+
+<h2 id="advanced-params">Advanced Parameters Most People Ignore</h2>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Parameter</th><th>Range</th><th>What It Does</th><th>When to Use It</th></tr></thead>
+<tbody>
+<tr><td><code>--stylize / --s</code></td><td>0–1000</td><td>How much Midjourney's aesthetic training influences output. Higher = more artistic/opinionated.</td><td>Low (0-100) for literal accuracy; high (700+) for artistic interpretation</td></tr>
+<tr><td><code>--chaos / --c</code></td><td>0–100</td><td>Variety between the 4 initial grid images. High = very different options.</td><td>High for ideation; low for refinement</td></tr>
+<tr><td><code>--weird / --w</code></td><td>0–3000</td><td>Experimental, unusual aesthetic. Makes outputs surreal and unexpected.</td><td>Creative/editorial work where unusual is a feature</td></tr>
+<tr><td><code>--quality / --q</code></td><td>0.25, 0.5, 1</td><td>Rendering time/quality. 0.25 = fast draft; 1 = full quality.</td><td>Use 0.25 for ideation iterations; 1 for final outputs</td></tr>
+<tr><td><code>--seed</code></td><td>Any number</td><td>Fix the random seed for reproducible results. Same seed + same prompt = same image.</td><td>Reproducing a result, creating subtle variations</td></tr>
+<tr><td><code>--tile</code></td><td>Flag</td><td>Creates seamlessly tileable images.</td><td>Backgrounds, textures, pattern design</td></tr>
+<tr><td><code>--no</code></td><td>Word list</td><td>Negative prompting — exclude specific elements.</td><td>Any time you want to prevent something common: <code>--no text, watermark, hands</code></td></tr>
+<tr><td><code>--repeat / --r</code></td><td>2–40</td><td>Runs the same prompt multiple times. Useful for batch generation.</td><td>When you need many variations at once</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="vs-dalle-sd">Midjourney vs DALL-E vs Stable Diffusion: Honest Comparison</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Criteria</th><th>Midjourney</th><th>DALL-E 3</th><th>Stable Diffusion</th></tr></thead>
+<tbody>
+<tr><td>Image quality ceiling</td><td>🥇 Highest artistic quality</td><td>Good, improving</td><td>Variable (model-dependent)</td></tr>
+<tr><td>Prompt understanding</td><td>Excellent (artistic language)</td><td>Excellent (conversational)</td><td>Good (technical)</td></tr>
+<tr><td>Photorealism</td><td>Excellent</td><td>Good</td><td>Excellent (with right models)</td></tr>
+<tr><td>Text in images</td><td>Poor (v6.1 improved but still unreliable)</td><td>Good</td><td>Variable</td></tr>
+<tr><td>Cost</td><td>$10-120/mo subscription</td><td>Included in ChatGPT Plus</td><td>Free (local) or per-API-call</td></tr>
+<tr><td>Setup friction</td><td>Low (Discord/web)</td><td>None (built into ChatGPT)</td><td>High (local setup) / Low (API)</td></tr>
+<tr><td>Commercial rights</td><td>✅ Paid plans own outputs</td><td>✅ Outputs owned by user</td><td>✅ Full ownership</td></tr>
+<tr><td>Custom model training</td><td>❌ No</td><td>❌ No</td><td>✅ Full LoRA/finetune support</td></tr>
+<tr><td>Privacy (no data retention)</td><td>Paid stealth mode only</td><td>OpenAI privacy terms apply</td><td>✅ Fully local option</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Use Midjourney when:</strong> You want professional-quality artistic or photographic images with minimal technical friction. The output-per-prompt quality is simply the highest of any commercial tool.</p>
+
+<p><strong>Use DALL-E when:</strong> You're already in ChatGPT and need a quick image. Or when you need to generate images from very detailed textual descriptions — DALL-E handles instruction following better for complex scenes with specific text elements.</p>
+
+<p><strong>Use Stable Diffusion when:</strong> You need custom fine-tuning (your own characters, products, styles), you process high volumes that make per-image pricing prohibitive, or you require full data privacy with no cloud processing.</p>
+
+<h2 id="cost-breakdown">Cost Per Image Breakdown</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Price/mo</th><th>Fast GPU Hours</th><th>Est. Images</th><th>Cost/Image</th></tr></thead>
+<tbody>
+<tr><td>Basic</td><td>$10</td><td>3.3 hrs</td><td>~200 (fast)</td><td>~$0.05</td></tr>
+<tr><td>Standard</td><td>$30</td><td>15 hrs</td><td>~900 fast + unlimited relaxed</td><td>~$0.03 fast; ~$0.01 relaxed</td></tr>
+<tr><td>Pro</td><td>$60</td><td>30 hrs</td><td>~1,800 fast + unlimited relaxed + stealth</td><td>~$0.03 fast; ~$0.005 relaxed</td></tr>
+<tr><td>Mega</td><td>$120</td><td>60 hrs</td><td>~3,600 fast + unlimited relaxed</td><td>~$0.03 fast; <$0.005 relaxed</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout yellow"><strong>⚠️ Fast vs Relaxed:</strong> Fast mode generates in ~30 seconds; Relaxed mode queues during off-peak times, taking 0-5 minutes. For professional work with deadlines, you need Fast. For personal projects, Relaxed is fine and dramatically increases your effective image volume.</div>
+
+<p>Standard at $30/mo is the right tier for 90% of users. Unlimited relaxed generations means cost-per-image effectively approaches zero for patient users. Pro adds Stealth mode (images don't appear in public gallery) — required if you're generating commercially sensitive work.</p>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">What Midjourney plan should I start with?</div>
+  <div class="faq-a">Start with Basic ($10/mo) to test if Midjourney fits your workflow. If you use it more than a few times per week, Standard ($30/mo) with unlimited relaxed generations is the right tier. Pro ($60/mo) is only for studios or professionals who need fast mode for client deadlines or stealth mode for privacy.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">How do I maintain consistent characters across Midjourney images?</div>
+  <div class="faq-a">Use --cref (character reference) with an image URL of your character. Combine with --cw (character weight, 0-100) to control how strictly it follows the reference. For full consistency, keep the same base prompt and only change the scene/action. --sref for style + --cref for character is the professional brand consistency workflow.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">What is the difference between --stylize and --chaos in Midjourney?</div>
+  <div class="faq-a">--stylize (0-1000) controls how strongly Midjourney applies its aesthetic preferences to your prompt. Higher values = more artistic interpretation. --chaos (0-100) controls variety between the 4 initial images. High chaos gives wildly different options; low chaos gives variations on a theme.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Is Midjourney worth it over DALL-E or Stable Diffusion?</div>
+  <div class="faq-a">Midjourney produces consistently higher-quality artistic and photorealistic images than DALL-E 3. Stable Diffusion (local) is free and gives full control but requires technical setup. Choose Midjourney for professional quality with minimal friction. Choose Stable Diffusion if you need custom training or no per-image costs.</div>
+</div>
+
+<div style="margin-top:40px">
+  <a class="cta" href="https://comparedge.com/tools/midjourney">View Midjourney on ComparEdge →</a>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Playbooks</h4>
+      <a href="/playbooks/chatgpt.html">ChatGPT</a>
+      <a href="/playbooks/cursor.html">Cursor</a>
+      <a href="/playbooks/midjourney.html">Midjourney</a>
+      <a href="/playbooks/notion.html">Notion</a>
+      <a href="/playbooks/hubspot.html">HubSpot</a>
+    </div>
+    <div class="footer-col">
+      <h4>Related</h4>
+      <a href="https://blog.comparedge.com/dalle-vs-midjourney.html">DALL-E vs Midjourney</a>
+      <a href="https://blog.comparedge.com/ai-image-generators-2026.html">AI Image Generators</a>
+      <a href="https://blog.comparedge.com/real-cost-ai-2026.html">Real Cost of AI 2026</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a>
+      <a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a>
+      <a href="https://github.com/comparedge" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span>
+    <span>Updated April 24, 2026</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.fade-in');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.1});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
