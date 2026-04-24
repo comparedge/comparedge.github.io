@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Playbooks — Expert Guides for SaaS &amp; AI Tools | ComparEdge Blog</title>
+<meta name="description" content="Deep-dive playbooks for ChatGPT, Cursor, Midjourney, Notion, HubSpot and more. Real workflows, hidden features, and honest comparisons.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Product Playbooks — Expert Guides for SaaS &amp; AI Tools | ComparEdge Blog">
+<meta property="og:description" content="Deep-dive playbooks for ChatGPT, Cursor, Midjourney, Notion, HubSpot and more. Real workflows, hidden features, and honest comparisons.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Product Playbooks — Expert Guides for SaaS &amp; AI Tools | ComparEdge Blog">
+<meta name="twitter:description" content="Deep-dive playbooks for ChatGPT, Cursor, Midjourney, Notion, HubSpot and more. Real workflows, hidden features, and honest comparisons.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.comparedge.com/playbooks/",
+      "name": "Product Playbooks — Expert Guides for SaaS & AI Tools",
+      "description": "Deep-dive playbooks for ChatGPT, Cursor, Midjourney, Notion, HubSpot and more. Real workflows, hidden features, and honest comparisons.",
+      "url": "https://blog.comparedge.com/playbooks/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ComparEdge",
+        "url": "https://comparedge.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.comparedge.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Playbooks", "item": "https://blog.comparedge.com/playbooks/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#00e5ff;--accent2:#8b5cf6;--accent3:#3b82f6;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:3px}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent);opacity:.85}
+.site-logo:hover{text-decoration:none!important;opacity:1!important}
+.container{max-width:1200px;margin:0 auto;padding:24px 24px}
+
+/* ── Fade-in ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:none}
+
+/* ── Header ── */
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-center{display:flex;gap:28px;align-items:center}
+.nav-center a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-center a:hover{color:#00e5ff;text-decoration:none}
+
+/* ── Burger ── */
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.burger svg{display:block}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:#00e5ff;text-decoration:none}
+.mobile-menu a.primary-link{color:var(--accent);font-weight:700}
+
+/* ── Body offset ── */
+main{padding-top:60px}
+
+/* ── Playbooks Hero ── */
+.playbooks-hero{position:relative;overflow:hidden;padding:72px 0 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.playbooks-hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.playbooks-hero .glow{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(0,229,255,.07) 0%,transparent 70%);pointer-events:none;animation:glowPulse 8s ease-in-out infinite}
+.playbooks-hero .glow2{position:absolute;bottom:0%;right:5%;width:400px;height:300px;background:radial-gradient(ellipse,rgba(139,92,246,.06) 0%,transparent 70%);pointer-events:none;animation:glowPulse 10s ease-in-out infinite reverse}
+@keyframes glowPulse{0%,100%{opacity:.7;transform:scale(1) translateX(-50%)}50%{opacity:1;transform:scale(1.05) translateX(-50%)}}
+.playbooks-hero .scanline{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.06),transparent);pointer-events:none;animation:scanMove 6s linear infinite}
+@keyframes scanMove{0%{top:-2px}100%{top:100%}}
+.playbooks-hero-inner{position:relative;z-index:1;max-width:760px;padding:0 24px;width:100%}
+.playbooks-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-dim);border:1px solid var(--border);border-radius:20px;padding:5px 16px;margin-bottom:24px}
+.playbooks-hero h1{font-family:system-ui,-apple-system,sans-serif;font-size:clamp(2.4em,5vw,3.6em);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
+.playbooks-hero-desc{color:var(--text-dim);font-size:1.05em;max-width:580px;margin:0 auto 28px;line-height:1.7}
+.playbooks-stats-bar{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+.playbooks-stat{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)}
+.playbooks-stat span{color:var(--accent);font-weight:700}
+
+/* ── Search ── */
+.search-wrap{max-width:560px;margin:36px auto 0;padding:0 24px}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 48px 14px 48px;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,229,255,.08),0 0 20px rgba(0,229,255,.06)}
+.search-box input::placeholder{color:var(--text-muted)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-dim);pointer-events:none}
+.search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-dim);cursor:pointer;padding:4px;display:none;font-size:16px;line-height:1}
+.search-clear.visible{display:block}
+
+/* ── Category pills ── */
+.category-pills{display:flex;gap:8px;padding:28px 0 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.category-pills::-webkit-scrollbar{display:none}
+.cat-pill{font-family:'Space Mono',monospace;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;padding:6px 16px;border-radius:20px;border:1px solid var(--border);color:var(--text-dim);background:none;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.cat-pill:hover{border-color:var(--accent);color:var(--accent)}
+.cat-pill.active{background:rgba(0,229,255,.08);border-color:var(--accent);color:var(--accent)}
+
+/* ── Playbook grid ── */
+.playbooks-section{max-width:1200px;margin:0 auto;padding:40px 24px 20px}
+.playbooks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--text-dim);display:none}
+.no-results.visible{display:block}
+
+/* ── Playbook card ── */
+.playbook-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important;cursor:pointer}
+.playbook-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 24px rgba(0,229,255,.09);text-decoration:none!important}
+.playbook-card.hidden{display:none}
+.card-img{height:140px;flex-shrink:0;overflow:hidden}
+.card-img svg{display:block;width:100%;height:100%}
+.card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
+.card-title{font-family:system-ui,-apple-system,sans-serif;font-size:1rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:8px}
+.card-desc{font-size:.82rem;color:var(--text-dim);line-height:1.5;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.card-author{display:flex;align-items:center;gap:8px}
+.card-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;flex-shrink:0}
+.card-author-name{display:block;font-size:.73rem;color:var(--text);font-weight:500}
+.card-date{font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--text-muted);display:block}
+.card-read{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0}
+
+/* ── Newsletter ── */
+.newsletter-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px 40px;margin:60px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;transition:box-shadow .3s}
+.newsletter-section:hover{box-shadow:0 0 40px rgba(0,229,255,.07)}
+.newsletter-section h2{font-family:system-ui,-apple-system,sans-serif;font-size:1.5em;color:#fff;border:none;padding:0;margin:0 0 10px}
+.newsletter-section p{color:var(--text-dim);font-size:0.95em;margin:0}
+.newsletter-form{display:flex;flex-direction:column;gap:10px}
+.newsletter-form input{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:15px;outline:none;transition:border-color .2s}
+.newsletter-form input:focus{border-color:var(--accent)}
+.newsletter-form input::placeholder{color:var(--text-muted)}
+.newsletter-form button{background:var(--accent);color:#000;border:none;border-radius:8px;padding:12px 20px;font-family:'Space Mono',monospace;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;transition:opacity .2s}
+.newsletter-form button:hover{opacity:.85}
+.newsletter-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--text-dim);margin-top:4px}
+
+/* ── Footer ── */
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;text-decoration:none}
+.footer-col a:hover{color:var(--accent);text-decoration:none}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+
+/* ── Responsive ── */
+@media(max-width:1100px){
+  .playbooks-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .playbooks-grid{grid-template-columns:repeat(2,1fr)}
+  .newsletter-section{grid-template-columns:1fr;gap:24px;padding:28px 24px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .playbooks-hero{padding:60px 0 36px}
+}
+@media(max-width:640px){
+  .playbooks-grid{grid-template-columns:1fr}
+  .nav-center{display:none}
+  .burger{display:block}
+  header nav{padding:0 16px}
+  .playbooks-hero{padding:52px 0 28px}
+  .playbooks-hero-inner{padding:0 16px}
+  .search-wrap{padding:0 16px;margin-top:28px}
+  .playbooks-section{padding:32px 16px 16px}
+  .category-pills{padding:20px 0 0}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .playbooks-stats-bar{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo">
+    <svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+    <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+  </a>
+  <div class="nav-center">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('mob-menu').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+
+<!-- ── Mobile menu ── -->
+<div id="mob-menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="https://blog.comparedge.com/" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">
+      <svg width="22" height="20" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+      <span style="font-weight:800;font-size:15px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+    </a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mob-menu').classList.remove('open')" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<main>
+
+<!-- ── HERO ── -->
+<section class="playbooks-hero">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="scanline"></div>
+  <div class="playbooks-hero-inner fade-in">
+    <div class="playbooks-tag">Playbooks · Deep Dive Guides</div>
+    <h1>Product Playbooks</h1>
+    <p class="playbooks-hero-desc">Expert-level guides with real workflows, hidden features, and honest comparisons. Built from research, not templates.</p>
+    <div class="playbooks-stats-bar">
+      <span class="playbooks-stat"><span>5</span> Playbooks</span>
+      <span class="playbooks-stat" style="color:var(--text-muted)">·</span>
+      <span class="playbooks-stat"><span>5</span> Categories</span>
+      <span class="playbooks-stat" style="color:var(--text-muted)">·</span>
+      <span class="playbooks-stat"><span>100%</span> Research-Based</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEARCH + FILTERS ── -->
+<div class="playbooks-section" style="padding-bottom:0">
+  <div class="search-wrap" style="max-width:100%;padding:0;margin:0 0 0 0">
+    <div class="search-box">
+      <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" placeholder="Search playbooks..." aria-label="Search playbooks" autocomplete="off">
+      <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
+    </div>
+  </div>
+  <div class="category-pills" id="cat-pills">
+    <button class="cat-pill active" data-cat="all">All</button>
+    <button class="cat-pill" data-cat="ai-llm">AI &amp; LLM</button>
+    <button class="cat-pill" data-cat="ai-coding">AI Coding</button>
+    <button class="cat-pill" data-cat="ai-image">AI Image</button>
+    <button class="cat-pill" data-cat="project-management">Project Management</button>
+    <button class="cat-pill" data-cat="crm">CRM</button>
+  </div>
+</div>
+
+<!-- ── CARDS GRID ── -->
+<div class="playbooks-section" style="padding-top:24px">
+  <div class="playbooks-grid" id="playbooks-grid">
+
+    <!-- ChatGPT -->
+    <a href="https://blog.comparedge.com/playbooks/chatgpt.html" class="playbook-card fade-in" data-cat="ai-llm" data-title="the chatgpt power user playbook" data-search="chatgpt ai llm power user prompt engineering">
+      <div class="card-img">
+        <svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="140" fill="#0a0e1a"/>
+          <!-- Neural network nodes -->
+          <circle cx="60" cy="70" r="8" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".6">
+            <animate attributeName="r" values="8;11;8" dur="2.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".6;1;.6" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="130" cy="40" r="6" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".5">
+            <animate attributeName="opacity" values=".5;1;.5" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="130" cy="100" r="6" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".5">
+            <animate attributeName="opacity" values=".5;1;.5" dur="2.2s" begin=".6s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="68" y1="65" x2="124" y2="43" stroke="#10b981" stroke-width="1" opacity=".25"/>
+          <line x1="68" y1="75" x2="124" y2="97" stroke="#10b981" stroke-width="1" opacity=".25"/>
+          <!-- Chat bubbles -->
+          <rect x="160" y="25" width="180" height="38" rx="12" fill="rgba(16,185,129,.1)" stroke="#10b981" stroke-width="1.5"/>
+          <polygon points="172,63 165,75 190,63" fill="rgba(16,185,129,.1)" stroke="#10b981" stroke-width="1"/>
+          <rect x="160" y="82" width="155" height="36" rx="12" fill="rgba(10,14,26,.8)" stroke="#334155" stroke-width="1.5"/>
+          <polygon points="172,82 165,70 190,82" fill="rgba(10,14,26,.8)" stroke="#334155" stroke-width="1"/>
+          <!-- Typing dots in first bubble -->
+          <circle cx="188" cy="44" r="4" fill="#10b981">
+            <animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="204" cy="44" r="4" fill="#10b981">
+            <animate attributeName="opacity" values="1;.2;1" dur="1.2s" begin=".3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="220" cy="44" r="4" fill="#10b981">
+            <animate attributeName="opacity" values="1;.2;1" dur="1.2s" begin=".6s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Text lines in second bubble -->
+          <rect x="174" y="92" width="80" height="5" rx="2" fill="#334155" opacity=".7"/>
+          <rect x="174" y="103" width="55" height="5" rx="2" fill="#334155" opacity=".5"/>
+          <!-- Ambient dots -->
+          <circle cx="20" cy="25" r="2" fill="#10b981"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="385" cy="110" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+          <!-- Label -->
+          <rect x="130" y="120" width="140" height="16" rx="8" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+          <text x="200" y="131" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">CHATGPT · AI &amp; LLM</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2)">AI &amp; LLM</span>
+        <div class="card-title">The ChatGPT Power User Playbook</div>
+        <p class="card-desc">Real prompt engineering, daily workflows, hidden features, cost tiers breakdown, and when Claude or Gemini beats it.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <span class="card-avatar" style="background:linear-gradient(135deg,rgba(16,185,129,.3),rgba(16,185,129,.15));color:#10b981">CE</span>
+            <div>
+              <span class="card-author-name">ComparEdge Research</span>
+              <span class="card-date">April 1, 2026 · 18 min</span>
+            </div>
+          </div>
+          <span class="card-read">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Cursor -->
+    <a href="https://blog.comparedge.com/playbooks/cursor.html" class="playbook-card fade-in" data-cat="ai-coding" data-title="the cursor developer guide" data-search="cursor developer guide ai coding ide react vscode">
+      <div class="card-img">
+        <svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="140" fill="#0a0e1a"/>
+          <!-- Editor frame -->
+          <rect x="40" y="18" width="320" height="100" rx="8" fill="rgba(6,182,212,.05)" stroke="#1e2433" stroke-width="1.5"/>
+          <rect x="40" y="18" width="320" height="22" rx="8" fill="rgba(6,182,212,.1)"/>
+          <circle cx="58" cy="29" r="4" fill="#ef4444" opacity=".7"/>
+          <circle cx="72" cy="29" r="4" fill="#f59e0b" opacity=".7"/>
+          <circle cx="86" cy="29" r="4" fill="#10b981" opacity=".7"/>
+          <!-- Code lines appearing -->
+          <text x="58" y="57" font-family="Space Mono,monospace" font-size="8" fill="#a78bfa" opacity=".8">function</text>
+          <text x="120" y="57" font-family="Space Mono,monospace" font-size="8" fill="#06b6d4">useAI</text>
+          <text x="160" y="57" font-family="Space Mono,monospace" font-size="8" fill="#e2e8f0" opacity=".6">() {</text>
+          <rect x="58" y="63" width="0" height="7" rx="2" fill="#334155">
+            <animate attributeName="width" values="0;180;180;180" dur="3s" repeatCount="indefinite"/>
+          </rect>
+          <text x="58" y="78" font-family="Space Mono,monospace" font-size="8" fill="#34d399" opacity=".7">
+            <animate attributeName="opacity" values="0;0;.7;.7" dur="3s" repeatCount="indefinite"/>
+            return prompt(ctx);
+          </text>
+          <rect x="58" y="84" width="0" height="7" rx="2" fill="#1e2433">
+            <animate attributeName="width" values="0;0;120;120" dur="3s" repeatCount="indefinite"/>
+          </rect>
+          <text x="58" y="97" font-family="Space Mono,monospace" font-size="8" fill="#e2e8f0" opacity=".4">}</text>
+          <!-- AI highlight overlay -->
+          <rect x="58" y="48" width="120" height="12" rx="3" fill="rgba(6,182,212,.12)" stroke="rgba(6,182,212,.3)" stroke-width="1">
+            <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"/>
+          </rect>
+          <!-- Blinking cursor -->
+          <rect x="229" y="50" width="2" height="10" rx="1" fill="#06b6d4">
+            <animate attributeName="opacity" values="1;0;1" dur=".9s" repeatCount="indefinite"/>
+          </rect>
+          <!-- AI sparkle -->
+          <text x="340" y="70" font-family="Space Mono,monospace" font-size="18" fill="#06b6d4" text-anchor="middle" opacity=".6">
+            ✦
+            <animate attributeName="opacity" values=".6;1;.6" dur="2s" repeatCount="indefinite"/>
+          </text>
+          <circle cx="18" cy="70" r="2" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="382" cy="30" r="2" fill="#a78bfa"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+          <rect x="130" y="120" width="140" height="16" rx="8" fill="rgba(10,14,26,.85)" stroke="#06b6d4" stroke-width="1"/>
+          <text x="200" y="131" font-family="Space Mono,monospace" font-size="6" fill="#06b6d4" text-anchor="middle" letter-spacing=".08em">CURSOR · AI CODING</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag-pill" style="color:#06b6d4;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.2)">AI Coding</span>
+        <div class="card-title">The Cursor Developer Guide</div>
+        <p class="card-desc">IDE setup, AI features deep dive, React workflow, VS Code migration, large codebase management, and cost analysis.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <span class="card-avatar" style="background:linear-gradient(135deg,rgba(6,182,212,.3),rgba(6,182,212,.15));color:#06b6d4">CE</span>
+            <div>
+              <span class="card-author-name">ComparEdge Research</span>
+              <span class="card-date">April 5, 2026 · 16 min</span>
+            </div>
+          </div>
+          <span class="card-read">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Midjourney -->
+    <a href="https://blog.comparedge.com/playbooks/midjourney.html" class="playbook-card fade-in" data-cat="ai-image" data-title="the midjourney image generation playbook" data-search="midjourney image generation ai art prompt style">
+      <div class="card-img">
+        <svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="mj-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="140" fill="#0a0e1a"/>
+          <!-- Canvas frame -->
+          <rect x="50" y="15" width="160" height="110" rx="6" fill="rgba(139,92,246,.06)" stroke="#8b5cf6" stroke-width="1.5"/>
+          <!-- Morphing shape -->
+          <path fill="rgba(139,92,246,.25)" stroke="#8b5cf6" stroke-width="1.5">
+            <animate attributeName="d" values="M100,45 Q130,30 160,50 Q175,70 160,95 Q130,110 100,95 Q75,75 100,45;M95,40 Q135,25 165,55 Q180,75 155,100 Q125,115 95,100 Q70,72 95,40;M100,45 Q130,30 160,50 Q175,70 160,95 Q130,110 100,95 Q75,75 100,45" dur="4s" repeatCount="indefinite"/>
+          </path>
+          <!-- Paint strokes -->
+          <path d="M70,35 Q95,28 115,38" stroke="#a78bfa" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".5">
+            <animate attributeName="stroke-dasharray" values="0,80;80,0;80,0" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <path d="M155,105 Q170,118 190,110" stroke="#c084fc" stroke-width="2" fill="none" stroke-linecap="round" opacity=".4">
+            <animate attributeName="stroke-dasharray" values="0,60;60,0;60,0" dur="3s" begin=".5s" repeatCount="indefinite"/>
+          </path>
+          <!-- Sparkles -->
+          <text x="55" y="115" font-size="10" fill="#a78bfa" opacity=".7">✦
+            <animate attributeName="opacity" values=".7;.2;.7" dur="1.5s" repeatCount="indefinite"/>
+          </text>
+          <text x="195" y="30" font-size="8" fill="#8b5cf6" opacity=".6">✦
+            <animate attributeName="opacity" values=".6;1;.6" dur="2s" begin=".4s" repeatCount="indefinite"/>
+          </text>
+          <text x="175" y="75" font-size="6" fill="#c084fc" opacity=".5">✦
+            <animate attributeName="opacity" values=".5;1;.5" dur="1.8s" begin=".8s" repeatCount="indefinite"/>
+          </text>
+          <!-- Color swatches right side -->
+          <rect x="240" y="25" width="110" height="92" rx="6" fill="rgba(139,92,246,.04)" stroke="#1e2433" stroke-width="1"/>
+          <rect x="250" y="35" width="22" height="22" rx="4" fill="rgba(139,92,246,.5)" stroke="#8b5cf6" stroke-width="1"/>
+          <rect x="278" y="35" width="22" height="22" rx="4" fill="rgba(167,139,250,.4)" stroke="#a78bfa" stroke-width="1"/>
+          <rect x="306" y="35" width="22" height="22" rx="4" fill="rgba(192,132,252,.3)" stroke="#c084fc" stroke-width="1"/>
+          <rect x="250" y="65" width="78" height="6" rx="2" fill="#334155" opacity=".6"/>
+          <rect x="250" y="77" width="55" height="6" rx="2" fill="#334155" opacity=".4"/>
+          <rect x="250" y="89" width="68" height="6" rx="2" fill="#334155" opacity=".3"/>
+          <circle x="250" y="100" r="3" fill="#8b5cf6"/>
+          <text x="250" y="106" font-family="Space Mono,monospace" font-size="6" fill="#a78bfa" opacity=".5">--ar 16:9 --v 6</text>
+          <circle cx="18" cy="50" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="382" cy="110" r="2" fill="#c084fc"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+          <rect x="130" y="120" width="140" height="16" rx="8" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+          <text x="200" y="131" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">MIDJOURNEY · AI IMAGE</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.2)">AI Image</span>
+        <div class="card-title">The Midjourney Image Generation Playbook</div>
+        <p class="card-desc">Prompt formulas that work, style references, brand identity workflow, e-commerce mockups, and advanced parameters.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <span class="card-avatar" style="background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(139,92,246,.15));color:#8b5cf6">CE</span>
+            <div>
+              <span class="card-author-name">ComparEdge Research</span>
+              <span class="card-date">April 10, 2026 · 17 min</span>
+            </div>
+          </div>
+          <span class="card-read">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Notion -->
+    <a href="https://blog.comparedge.com/playbooks/notion.html" class="playbook-card fade-in" data-cat="project-management" data-title="the notion workspace playbook" data-search="notion workspace project management second brain wiki database">
+      <div class="card-img">
+        <svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="140" fill="#0a0e1a"/>
+          <!-- Document blocks -->
+          <rect x="40" y="15" width="160" height="112" rx="6" fill="rgba(245,158,11,.04)" stroke="#1e2433" stroke-width="1"/>
+          <!-- Title block -->
+          <rect x="52" y="26" width="136" height="10" rx="3" fill="#f59e0b" opacity=".6"/>
+          <!-- Content blocks rearranging -->
+          <rect x="52" y="44" width="100" height="7" rx="2" fill="#334155">
+            <animate attributeName="width" values="100;75;100" dur="3s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="52" y="56" width="120" height="7" rx="2" fill="#334155" opacity=".7"/>
+          <rect x="52" y="68" width="85" height="7" rx="2" fill="#334155" opacity=".5"/>
+          <!-- Checkbox ticking -->
+          <rect x="52" y="82" width="14" height="14" rx="3" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+          <polyline points="55,89 59,93 65,85" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round">
+            <animate attributeName="opacity" values="0;0;1;1" dur="2.5s" repeatCount="indefinite"/>
+          </polyline>
+          <rect x="72" y="86" width="90" height="6" rx="2" fill="#334155" opacity=".5"/>
+          <rect x="52" y="102" width="14" height="14" rx="3" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+          <rect x="72" y="106" width="70" height="6" rx="2" fill="#334155" opacity=".4"/>
+          <!-- Database grid right -->
+          <rect x="220" y="15" width="160" height="112" rx="6" fill="rgba(245,158,11,.04)" stroke="#1e2433" stroke-width="1"/>
+          <rect x="220" y="15" width="160" height="20" fill="rgba(245,158,11,.1)" rx="6"/>
+          <text x="300" y="29" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle">DATABASE</text>
+          <!-- Grid columns -->
+          <line x1="274" y1="35" x2="274" y2="127" stroke="#1e2433" stroke-width="1"/>
+          <line x1="328" y1="35" x2="328" y2="127" stroke="#1e2433" stroke-width="1"/>
+          <!-- Grid rows -->
+          <line x1="220" y1="55" x2="380" y2="55" stroke="#1e2433" stroke-width="1"/>
+          <line x1="220" y1="75" x2="380" y2="75" stroke="#1e2433" stroke-width="1"/>
+          <line x1="220" y1="95" x2="380" y2="95" stroke="#1e2433" stroke-width="1"/>
+          <line x1="220" y1="115" x2="380" y2="115" stroke="#1e2433" stroke-width="1"/>
+          <!-- Cell content -->
+          <rect x="228" y="42" width="38" height="5" rx="2" fill="#f59e0b" opacity=".5"/>
+          <rect x="282" y="42" width="30" height="5" rx="2" fill="#334155" opacity=".6"/>
+          <rect x="336" y="42" width="28" height="5" rx="2" fill="#334155" opacity=".5"/>
+          <rect x="228" y="62" width="30" height="5" rx="2" fill="#334155" opacity=".5"/>
+          <rect x="282" y="62" width="24" height="5" rx="2" fill="#10b981" opacity=".4"/>
+          <rect x="228" y="82" width="40" height="5" rx="2" fill="#334155" opacity=".4"/>
+          <rect x="282" y="82" width="32" height="5" rx="2" fill="#334155" opacity=".5"/>
+          <!-- Appearing new row -->
+          <rect x="228" y="102" width="0" height="5" rx="2" fill="#f59e0b" opacity=".6">
+            <animate attributeName="width" values="0;38;38" dur="2s" repeatCount="indefinite"/>
+          </rect>
+          <circle cx="18" cy="70" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="382" cy="30" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+          <rect x="130" y="120" width="140" height="16" rx="8" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+          <text x="200" y="131" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">NOTION · PROJECT MGMT</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)">Project Management</span>
+        <div class="card-title">The Notion Workspace Playbook</div>
+        <p class="card-desc">Second brain setup, team wiki, databases with formulas, CRM workflow, content calendar, and Notion AI verdict.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <span class="card-avatar" style="background:linear-gradient(135deg,rgba(245,158,11,.3),rgba(245,158,11,.15));color:#f59e0b">CE</span>
+            <div>
+              <span class="card-author-name">ComparEdge Research</span>
+              <span class="card-date">April 15, 2026 · 19 min</span>
+            </div>
+          </div>
+          <span class="card-read">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- HubSpot -->
+    <a href="https://blog.comparedge.com/playbooks/hubspot.html" class="playbook-card fade-in" data-cat="crm" data-title="the hubspot crm playbook" data-search="hubspot crm sales pipeline lead scoring email sequences">
+      <div class="card-img">
+        <svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="140" fill="#0a0e1a"/>
+          <!-- Pipeline funnel -->
+          <polygon points="50,20 210,20 190,60 70,60" fill="rgba(249,115,22,.15)" stroke="#f97316" stroke-width="1.5">
+            <animate attributeName="opacity" values=".8;1;.8" dur="3s" repeatCount="indefinite"/>
+          </polygon>
+          <polygon points="70,65 190,65 175,100 85,100" fill="rgba(249,115,22,.1)" stroke="#f97316" stroke-width="1.5" opacity=".8"/>
+          <polygon points="85,105 175,105 165,125 95,125" fill="rgba(249,115,22,.2)" stroke="#f97316" stroke-width="2"/>
+          <!-- Funnel labels -->
+          <text x="130" y="43" font-family="Space Mono,monospace" font-size="6" fill="#f97316" text-anchor="middle">LEADS</text>
+          <text x="130" y="85" font-family="Space Mono,monospace" font-size="6" fill="#f97316" text-anchor="middle" opacity=".7">DEALS</text>
+          <text x="130" y="118" font-family="Space Mono,monospace" font-size="6" fill="#f97316" text-anchor="middle">CLOSED</text>
+          <!-- Filling animation -->
+          <rect x="50" y="20" width="0" height="40" fill="rgba(249,115,22,.2)" rx="2">
+            <animate attributeName="width" values="0;160;160;0" dur="4s" repeatCount="indefinite"/>
+          </rect>
+          <!-- Contact nodes connecting -->
+          <circle cx="270" cy="35" r="10" fill="none" stroke="#f97316" stroke-width="1.5">
+            <animate attributeName="opacity" values=".5;1;.5" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="270" y="39" font-family="Space Mono,monospace" font-size="7" fill="#f97316" text-anchor="middle">C</text>
+          <circle cx="330" cy="60" r="10" fill="none" stroke="#f97316" stroke-width="1.5">
+            <animate attributeName="opacity" values=".5;1;.5" dur="2s" begin=".5s" repeatCount="indefinite"/>
+          </circle>
+          <text x="330" y="64" font-family="Space Mono,monospace" font-size="7" fill="#f97316" text-anchor="middle">C</text>
+          <circle cx="360" cy="100" r="10" fill="none" stroke="#fb923c" stroke-width="1.5">
+            <animate attributeName="opacity" values=".5;1;.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <text x="360" y="104" font-family="Space Mono,monospace" font-size="7" fill="#fb923c" text-anchor="middle">C</text>
+          <line x1="280" y1="40" x2="320" y2="57" stroke="#f97316" stroke-width="1" stroke-dasharray="4,3" opacity=".4">
+            <animate attributeName="stroke-dashoffset" values="0;-14" dur="1s" repeatCount="indefinite"/>
+          </line>
+          <line x1="340" y1="68" x2="352" y2="92" stroke="#f97316" stroke-width="1" stroke-dasharray="4,3" opacity=".4">
+            <animate attributeName="stroke-dashoffset" values="0;-14" dur="1s" begin=".3s" repeatCount="indefinite"/>
+          </line>
+          <!-- Mini chart -->
+          <polyline points="240,120 255,115 270,108 285,112 300,100 315,95" fill="none" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round">
+            <animate attributeName="stroke-dasharray" values="0,120;120,0" dur="3s" repeatCount="indefinite"/>
+          </polyline>
+          <circle cx="18" cy="50" r="2" fill="#f97316"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="382" cy="20" r="2" fill="#fb923c"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+          <rect x="130" y="120" width="140" height="16" rx="8" fill="rgba(10,14,26,.85)" stroke="#f97316" stroke-width="1"/>
+          <text x="200" y="131" font-family="Space Mono,monospace" font-size="6" fill="#f97316" text-anchor="middle" letter-spacing=".08em">HUBSPOT · CRM</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag-pill" style="color:#f97316;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.2)">CRM</span>
+        <div class="card-title">The HubSpot CRM Playbook</div>
+        <p class="card-desc">First 30 days plan, lead scoring model, email sequences with real copy, hidden free features, and integration playbook.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <span class="card-avatar" style="background:linear-gradient(135deg,rgba(249,115,22,.3),rgba(249,115,22,.15));color:#f97316">CE</span>
+            <div>
+              <span class="card-author-name">ComparEdge Research</span>
+              <span class="card-date">April 20, 2026 · 17 min</span>
+            </div>
+          </div>
+          <span class="card-read">Read →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  <div class="no-results" id="no-results">No playbooks found. Try a different search.</div>
+
+  <!-- ── NEWSLETTER ── -->
+  <div class="newsletter-section fade-in" style="margin-top:52px">
+    <div>
+      <h2>Stay Updated on SaaS Intelligence</h2>
+      <p>Weekly data-driven insights on AI tools, pricing changes, and market trends. Join the analysts who use ComparEdge.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="your@email.com" aria-label="Email address">
+      <button type="button" onclick="this.textContent='Subscribed ✓';this.style.background='#10b981'">Subscribe →</button>
+      <span class="newsletter-note">✦ No spam · Data-driven insights only</span>
+    </div>
+  </div>
+
+</div><!-- /playbooks-section -->
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+        <svg width="22" height="20" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg3)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+        <span style="font-weight:800;font-size:15px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+      </a>
+      <p>Data-driven SaaS &amp; AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="https://blog.comparedge.com/">Home</a>
+      <a href="https://blog.comparedge.com/playbooks/">Playbooks</a>
+      <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare Tools</a>
+    </div>
+    <div class="footer-col">
+      <h4>Playbooks</h4>
+      <a href="https://blog.comparedge.com/playbooks/chatgpt.html">ChatGPT</a>
+      <a href="https://blog.comparedge.com/playbooks/cursor.html">Cursor</a>
+      <a href="https://blog.comparedge.com/playbooks/midjourney.html">Midjourney</a>
+      <a href="https://blog.comparedge.com/playbooks/notion.html">Notion</a>
+      <a href="https://blog.comparedge.com/playbooks/hubspot.html">HubSpot</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a>
+      <a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a>
+      <a href="https://github.com/comparedge" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span>
+    <span>Data updated April 2026</span>
+  </div>
+</footer>
+
+<script>
+// ── Fade-in on scroll ──
+(function(){
+  var els = document.querySelectorAll('.fade-in');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.08});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// ── Search + Category Filter ──
+(function(){
+  var searchInput = document.getElementById('search-input');
+  var searchClear = document.getElementById('search-clear');
+  var catPills = document.querySelectorAll('.cat-pill');
+  var cards = document.querySelectorAll('.playbook-card');
+  var noResults = document.getElementById('no-results');
+  var activeCat = 'all';
+  var searchQ = '';
+
+  function filterCards(){
+    var visible = 0;
+    cards.forEach(function(card){
+      var cat = card.dataset.cat;
+      var title = (card.dataset.title || '').toLowerCase();
+      var search = (card.dataset.search || '').toLowerCase();
+      var catMatch = activeCat === 'all' || cat === activeCat;
+      var searchMatch = !searchQ || title.indexOf(searchQ) !== -1 || search.indexOf(searchQ) !== -1;
+      if(catMatch && searchMatch){
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if(noResults) noResults.classList.toggle('visible', visible === 0);
+  }
+
+  // Category pills
+  catPills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      catPills.forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+      activeCat = this.dataset.cat;
+      filterCards();
+    });
+  });
+
+  // Search input
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      searchQ = this.value.toLowerCase().trim();
+      searchClear.classList.toggle('visible', searchQ.length > 0);
+      filterCards();
+    });
+  }
+
+  if(searchClear){
+    searchClear.addEventListener('click', function(){
+      searchInput.value = '';
+      searchQ = '';
+      this.classList.remove('visible');
+      filterCards();
+    });
+  }
+})();
+</script>
+</body>
+</html>
