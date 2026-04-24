@@ -40,7 +40,7 @@ a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
 .site-logo:hover{opacity:1!important}
 .container{max-width:860px;margin:0 auto;padding:24px 24px}
 header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
-header nav{display:flex;align-items:center;justify-content:center;height:100%;max-width:1200px;margin:0 auto;padding:0 24px;gap:40px}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 .site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .nav-center{display:flex;gap:28px;align-items:center}
 .nav-center a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
@@ -57,7 +57,7 @@ main{padding-top:60px}
 .breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
 .breadcrumb a{color:var(--text-dim)}
 .breadcrumb a:hover{color:var(--text)}
-.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);max-height:280px}
 .article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
 .meta-tag{display:inline-block;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
 .updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
@@ -105,6 +105,22 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 .cta:hover{opacity:.85}
 @media(max-width:768px){.burger{display:block}.nav-center{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+/* Reading progress bar */
+.progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
+/* Sticky sidebar TOC */
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);scrollbar-width:thin;opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
+.sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
+.sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
+.sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
+.sidebar-toc li a{display:block;font-size:.72rem;color:var(--text-muted);padding:4px 8px 4px 0;border-left:2px solid transparent;padding-left:10px;transition:all .2s;line-height:1.3}
+.sidebar-toc li a::before{content:counter(stoc) ". ";color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.6rem}
+.sidebar-toc li a:hover{color:var(--accent);border-left-color:var(--accent)}
+.sidebar-toc li a.active{color:var(--accent);border-left-color:var(--accent);background:rgba(0,229,255,.05);border-radius:0 6px 6px 0}
+.progress-track{position:fixed;top:90px;right:max(16px,calc((100vw - 1200px)/2 - 10px));width:4px;height:calc(100vh - 120px);background:var(--border);border-radius:2px;z-index:50}
+.progress-thumb{width:4px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;min-height:20px;transition:height .1s}
+@media(max-width:1400px){.sidebar-toc,.progress-track{display:none}}
 </style>
 </head>
 <body>
@@ -122,6 +138,7 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </button>
 </nav>
 </header>
+<div class="progress-bar" id="progressBar"></div>
 <div id="nt-mob" class="mobile-menu">
   <div class="mobile-menu-header">
     <a href="https://blog.comparedge.com/" style="text-decoration:none"><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span></a>
@@ -133,6 +150,21 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
 </div>
 
+
+<nav class="sidebar-toc" id="sidebarToc">
+  <h4>Navigation</h4>
+  <ol>
+    <li><a href="#second-brain">Second Brain</a></li>
+    <li><a href="#team-wiki">Team Wiki</a></li>
+    <li><a href="#databases">Databases</a></li>
+    <li><a href="#crm-workflow">CRM Workflow</a></li>
+    <li><a href="#content-calendar">Content Calendar</a></li>
+    <li><a href="#notion-ai">Notion AI</a></li>
+    <li><a href="#vs-others">vs ClickUp vs Obsidian</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+<div class="progress-track" id="progressTrack"><div class="progress-thumb" id="progressThumb"></div></div>
 <main class="container">
 <nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / Notion</nav>
 
@@ -520,5 +552,26 @@ if(prop("Status") == "Not Started", 0,
   els.forEach(function(el){io.observe(el)});
 })();
 </script>
+<script>
+(function(){
+  var bar=document.getElementById('progressBar');
+  var thumb=document.getElementById('progressThumb');
+  var sidebar=document.getElementById('sidebarToc');
+  var inlineToc=document.querySelector('.toc');
+  var tocLinks=document.querySelectorAll('.sidebar-toc a');
+  var sections=[];
+  tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
+  function update(){
+    var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=dh>0?Math.min(st/dh,1):0;
+    if(bar)bar.style.width=(pct*100)+'%';
+    if(thumb)thumb.style.height=(pct*100)+'%';
+    if(sidebar&&inlineToc){sidebar.classList.toggle('visible',st+120>inlineToc.offsetTop+inlineToc.offsetHeight)}
+    var active=null;
+    for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=st+120){active=sections[i].id;break}}
+    tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});
+  }
+  var t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){update();t=false});t=true}});update();
+})();</script>
 </body>
 </html>
