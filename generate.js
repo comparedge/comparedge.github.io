@@ -2866,14 +2866,28 @@ const indexHtml = htmlPage({ ...indexData, canonical: BLOG_URL + '/' });
 fs.writeFileSync(path.join(outDir, 'index.html'), indexHtml, 'utf8');
 console.log(`[OK] index.html`);
 
+// Scan playbooks directory for sitemap
+const playbooksDir = path.join(outDir, 'playbooks');
+const playbookFiles = fs.existsSync(playbooksDir)
+  ? fs.readdirSync(playbooksDir).filter(f => f.endsWith('.html'))
+  : [];
+const playbookUrls = playbookFiles.map(f => {
+  const isIndex = f === 'index.html';
+  const loc = isIndex ? `${BLOG_URL}/playbooks/` : `${BLOG_URL}/playbooks/${f}`;
+  const priority = isIndex ? '0.9' : '0.7';
+  return `<url><loc>${loc}</loc><lastmod>${TODAY}</lastmod><changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
+}).join('\n');
+
 // Write sitemap
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>${BLOG_URL}/</loc><lastmod>${TODAY}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 ${articles.map(a => `<url><loc>${BLOG_URL}/${a.slug}.html</loc><lastmod>${TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`).join('\n')}
+${playbookUrls}
 </urlset>`;
 fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemap, 'utf8');
-console.log(`[OK] sitemap.xml (${articles.length + 1} URLs)`);
+const totalUrls = articles.length + 1 + playbookFiles.length;
+console.log(`[OK] sitemap.xml (${totalUrls} URLs — ${articles.length} articles + ${playbookFiles.length} playbooks + index)`);
 
 // Write robots.txt
 const robots = `User-agent: *\nAllow: /\nSitemap: ${BLOG_URL}/sitemap.xml`;
