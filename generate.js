@@ -33,6 +33,14 @@ const ICONS = {
 };
 
 
+// Extract use case text (handles both string and {title,description} objects)
+function getUseCase(uc) {
+  if (!uc) return null;
+  if (typeof uc === 'string') return uc;
+  if (typeof uc === 'object' && uc.title) return uc.title;
+  return String(uc);
+}
+
 const productsPath = path.join(__dirname, '../site-prototype/data/products.json');
 const db = JSON.parse(fs.readFileSync(productsPath, 'utf8'));
 const products = Array.isArray(db.products) ? db.products : Object.values(db.products);
@@ -807,7 +815,7 @@ function generateAICodingGuide() {
 <tbody>
 ${coders.map((p, i) => {
   const minPaid = getMinPaidPrice(p);
-  return `<tr><td><span class="rank-badge">${i+1}</span></td><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td><td>${minPaid ? `$${minPaid}/mo` : 'Free only'}</td><td>${p.pricing?.free ? ICONS.check : ICONS.x}</td><td>${escHtml((p.useCases || [])[0] || p.description?.split('.')[0] || '—')}</td></tr>`;
+  return `<tr><td><span class="rank-badge">${i+1}</span></td><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td><td>${minPaid ? `$${minPaid}/mo` : 'Free only'}</td><td>${p.pricing?.free ? ICONS.check : ICONS.x}</td><td>${escHtml(getUseCase((p.useCases || [])[0]) || p.description?.split('.')[0] || '—')}</td></tr>`;
 }).join('\n')}
 </tbody>
 </table></div>
@@ -938,7 +946,7 @@ ${llmApis.slice(0, 5).map(p => `
     ${p.pricing?.free ? '<span class="pc-free">✓ Free tier</span>' : ''}
   </div>
   <p>${escHtml(p.description || '')}</p>
-  <p><strong>Best for:</strong> ${escHtml((p.useCases || []).slice(0,2).join(', ') || 'General purpose AI applications')}</p>
+  <p><strong>Best for:</strong> ${escHtml((p.useCases || []).slice(0,2).map(uc => getUseCase(uc)).filter(Boolean).join(', ') || 'General purpose AI applications')}</p>
   <a href="${SITE_URL}/pricing/${p.slug}-pricing">Full pricing breakdown →</a>
 </div>
 `).join('')}
@@ -1548,7 +1556,7 @@ ${barChart(tools.slice(0,12).map(p => ({ name: p.name, rating: parseFloat(p.rati
 <tbody>
 ${tools.map((p, i) => {
   const mp = getMinPaidPrice(p);
-  const useCase = (p.useCases || [])[0] || p.description?.split('.')[0] || '—';
+  const useCase = getUseCase((p.useCases || [])[0]) || p.description?.split('.')[0] || '—';
   return `<tr>
     <td><span class="rank-badge">${i+1}</span></td>
     <td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td>
