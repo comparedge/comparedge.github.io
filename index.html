@@ -157,7 +157,8 @@ code,pre{background:var(--surface);border:1px solid var(--border);border-radius:
 .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
 .article-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important}
 .article-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,.08);text-decoration:none!important}
-.article-card .card-img{height:170px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.article-card .card-img{height:180px;flex-shrink:0;overflow:hidden}
+.article-card .card-img svg{display:block;width:100%;height:100%}
 .article-card .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .article-card .card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
 .article-card .card-desc{font-size:.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -195,7 +196,7 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 .footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
 .footer-bottom a{color:var(--text-dim)}
 /* ── Index Hero ── */
-.index-hero{min-height:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;position:relative;overflow:hidden;padding:80px 0 0}
+.index-hero{min-height:auto;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;position:relative;overflow:hidden;padding:80px 0 0}
 .index-hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .index-hero .glow{position:absolute;top:20%;left:50%;width:700px;height:500px;background:radial-gradient(ellipse,rgba(0,229,255,.07) 0%,transparent 70%);pointer-events:none;animation:glowPulse 8s ease-in-out infinite}
 .index-hero .glow2{position:absolute;bottom:10%;right:10%;width:500px;height:400px;background:radial-gradient(ellipse,rgba(139,92,246,.06) 0%,transparent 70%);pointer-events:none;animation:glowPulse 10s ease-in-out infinite reverse}
@@ -212,23 +213,23 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 /* Floating dots */
 .cyber-dot{position:absolute;border-radius:50%;pointer-events:none;animation:dotFloat 4s ease-in-out infinite}
 @keyframes dotFloat{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(-12px);opacity:.7}}
-.index-hero-inner{position:relative;z-index:1;max-width:1200px;padding:0 24px;width:100%}
+.index-hero-inner{position:relative;z-index:1;max-width:1200px;padding:0 24px;width:100%;display:flex;flex-direction:column;align-items:center}
 .index-hero .est-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);border:1px solid var(--border);border-radius:20px;padding:5px 16px;margin-bottom:28px}
-.index-hero h1{font-family:system-ui,-apple-system,sans-serif;font-size:clamp(2.4em,5vw,3.8em);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px;text-align:left}
+.index-hero h1{font-family:system-ui,-apple-system,sans-serif;font-size:clamp(2.4em,5vw,3.8em);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px;text-align:center}
 .index-hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55);background:none;-webkit-background-clip:unset;-webkit-text-fill-color:transparent}
-.index-hero .hero-desc{color:var(--text-dim);font-size:1.1em;max-width:540px;margin:0 0 32px;line-height:1.7;text-align:left}
-.index-hero-btns{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;margin-bottom:56px}
+.index-hero .hero-desc{color:var(--text-dim);font-size:1.1em;max-width:600px;margin:0 auto 32px;line-height:1.7;text-align:center}
+.index-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
 .index-hero-btns .btn-primary{background:var(--accent);color:#000!important;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none!important;transition:opacity .2s}
 .index-hero-btns .btn-primary:hover{opacity:.85;text-decoration:none!important}
 .index-hero-btns .btn-ghost{background:transparent;color:var(--text)!important;border:1px solid var(--border);padding:13px 28px;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none!important;transition:border-color .2s}
 .index-hero-btns .btn-ghost:hover{border-color:var(--accent);text-decoration:none!important}
 /* ── Hero stats bar ── */
-.hero-stats-bar{display:flex;gap:32px;flex-wrap:wrap}
-.hero-stat-item{display:flex;flex-direction:column;align-items:flex-start}
+.hero-stats-bar{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.hero-stat-item{display:flex;flex-direction:column;align-items:center}
 .hero-stat-num{font-family:system-ui,-apple-system,sans-serif;font-size:1.5em;font-weight:800;color:#fff;display:block}
 .hero-stat-label{font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
 /* ── Ticker ── */
-.ticker-wrap{overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;white-space:nowrap;margin-top:48px;margin-bottom:48px}
+.ticker-wrap{overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;white-space:nowrap;margin-top:0;margin-bottom:48px}
 .ticker-track{display:inline-block;animation:ticker 30s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{display:inline-block;font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin:0 32px}
