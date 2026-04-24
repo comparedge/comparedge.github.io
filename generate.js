@@ -305,10 +305,10 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
-  <a href="${BLOG_URL}/">Articles</a>
+  <a href="${SITE_URL}" class="primary-link">Visit ComparEdge →</a>
   <a href="${SITE_URL}/compare">Compare Tools</a>
   <a href="${SITE_URL}/pricing">Pricing</a>
-  <a href="${SITE_URL}" class="primary-link">Visit ComparEdge →</a>
+  <a href="${BLOG_URL}/">Articles</a>
 </div>
 <main class="container">
 ${article}
