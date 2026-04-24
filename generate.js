@@ -234,6 +234,7 @@ code,pre{background:var(--surface);border:1px solid var(--border);border-radius:
 .article-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important}
 .article-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,.08);text-decoration:none!important}
 .article-card .card-img{height:180px;flex-shrink:0;overflow:hidden}
+.article-card .card-img svg{display:block;width:100%;height:100%;object-fit:cover}
 .article-card .card-img svg{display:block;width:100%;height:100%}
 .article-card .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .article-card .card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
@@ -2519,15 +2520,15 @@ function cardHeaderSVG(slug, idx) {
 
 'llm-api-integration-guide': `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
 <rect width="400" height="180" fill="#0a0e1a"/>
-<defs><filter id="gl-${i}"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect x="30" y="60" width="70" height="40" rx="5" fill="rgba(139,92,246,.12)" stroke="#8b5cf6" stroke-width="1.5"/><text x="65" y="84" font-family="Space Mono,monospace" font-size="7" fill="#8b5cf6" text-anchor="middle">APP</text>
-<rect x="165" y="60" width="70" height="40" rx="5" fill="rgba(167,139,250,.12)" stroke="#a78bfa" stroke-width="1.5"/><text x="200" y="84" font-family="Space Mono,monospace" font-size="7" fill="#a78bfa" text-anchor="middle">API</text>
-<rect x="300" y="60" width="70" height="40" rx="5" fill="rgba(139,92,246,.12)" stroke="#8b5cf6" stroke-width="1.5"/><text x="335" y="84" font-family="Space Mono,monospace" font-size="7" fill="#8b5cf6" text-anchor="middle">LLM</text>
-<line x1="100" y1="80" x2="165" y2="80" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="1s" repeatCount="indefinite"/></line>
-<line x1="235" y1="80" x2="300" y2="80" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="1s" begin=".3s" repeatCount="indefinite"/></line>
-<circle cx="132" cy="80" r="4" fill="#8b5cf6"><animate attributeName="cx" values="100;165;100" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.2;.9" dur="2s" repeatCount="indefinite"/></circle>
-<circle cx="270" cy="80" r="4" fill="#a78bfa"><animate attributeName="cx" values="235;300;235" dur="2s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.2;.9" dur="2s" begin=".5s" repeatCount="indefinite"/></circle>
-<animateTransform attributeName="transform" type="rotate" from="0 335 80" to="360 335 80" dur="4s" repeatCount="indefinite" additive="sum"/><circle cx="335" cy="60" r="8" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".4"/>
+<defs><linearGradient id="lg-${i}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl-${i}"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="50" width="80" height="50" rx="6" fill="rgba(139,92,246,.1)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl-${i})"><animate attributeName="stroke-opacity" values=".5;1;.5" dur="3s" repeatCount="indefinite"/></rect><text x="70" y="72" font-family="Space Mono,monospace" font-size="8" fill="#8b5cf6" text-anchor="middle" font-weight="700">APP</text><text x="70" y="84" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf680" text-anchor="middle">request()</text>
+<rect x="160" y="50" width="80" height="50" rx="6" fill="rgba(167,139,250,.1)" stroke="#a78bfa" stroke-width="1.5" filter="url(#gl-${i})"><animate attributeName="stroke-opacity" values=".5;1;.5" dur="3s" begin="1s" repeatCount="indefinite"/></rect><text x="200" y="72" font-family="Space Mono,monospace" font-size="8" fill="#a78bfa" text-anchor="middle" font-weight="700">API</text><text x="200" y="84" font-family="Space Mono,monospace" font-size="6" fill="#a78bfa80" text-anchor="middle">gateway</text>
+<rect x="290" y="50" width="80" height="50" rx="6" fill="rgba(139,92,246,.1)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl-${i})"><animate attributeName="stroke-opacity" values=".5;1;.5" dur="3s" begin="2s" repeatCount="indefinite"/></rect><text x="330" y="72" font-family="Space Mono,monospace" font-size="8" fill="#8b5cf6" text-anchor="middle" font-weight="700">LLM</text><text x="330" y="84" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf680" text-anchor="middle">inference</text>
+<line x1="110" y1="75" x2="160" y2="75" stroke="url(#lg-${i})" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="1s" repeatCount="indefinite"/></line>
+<line x1="240" y1="75" x2="290" y2="75" stroke="url(#lg-${i})" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="1s" begin=".3s" repeatCount="indefinite"/></line>
+<circle cx="135" cy="75" r="4" fill="#8b5cf6"><animate attributeName="cx" values="110;160;110" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.2;.9" dur="2s" repeatCount="indefinite"/></circle>
+<circle cx="265" cy="75" r="4" fill="#a78bfa"><animate attributeName="cx" values="240;290;240" dur="2s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.2;.9" dur="2s" begin=".5s" repeatCount="indefinite"/></circle>
+<g transform="translate(330,40)"><circle r="8" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".4"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/></circle></g>
 <circle cx="25" cy="30" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 <circle cx="380" cy="140" r="2" fill="#a78bfa"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
 <circle cx="200" cy="145" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.6;.3" dur="2.5s" begin="1s" repeatCount="indefinite"/></circle>
