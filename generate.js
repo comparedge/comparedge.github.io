@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ComparEdge Blog Generator v2
+ * build script
  * Generates SEO-optimized HTML articles from products.json
  * Deploys to GitHub Pages (comparedge.github.io)
  */
