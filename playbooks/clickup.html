@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClickUp Playbook: Power User Guide 2026</title>
+<meta name="description" content="Master ClickUp with expert tips on Space/Folder/List hierarchy, Custom Fields, Automations, Sprints, and ClickUp AI. Real workflows, pricing comparison vs Notion and Asana.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/clickup.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="ClickUp Playbook: Power User Guide 2026">
+<meta property="og:description" content="Master ClickUp: hierarchy setup, Custom Fields, Automations, Sprints, ClickUp AI, and honest comparison vs Notion and Asana. Real workflows from power users.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/clickup.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ClickUp Playbook: Power User Guide 2026">
+<meta name="twitter:description" content="ClickUp hierarchy, Custom Fields, Automations, Sprints, and AI features. Honest comparison vs Notion and Asana with real workflow examples.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-03-31","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"ClickUp Playbook: Power User Guide 2026","description":"Master ClickUp hierarchy, Custom Fields, Automations, Sprints, and AI features with real workflow examples.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/clickup.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"ClickUp Playbook","item":"https://blog.comparedge.com/playbooks/clickup.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the best ClickUp hierarchy for a small team?","acceptedAnswer":{"@type":"Answer","text":"For small teams (under 20 people), use one Space per department (or one Space total for very small teams), Folders for major projects or client accounts, and Lists for specific workflows or sprint cycles. Avoid creating too many Spaces — it fragments visibility. Most teams do better with fewer, well-organized Spaces than many granular ones."}},
+{"@type":"Question","name":"How do ClickUp Automations compare to Zapier?","acceptedAnswer":{"@type":"Answer","text":"ClickUp Automations handle internal ClickUp workflows (status changes, assignments, due date shifts) more reliably and cheaply than Zapier for ClickUp-to-ClickUp actions. For cross-platform integrations (ClickUp to Slack, ClickUp to Salesforce), Zapier or Make are more powerful. The sweet spot: use ClickUp Automations for internal workflow routing, use Zapier for external system integrations."}},
+{"@type":"Question","name":"Is ClickUp worth the price compared to Asana or Notion?","acceptedAnswer":{"@type":"Answer","text":"ClickUp Business at $12/user/mo offers more features than Asana Business at $24.99/user and Notion Plus at $16/user. The tradeoff is complexity — ClickUp's feature depth creates a steeper learning curve and requires more setup time. For teams that need Gantt charts, time tracking, sprint management, and custom fields all in one tool, ClickUp wins on value. For simpler team wikis and databases, Notion is better. For enterprise-grade PM with no setup friction, Asana."}},
+{"@type":"Question","name":"Does ClickUp AI actually save time?","acceptedAnswer":{"@type":"Answer","text":"ClickUp AI (powered by various LLMs) is genuinely useful for task descriptions, meeting summaries, and generating subtask breakdowns from high-level task names. It's not impressive for complex writing or research. The best use case: automatic meeting notes-to-tasks conversion and 'write a description for this task' when you're in a hurry. At $5/member/mo add-on, it's worth it for teams doing lots of documentation."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#7B68EE;--accent2:#9b8fff;--accent3:#5a4fcf;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+.progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
+.sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
+.sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
+.sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
+.sidebar-toc li a{display:block;font-size:.72rem;color:var(--text-muted);padding:4px 8px 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.3}
+.sidebar-toc li a::before{content:counter(stoc) ". ";color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.6rem}
+.sidebar-toc li a:hover,.sidebar-toc li a.active{color:var(--accent);border-left-color:var(--accent)}
+.sidebar-toc li a.active{background:rgba(123,104,238,.05);border-radius:0 6px 6px 0}
+.progress-track{position:fixed;top:90px;right:max(16px,calc((100vw - 1200px)/2 - 10px));width:4px;height:calc(100vh - 120px);background:var(--border);border-radius:2px;z-index:50}
+.progress-thumb{width:4px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;min-height:20px;transition:height .1s}
+@media(max-width:1400px){.sidebar-toc,.progress-track{display:none}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:none}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--accent)}.mobile-menu a.primary-link{color:var(--accent);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);max-height:280px}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(123,104,238,.08);border:1px solid rgba(123,104,238,.25);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}.toc li{margin-bottom:6px}.toc a{color:var(--accent);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#0d0b1f;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#b8acff}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.yellow{border-color:#f59e0b;background:#1a1505}.callout.yellow strong{color:#fcd34d}
+.callout.red{border-color:#ef4444;background:#1a0808}.callout.red strong{color:#fca5a5}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#b8acff}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#c7beff}
+pre code{background:none;border:none;padding:0;font-size:1em}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(255,255,255,.02)}
+.tip{background:rgba(123,104,238,.07);border:1px solid rgba(123,104,238,.2);border-radius:10px;padding:16px 20px;margin:20px 0}
+.tip strong{color:var(--accent2)}
+.key-takeaway{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:32px 0}
+.key-takeaway h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);cursor:pointer;background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+.newsletter{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;margin:40px 0;text-align:center}
+.newsletter h3{color:var(--text);margin-bottom:8px}.newsletter p{color:var(--text-dim);margin-bottom:20px}
+.newsletter-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.newsletter-form input{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-size:15px;width:280px}
+.newsletter-form button{background:var(--accent);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:15px}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#5a4fcf,#7B68EE);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-links{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo">
+    <svg width="26" height="24" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="cu-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#cu-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg>
+    <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('cu-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div class="progress-bar" id="progressBar"></div>
+<div id="cu-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('cu-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<nav class="sidebar-toc" id="sidebarToc">
+  <h4>Navigation</h4>
+  <ol>
+    <li><a href="#hierarchy">Hierarchy Setup</a></li>
+    <li><a href="#custom-fields">Custom Fields</a></li>
+    <li><a href="#sprints">Sprints & Agile</a></li>
+    <li><a href="#docs">Docs & Whiteboards</a></li>
+    <li><a href="#ai">ClickUp AI</a></li>
+    <li><a href="#vs-alternatives">vs Notion vs Asana</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+<div class="progress-track" id="progressTrack"><div class="progress-thumb" id="progressThumb"></div></div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / ClickUp</nav>
+
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="cup-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7B68EE"/><stop offset="100%" stop-color="#9b8fff"/></linearGradient>
+  </defs>
+  <!-- Kanban columns -->
+  <rect x="40" y="60" width="80" height="180" rx="8" fill="#0f0d20" stroke="#7B68EE" stroke-width="1" opacity="0.6"/>
+  <text x="52" y="82" fill="#7B68EE" font-size="9" font-family="monospace">TO DO</text>
+  <!-- Cards in column 1 -->
+  <rect x="50" y="90" width="60" height="28" rx="4" fill="#1a1535" stroke="#7B68EE" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </rect>
+  <rect x="50" y="125" width="60" height="28" rx="4" fill="#1a1535" stroke="#7B68EE" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1" dur="0.5s" begin="0.5s" fill="freeze"/>
+  </rect>
+  <rect x="50" y="160" width="60" height="28" rx="4" fill="#1a1535" stroke="#7B68EE" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1" dur="0.5s" begin="0.8s" fill="freeze"/>
+  </rect>
+
+  <rect x="135" y="60" width="80" height="180" rx="8" fill="#0f0d20" stroke="#7B68EE" stroke-width="1" opacity="0.6"/>
+  <text x="143" y="82" fill="#7B68EE" font-size="9" font-family="monospace">IN PROGRESS</text>
+  <rect x="145" y="90" width="60" height="28" rx="4" fill="#201a45" stroke="#9b8fff" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1" dur="0.5s" begin="0.4s" fill="freeze"/>
+  </rect>
+  <rect x="145" y="125" width="60" height="28" rx="4" fill="#201a45" stroke="#9b8fff" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;1;1" dur="0.5s" begin="0.7s" fill="freeze"/>
+  </rect>
+
+  <rect x="230" y="60" width="80" height="180" rx="8" fill="#0f0d20" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+  <text x="248" y="82" fill="#10b981" font-size="9" font-family="monospace">DONE</text>
+  <!-- Checkmark appearing -->
+  <text x="255" y="115" fill="#10b981" font-size="20" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.2s" fill="freeze"/>
+    ✓
+  </text>
+  <text x="255" y="150" fill="#10b981" font-size="20" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.5s" fill="freeze"/>
+    ✓
+  </text>
+
+  <!-- Sprint board indicator -->
+  <rect x="340" y="80" width="120" height="30" rx="6" fill="#7B68EE" opacity="0.15"/>
+  <text x="355" y="100" fill="#9b8fff" font-size="11" font-family="monospace">SPRINT 14 🔥</text>
+  <rect x="340" y="120" width="100" height="8" rx="4" fill="#1a1535"/>
+  <rect x="340" y="120" width="72" height="8" rx="4" fill="#7B68EE">
+    <animate attributeName="width" values="0;72" dur="1.5s" fill="freeze"/>
+  </rect>
+  <text x="340" y="146" fill="#7B68EE" font-size="10" font-family="monospace">72% complete</text>
+
+  <!-- Product label -->
+  <text x="490" y="140" fill="url(#cup-grad1)" font-size="54" font-weight="800" font-family="system-ui,sans-serif" letter-spacing="-2">ClickUp</text>
+  <text x="490" y="167" fill="#7B68EE" font-size="13" font-family="'Space Mono',monospace" opacity="0.7">POWER USER PLAYBOOK</text>
+  <line x1="490" y1="177" x2="490" y2="177" stroke="url(#cup-grad1)" stroke-width="2">
+    <animate attributeName="x2" values="490;730;730" dur="1.5s" fill="freeze"/>
+  </line>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The ClickUp Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span><span>·</span>
+  <span>March 31, 2026</span><span>·</span>
+  <span>20 min read</span><span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#hierarchy">Space/Folder/List Hierarchy Setup</a></li>
+    <li><a href="#custom-fields">Custom Fields & Automations</a></li>
+    <li><a href="#sprints">Sprints & Agile Workflows</a></li>
+    <li><a href="#docs">ClickUp Docs & Whiteboards</a></li>
+    <li><a href="#ai">ClickUp AI Features</a></li>
+    <li><a href="#vs-alternatives">vs Notion vs Asana</a></li>
+    <li><a href="#pricing">Pricing Tiers</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>ClickUp is the most feature-dense project management tool on the market. That's both its greatest strength and its most significant weakness. Teams that master the hierarchy, learn the automations, and resist the urge to turn on every feature they find will get a genuinely powerful system. Teams that don't will spend more time configuring ClickUp than doing actual work. This guide covers the former path.</p>
+
+<h2 id="hierarchy">Space/Folder/List Hierarchy Setup</h2>
+<p>ClickUp's hierarchy is: Workspace → Spaces → Folders → Lists → Tasks → Subtasks. Most onboarding failures happen because teams don't think through their hierarchy before starting. Fix this first.</p>
+
+<h3>The Right Mental Model</h3>
+<p>Think of it this way:</p>
+<ul>
+  <li><strong>Workspace:</strong> Your whole company. One workspace almost always.</li>
+  <li><strong>Spaces:</strong> Departments or major business functions (Marketing, Engineering, Sales, Operations). Not projects.</li>
+  <li><strong>Folders:</strong> Client accounts, major product areas, or quarters. Something that groups multiple related workflows.</li>
+  <li><strong>Lists:</strong> Specific workflows with a defined lifecycle — "Q2 Blog Content," "Sprint 14," "Client A — Active Projects."</li>
+  <li><strong>Tasks:</strong> Individual pieces of work. Should be completable in a single sprint at most.</li>
+</ul>
+
+<div class="callout red"><strong>❌ The mistake everyone makes:</strong> Creating a Space for every project. When you have 40 Spaces, your sidebar becomes unusable and cross-project visibility disappears. Spaces are departments, not projects.</div>
+
+<h3>Concrete Setup for a 15-Person SaaS Team</h3>
+<pre><code>SPACES (5 total):
+├── 🚀 Product & Engineering
+│   ├── Folder: Product Roadmap
+│   │   ├── List: Q2 Features
+│   │   ├── List: Backlog
+│   │   └── List: Ice Box
+│   ├── Folder: Sprint Board
+│   │   ├── List: Sprint 14 (active)
+│   │   └── List: Sprint 15 (planning)
+│   └── Folder: Bug Tracker
+│       └── List: Active Bugs
+├── 📢 Marketing
+│   ├── Folder: Content
+│   │   ├── List: Blog Pipeline
+│   │   └── List: Social Calendar
+│   └── Folder: Campaigns
+│       └── List: Q2 Campaigns
+├── 💼 Sales
+│   └── Folder: Pipeline (by stage or rep)
+├── 🤝 Operations
+│   └── Folder: Internal Processes
+└── 👋 Shared / Cross-Team
+    └── List: Company OKRs</code></pre>
+
+<p>This gives you clear ownership, easy filtering, and a sidebar that doesn't scroll forever. Cross-team tasks can live in the Shared space or be assigned across spaces with relationships.</p>
+
+<h3>Statuses: The Configuration Nobody Thinks Through</h3>
+<p>ClickUp lets you create custom statuses per Space. Use this. Default statuses like "To Do → In Progress → Complete" are fine for simple tasks but inadequate for complex workflows.</p>
+
+<p>Example status flow for a content pipeline:</p>
+<pre><code>Ideas → Assigned → Outline Ready → Draft In Progress 
+→ Draft Complete → In Review → Revisions → Published → Archived</code></pre>
+
+<p>The benefit: you can build automations that trigger on specific status changes, and dashboards that show you how many pieces are at each stage. Without meaningful statuses, ClickUp is just a fancy checklist.</p>
+
+<h3>Views: Don't Just Use List View</h3>
+<p>ClickUp offers 15+ views. The ones worth learning:</p>
+<ul>
+  <li><strong>Board view:</strong> Kanban by status. Default for sprint planning and daily standup.</li>
+  <li><strong>Calendar view:</strong> Essential for content teams and anyone managing deadlines visually.</li>
+  <li><strong>Gantt view:</strong> Shows dependencies and timeline. Save it for project planning, not daily use — it's overwhelming at scale.</li>
+  <li><strong>Table view:</strong> Spreadsheet-like. Best for bulk editing Custom Fields, especially when you're updating many tasks at once.</li>
+  <li><strong>Workload view:</strong> Shows capacity per team member across tasks. The most underused view for managers — immediately reveals who is overloaded.</li>
+</ul>
+
+<h2 id="custom-fields">Custom Fields & Automations</h2>
+<p>Custom Fields and Automations are where ClickUp separates from the competition. Asana has some version of both; Notion has comparable Custom Fields but weak Automations. ClickUp's implementation is the most flexible — and the most rope to hang yourself with.</p>
+
+<h3>Custom Fields Worth Setting Up</h3>
+<p>Not every field needs to exist. The fields that actually drive decisions:</p>
+
+<ul>
+  <li><strong>Priority:</strong> ClickUp has a built-in priority field. Use it. Set a team convention: P0 = must ship this week, P1 = this sprint, P2 = backlog, P3 = someday.</li>
+  <li><strong>Story Points (Number field):</strong> For engineering sprints. Enables sprint velocity tracking in dashboards.</li>
+  <li><strong>Client Name (Text/Dropdown):</strong> For agencies or client-facing teams. Filter all tasks by client instantly.</li>
+  <li><strong>Revenue Impact (Dropdown):</strong> High/Medium/Low. Forces prioritization conversations to be explicit.</li>
+  <li><strong>Content Type (Dropdown):</strong> For content teams — Blog, Video, Social, Email. Enables filter-by-type views.</li>
+  <li><strong>Due Date (Date field):</strong> Obvious but critical — without a due date, nothing has urgency.</li>
+</ul>
+
+<div class="tip"><strong>💡 Field inheritance tip:</strong> Create custom fields at the Space level and they're available in all Folders and Lists within that Space. This prevents field sprawl where every List has different fields for the same concepts.</div>
+
+<h3>Automations That Change How You Work</h3>
+<p>ClickUp's automation engine (Business plan and up) can trigger on task events and perform actions. The ones with real ROI:</p>
+
+<pre><code>AUTOMATION 1: Auto-assign on status change
+Trigger: Task status changes to "In Review"
+Action: Assign to [Reviewer]
+Effect: Review tasks automatically land with the right person
+
+AUTOMATION 2: Due date reminder
+Trigger: Due date is 2 days away
+Condition: Status is NOT "Complete"
+Action: Post comment "@assignee this is due in 2 days"
+Effect: No more "I forgot" at deadline
+
+AUTOMATION 3: Sprint cleanup
+Trigger: Sprint list end date passes
+Action: Move all incomplete tasks to "Sprint 15" list
+Effect: Zero manual sprint rollover work
+
+AUTOMATION 4: New client onboarding
+Trigger: New task created in "New Clients" list
+Action: Create 12 subtasks (onboarding checklist)
+Effect: Consistent onboarding every time, zero manual setup</code></pre>
+
+<p>The "New client onboarding" automation is the highest-leverage one for service businesses. When a new client task is created, ClickUp automatically generates your full onboarding checklist as subtasks. This eliminates the "forgot a step" problem and works as a quality control system.</p>
+
+<h3>Automation Limits by Plan</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Automations/Month</th><th>Notable Limits</th></tr></thead>
+<tbody>
+<tr><td>Free</td><td>100</td><td>ClickUp actions only, no external integrations</td></tr>
+<tr><td>Unlimited</td><td>1,000</td><td>Basic external triggers</td></tr>
+<tr><td>Business</td><td>10,000</td><td>Full external integrations, scheduled automations</td></tr>
+<tr><td>Enterprise</td><td>Unlimited</td><td>Custom automation logic, SSO, API rate boosts</td></tr>
+</tbody>
+</table>
+</div>
+<p>Most teams of under 30 people won't hit 10,000 automations/month. Business is the right tier for professional use.</p>
+
+<h2 id="sprints">Sprints & Agile Workflows</h2>
+<p>ClickUp's Sprint feature is genuinely useful once configured, but the default setup leaves a lot on the table. Here's the workflow that actually supports Agile without the ceremony overhead.</p>
+
+<h3>Setting Up Sprints That Work</h3>
+<ol>
+  <li><strong>Enable Sprints on your Engineering Space:</strong> Space Settings → Sprints. Set duration to 2 weeks (standard) or 1 week for fast-moving teams.</li>
+  <li><strong>Create a Sprint Folder:</strong> One folder per quarter, one List per sprint. Name convention: "Sprint 14 (Apr 21 – May 2)."</li>
+  <li><strong>Use Story Points Custom Field:</strong> Add a Number field called "Story Points." The default Priority field isn't enough for capacity planning.</li>
+  <li><strong>Sprint Goal Custom Field:</strong> Add a Text field at the List level (not task level) for the sprint goal. Keeps the team aligned on the north star.</li>
+</ol>
+
+<h3>The Sprint Planning Workflow in ClickUp</h3>
+<pre><code>SPRINT PLANNING SEQUENCE:
+1. Open Backlog list → Table view
+2. Filter: P0 + P1 tasks only
+3. Sort by: Story Points (descending) + Priority
+4. Pull tasks into Sprint [N] list until team capacity is reached
+   (use Workload view to verify nobody is over 100%)
+5. Set sprint goal in List description
+6. Run automation: "Sprint started" → notify team in Slack
+
+DAILY STANDUP:
+- Open Sprint Board view
+- Filter: Assigned to me
+- Yesterday / Today / Blockers captured as comments on task
+- Blockers get a "Blocked" status → auto-notifies tech lead
+
+SPRINT REVIEW:
+- Table view: filter by "Completed this sprint"
+- Velocity = sum of Story Points for completed tasks
+- Track in a Dashboard widget over time</code></pre>
+
+<h3>The Velocity Dashboard</h3>
+<p>Create a ClickUp Dashboard with these widgets for sprint tracking:</p>
+<ul>
+  <li><strong>Sprint velocity over time:</strong> Line chart of completed story points per sprint</li>
+  <li><strong>Current sprint burndown:</strong> Tasks remaining vs. days left</li>
+  <li><strong>Blocked tasks:</strong> List of all tasks with "Blocked" status</li>
+  <li><strong>Team workload:</strong> Workload bar chart by assignee</li>
+</ul>
+<p>This dashboard replaces stand-up status updates for teams that trust it. Async-first teams can replace daily standups with a look at this dashboard + async comment updates.</p>
+
+<h2 id="docs">ClickUp Docs & Whiteboards</h2>
+<p>ClickUp Docs is ClickUp's Notion-killer ambition. It's getting better. It's not there yet. But it's good enough to centralize documentation within ClickUp and avoid a separate Notion subscription for many teams.</p>
+
+<h3>What ClickUp Docs Does Well</h3>
+<ul>
+  <li><strong>Linking to tasks:</strong> Embed task mentions directly in docs. Click on @TaskName and jump to the task. This is genuinely better than Notion's relation fields for quick navigation.</li>
+  <li><strong>Team wikis:</strong> SOPs, onboarding docs, playbooks. If you need a searchable internal wiki and you're already in ClickUp, Docs is good enough.</li>
+  <li><strong>Meeting notes with action items:</strong> Write meeting notes → mention tasks → tasks are automatically linked. With ClickUp AI, generate a structured meeting summary that links to existing tasks.</li>
+</ul>
+
+<h3>Where ClickUp Docs Falls Short vs. Notion</h3>
+<ul>
+  <li>No database views — you can't create a Notion-style table database with custom properties inside a Doc</li>
+  <li>Limited block types — no complex callouts, toggles are basic</li>
+  <li>Search is slower and less accurate than Notion's</li>
+  <li>Collaboration lag in real-time editing — noticeable when 3+ people edit simultaneously</li>
+</ul>
+
+<div class="callout yellow"><strong>⚠️ Honest assessment:</strong> If your team's primary use case is documentation and knowledge management, use Notion plus integrate it with ClickUp via Zapier or the native integration. If documentation is secondary to project management, ClickUp Docs is sufficient and reduces the number of tools you're paying for.</div>
+
+<h3>Whiteboards for Async Visual Thinking</h3>
+<p>ClickUp Whiteboards are good for sprint retrospectives, brainstorming sessions, and simple flowcharts. They're not FigJam. For design teams or complex system diagrams, use Miro or FigJam. For project teams doing occasional visual work, ClickUp Whiteboards eliminate the need for a separate tool.</p>
+
+<h2 id="ai">ClickUp AI Features</h2>
+<p>ClickUp AI launched in 2023 and has been steadily improving. It's an add-on at $5/member/month (included in some higher-tier plans).</p>
+
+<h3>What Actually Works</h3>
+<ul>
+  <li><strong>Task description generator:</strong> Give a one-line task name, click "Generate description." Gets you a structured description with context and acceptance criteria. Good 70% of the time, needs editing 30%.</li>
+  <li><strong>Meeting notes to tasks:</strong> Paste meeting notes into a Doc → ask AI to extract action items → creates tasks with assignees. The accuracy is high when meeting notes are structured; lower with freeform notes.</li>
+  <li><strong>Summarize thread:</strong> Long comment threads on a task can be summarized. Saves time when you're jumping into a task you weren't involved in from the start.</li>
+  <li><strong>Write with AI in Docs:</strong> Standard AI writing assistance. Fine for first drafts of SOPs and documentation.</li>
+</ul>
+
+<h3>What Doesn't Work (Yet)</h3>
+<ul>
+  <li>AI-suggested task assignments — too generic to be useful</li>
+  <li>AI project timeline estimates — way off for complex technical projects</li>
+  <li>AI sprint planning — doesn't understand team capacity or technical complexity well enough</li>
+</ul>
+
+<p>The ROI on ClickUp AI is real but narrow. Teams who write lots of task descriptions and meeting notes will save meaningful time. Teams who want AI to do strategic work (planning, prioritization, estimation) will be disappointed.</p>
+
+<h2 id="vs-alternatives">ClickUp vs Notion vs Asana</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Dimension</th><th>ClickUp</th><th>Notion</th><th>Asana</th></tr></thead>
+<tbody>
+<tr><td>Project management depth</td><td>⭐⭐⭐⭐⭐ Best</td><td>⭐⭐⭐ Adequate</td><td>⭐⭐⭐⭐ Strong</td></tr>
+<tr><td>Documentation/Wiki</td><td>⭐⭐⭐ Decent</td><td>⭐⭐⭐⭐⭐ Best</td><td>⭐⭐ Basic</td></tr>
+<tr><td>Ease of setup</td><td>⭐⭐ Steep curve</td><td>⭐⭐⭐⭐ Good</td><td>⭐⭐⭐⭐⭐ Easiest</td></tr>
+<tr><td>Automations</td><td>⭐⭐⭐⭐⭐ Powerful</td><td>⭐⭐ Basic</td><td>⭐⭐⭐⭐ Strong</td></tr>
+<tr><td>Reporting/Dashboards</td><td>⭐⭐⭐⭐⭐ Excellent</td><td>⭐⭐ Limited</td><td>⭐⭐⭐⭐ Good</td></tr>
+<tr><td>Agile/Sprint features</td><td>⭐⭐⭐⭐⭐ Best</td><td>⭐⭐ Manual</td><td>⭐⭐⭐ Basic</td></tr>
+<tr><td>Price (Business tier)</td><td>$12/user</td><td>$16/user</td><td>$24.99/user</td></tr>
+<tr><td>Best for</td><td>Engineering + ops teams</td><td>Knowledge workers</td><td>Marketing + project-heavy teams</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The honest verdict: ClickUp wins on raw functionality per dollar. Notion wins for teams where documentation is the primary workflow. Asana wins for teams that value UX simplicity over feature depth and have the budget for it.</p>
+
+<p>The "one tool to rule them all" pitch from ClickUp is mostly true — you can replace project management, docs, and basic CRM with ClickUp. The question is whether your team will actually configure it well enough to get the benefit, or whether they'll revert to Slack DMs and spreadsheets because ClickUp feels overwhelming.</p>
+
+<h2 id="pricing">Pricing Tiers</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Price</th><th>Key Features</th><th>Right For</th></tr></thead>
+<tbody>
+<tr><td><strong>Free</strong></td><td>$0</td><td>100MB storage, unlimited tasks, basic features</td><td>Solo users, very small teams evaluating</td></tr>
+<tr><td><strong>Unlimited</strong></td><td>$7/user/mo</td><td>Unlimited storage, dashboards, custom fields, integrations</td><td>Small teams wanting more than free</td></tr>
+<tr><td><strong>Business</strong></td><td>$12/user/mo</td><td>Sprints, advanced automations, timelines, workload views, custom permissions</td><td>Most professional teams — best value tier</td></tr>
+<tr><td><strong>Enterprise</strong></td><td>Custom</td><td>SSO, advanced permissions, dedicated success manager, custom contracts</td><td>Large orgs with compliance requirements</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip"><strong>💡 Pricing reality check:</strong> Business at $12/user delivers features that cost $24.99/user at Asana. If you're comparing sticker prices without comparing feature sets, you're comparing wrong. Calculate your per-user cost for equivalent functionality, not just the headline number.</div>
+
+<div class="key-takeaway">
+  <h4>🎯 Key Takeaway</h4>
+  <p>ClickUp's hierarchy needs to be designed before you start, not discovered after you've added 200 tasks to the wrong place. Get the Space/Folder/List structure right first. Then add Custom Fields — but only the ones tied to decisions you actually make. Automations are where you multiply your investment: 5 well-designed automations will save more time than 50 custom fields nobody uses. Business plan is the right tier for teams above 5 people doing real work.</p>
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">What is the best ClickUp hierarchy for a small team?</div>
+  <div class="faq-a">For small teams (under 20 people), use one Space per department (or one Space total for very small teams), Folders for major projects or client accounts, and Lists for specific workflows or sprint cycles. Avoid creating too many Spaces — it fragments visibility. Most teams do better with fewer, well-organized Spaces than many granular ones.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">How do ClickUp Automations compare to Zapier?</div>
+  <div class="faq-a">ClickUp Automations handle internal ClickUp workflows more reliably and cheaply than Zapier for ClickUp-to-ClickUp actions. For cross-platform integrations (ClickUp to Salesforce, HubSpot, etc.), Zapier or Make are more powerful. The sweet spot: use ClickUp Automations for internal workflow routing, use Zapier for external system integrations.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Is ClickUp worth the price compared to Asana or Notion?</div>
+  <div class="faq-a">ClickUp Business at $12/user/mo offers more features than Asana Business at $24.99/user and Notion Plus at $16/user. The tradeoff is complexity — ClickUp's feature depth creates a steeper learning curve. For teams needing Gantt charts, time tracking, sprint management, and custom fields in one tool, ClickUp wins on value. For simpler wikis, Notion is better. For enterprise PM with no setup friction, Asana.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Does ClickUp AI actually save time?</div>
+  <div class="faq-a">ClickUp AI is genuinely useful for task descriptions, meeting summaries, and subtask generation from high-level task names. It's not impressive for complex writing or strategic work. The best use case: automatic meeting notes-to-tasks conversion and generating task descriptions when you're in a hurry. At $5/member/mo add-on, it's worth it for teams doing lots of documentation.</div>
+</div>
+
+<div style="margin-top:40px"><a class="cta" href="https://comparedge.com/tools/clickup">View ClickUp on ComparEdge →</a></div>
+
+<div class="newsletter">
+  <h3>Get the Weekly SaaS Breakdown</h3>
+  <p>Real comparisons, pricing changes, and power user tips. No sponsored content.</p>
+  <div class="newsletter-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><svg width="22" height="20" viewBox="0 0 44 44" fill="none"><defs><linearGradient id="cu-lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#cu-lgf)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col"><h4>Playbooks</h4><a href="/playbooks/chatgpt.html">ChatGPT</a><a href="/playbooks/claude.html">Claude</a><a href="/playbooks/clickup.html">ClickUp</a><a href="/playbooks/notion.html">Notion</a><a href="/playbooks/figma.html">Figma</a></div>
+    <div class="footer-col"><h4>Topics</h4><a href="https://blog.comparedge.com/chatgpt-vs-claude.html">ChatGPT vs Claude</a><a href="https://blog.comparedge.com/cursor-vs-github-copilot.html">AI Coding Tools</a><a href="https://blog.comparedge.com/best-free-llm.html">Free LLMs</a></div>
+    <div class="footer-col"><h4>Connect</h4><a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a><a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span><span>Updated April 24, 2026</span></div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('progressBar'),thumb=document.getElementById('progressThumb');
+  function updateProgress(){var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight,pct=dh>0?Math.min(st/dh,1):0;if(bar)bar.style.width=(pct*100)+'%';if(thumb)thumb.style.height=(pct*100)+'%';}
+  var sidebar=document.getElementById('sidebarToc'),inlineToc=document.querySelector('.toc'),tocLinks=document.querySelectorAll('.sidebar-toc a'),sections=[];
+  tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
+  function updateActive(){var sp=window.scrollY+120;if(sidebar&&inlineToc){sidebar.classList.toggle('visible',sp>inlineToc.offsetTop+inlineToc.offsetHeight);}var active=null;for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=sp){active=sections[i].id;break}}tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});}
+  var ticking=false;window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateActive();ticking=false});ticking=true}});updateProgress();updateActive();
+})();
+</script>
+</body>
+</html>
