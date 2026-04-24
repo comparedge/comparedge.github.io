@@ -391,7 +391,6 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
   <a href="${BLOG_URL}/" class="site-logo">${logoSVG()}${logoWordmark()}</a>
   <div class="nav-center">
     <a href="${BLOG_URL}/">Home</a>
-    <a href="${BLOG_URL}/playbooks/">Playbooks</a>
     <a href="${SITE_URL}" target="_blank" rel="noopener">ComparEdge</a>
     <a href="${SITE_URL}/compare" target="_blank" rel="noopener">Compare</a>
     <a href="${SITE_URL}/pricing" target="_blank" rel="noopener">Pricing</a>
@@ -411,7 +410,6 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
     </button>
   </div>
   <a href="${BLOG_URL}/">Home</a>
-  <a href="${BLOG_URL}/playbooks/">Playbooks</a>
   <a href="${SITE_URL}" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
   <a href="${SITE_URL}/compare" target="_blank" rel="noopener">Compare</a>
   <a href="${SITE_URL}/pricing" target="_blank" rel="noopener">Pricing</a>
