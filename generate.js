@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = 'https://comparedge.com';
-const BLOG_URL = 'https://comparedge.github.io';
+const BLOG_URL = 'https://blog.comparedge.com';
 const YEAR = new Date().getFullYear();
 const TODAY = new Date().toISOString().split('T')[0];
 const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
