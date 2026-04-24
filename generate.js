@@ -391,6 +391,7 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
   <a href="${BLOG_URL}/" class="site-logo">${logoSVG()}${logoWordmark()}</a>
   <div class="nav-center">
     <a href="${BLOG_URL}/">Home</a>
+    <a href="${BLOG_URL}/playbooks/">Playbooks</a>
     <a href="${SITE_URL}" target="_blank" rel="noopener">ComparEdge</a>
     <a href="${SITE_URL}/compare" target="_blank" rel="noopener">Compare</a>
     <a href="${SITE_URL}/pricing" target="_blank" rel="noopener">Pricing</a>
@@ -410,6 +411,7 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
     </button>
   </div>
   <a href="${BLOG_URL}/">Home</a>
+  <a href="${BLOG_URL}/playbooks/" class="primary-link">Playbooks</a>
   <a href="${SITE_URL}" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
   <a href="${SITE_URL}/compare" target="_blank" rel="noopener">Compare</a>
   <a href="${SITE_URL}/pricing" target="_blank" rel="noopener">Pricing</a>
@@ -2781,6 +2783,7 @@ function generateIndex(articles) {
     <p class="hero-desc">Independent comparisons, real pricing breakdowns, and market intelligence for AI tools and SaaS platforms — no hype, just data.</p>
     <div class="index-hero-btns">
       <a href="#articles" class="btn-primary">Explore Articles</a>
+      <a href="${BLOG_URL}/playbooks/" class="btn-primary" style="background:var(--accent2)">Playbooks</a>
       <a href="${SITE_URL}" class="btn-ghost" target="_blank" rel="noopener">Visit ComparEdge</a>
     </div>
   </div>
