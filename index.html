@@ -157,7 +157,7 @@ code,pre{background:var(--surface);border:1px solid var(--border);border-radius:
 .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px}
 .article-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important}
 .article-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,.08);text-decoration:none!important}
-.article-card .card-img{height:120px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.article-card .card-img{height:170px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
 .article-card .card-body{padding:18px;flex:1;display:flex;flex-direction:column}
 .article-card .card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
 .article-card h3{font-family:system-ui,-apple-system,sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:10px}
@@ -346,10 +346,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 </div>
   <div class="article-grid">
     <a href="cheapest-llm-api-pricing.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-0"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-0)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-0)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-0)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -361,10 +368,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="claude-api-vs-openai-api.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-1"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-1)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-1)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-1)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -376,10 +390,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="cursor-vs-github-copilot.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-2)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-2)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-2)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -391,10 +412,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="deepseek-vs-openai-api.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-3"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-3)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-3)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-3)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -406,10 +434,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="chatgpt-vs-claude.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-4"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-4)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-4)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-4)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -421,10 +456,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="dalle-vs-midjourney.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-5"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-5)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-5)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-5)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -436,10 +478,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="clickup-vs-notion.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-comparisons" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-comparisons)"/>
-  <path d="M10,40 L22,8 L34,40 Z M38,10 L44,44 L32,44 Z M2,15 L14,15 L8,35 Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-6"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-6)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-6)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-6)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
@@ -451,10 +500,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="ai-image-generators-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-7" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-7"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -466,10 +522,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="crm-software-compared-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-8" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-8"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -481,10 +544,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="best-email-marketing-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-9" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-9"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-9)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-9)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-9)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -496,10 +566,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="best-free-llm.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-10" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-10"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -511,10 +588,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="best-free-ai-coding.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-11" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-11"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -526,10 +610,17 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="best-free-project-management.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-rankings" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-rankings)"/>
-  <path d="M8,44 L8,24 L18,24 L18,44 M20,44 L20,16 L30,16 L30,44 M32,44 L32,8 L42,8 L42,44" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-12" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-12"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
@@ -541,10 +632,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="how-to-choose-ai-coding-assistant.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-guides" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-guides)"/>
-  <path d="M22,6 L38,44 L6,44 Z M22,18 L30,36 L14,36 Z" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-13" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-13"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-13)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-13)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
@@ -556,10 +653,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="llm-api-integration-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-guides" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-guides)"/>
-  <path d="M22,6 L38,44 L6,44 Z M22,18 L30,36 L14,36 Z" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-14" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-14"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-14)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-14)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
@@ -571,10 +674,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="free-ai-tools-startups-2026.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-guides" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-guides)"/>
-  <path d="M22,6 L38,44 L6,44 Z M22,18 L30,36 L14,36 Z" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-15" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-15"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-15)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-15)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
@@ -586,10 +695,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="ai-pricing-pages-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-guides" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-guides)"/>
-  <path d="M22,6 L38,44 L6,44 Z M22,18 L30,36 L14,36 Z" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-16"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-16)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-16)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
@@ -601,10 +716,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="ai-tools-market-2026-analysis.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-analysis" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#fbbf24" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-analysis)"/>
-  <path d="M6,40 Q14,20 22,30 Q30,40 38,10" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-17" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-17"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-17)" stroke-width="2.5" filter="url(#gl4-analysis-17)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
@@ -616,10 +737,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="real-cost-ai-2026.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-analysis" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#fbbf24" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-analysis)"/>
-  <path d="M6,40 Q14,20 22,30 Q30,40 38,10" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-18" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-18"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-18)" stroke-width="2.5" filter="url(#gl4-analysis-18)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
@@ -631,10 +758,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="highest-rated-ai-tools-2026.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-analysis" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#fbbf24" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-analysis)"/>
-  <path d="M6,40 Q14,20 22,30 Q30,40 38,10" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-19" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-19"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-19)" stroke-width="2.5" filter="url(#gl4-analysis-19)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
@@ -646,10 +779,16 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   </div>
 </a>
 <a href="open-source-vs-proprietary-llms.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg width="100%" height="100%" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <defs><linearGradient id="g-analysis" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#fbbf24" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="44" height="44" fill="url(#g-analysis)"/>
-  <path d="M6,40 Q14,20 22,30 Q30,40 38,10" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-20" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-20"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-20)" stroke-width="2.5" filter="url(#gl4-analysis-20)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
