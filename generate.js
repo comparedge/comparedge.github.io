@@ -98,9 +98,11 @@ a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline;color:#93
 header{border-bottom:1px solid #1a1a2a;padding:14px 0;position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 header nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px}
 .site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-header .nav-links{display:flex;gap:20px}
-header .nav-links a{color:#888;font-size:14px}
-header .nav-links a:hover{color:#ddd;text-decoration:none}
+header .nav-links{display:flex;gap:8px}
+header .nav-links a{color:#ccc;font-size:13px;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid #2a2a2a;background:#1a1a1a;transition:all .2s}
+header .nav-links a:hover{background:#2a2a2a;border-color:#3a3a3a;color:#fff;text-decoration:none}
+header .nav-links a.primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-color:transparent;color:#fff}
+header .nav-links a.primary:hover{opacity:.9}
 /* ── Breadcrumb ── */
 .breadcrumb{font-size:13px;color:#555;margin-bottom:16px}
 .breadcrumb a{color:#666}
@@ -260,9 +262,10 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
   <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
 </a>
 <div class="nav-links">
-<a href="${SITE_URL}">Main Site</a>
-<a href="${SITE_URL}/compare">Compare Tools</a>
-<a href="${BLOG_URL}/">More Articles</a>
+<a href="${SITE_URL}/compare">Compare</a>
+<a href="${SITE_URL}/pricing">Pricing</a>
+<a href="${BLOG_URL}/">Articles</a>
+<a href="${SITE_URL}" class="primary">ComparEdge →</a>
 </div>
 </nav>
 </header>
