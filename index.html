@@ -34,7 +34,7 @@ a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent);opacity:.
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:none}
 /* ── Header ── */
 header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
-header nav{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+header nav{display:flex;align-items:center;justify-content:center;height:100%;max-width:1200px;margin:0 auto;padding:0 24px;gap:40px}
 .site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .nav-center{display:flex;gap:28px;align-items:center}
 .nav-center a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
@@ -228,7 +228,7 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 .hero-stat-num{font-family:system-ui,-apple-system,sans-serif;font-size:1.5em;font-weight:800;color:#fff;display:block}
 .hero-stat-label{font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
 /* ── Ticker ── */
-.ticker-wrap{overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;white-space:nowrap;margin-bottom:0}
+.ticker-wrap{overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;white-space:nowrap;margin-top:48px;margin-bottom:48px}
 .ticker-track{display:inline-block;animation:ticker 30s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{display:inline-block;font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin:0 32px}
@@ -318,7 +318,7 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <div class="cyber-dot" style="bottom:20%;right:18%;width:4px;height:4px;background:#8b5cf6;animation-delay:1.5s"></div>
   <div class="index-hero-inner">
     <div class="est-tag">Est. 2026 · Data-Driven SaaS Research</div>
-    <h1>Where <em>SaaS</em> Comparisons<br>Get Real</h1>
+    <h1>Where <em>SaaS</em> Data<br>Gets Real</h1>
     <p class="hero-desc">Independent comparisons, real pricing breakdowns, and market intelligence for AI tools and SaaS platforms — no hype, just data.</p>
     <div class="index-hero-btns">
       <a href="#articles" class="btn-primary">Explore Articles</a>
