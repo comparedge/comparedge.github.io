@@ -27,8 +27,7 @@ a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline;color:#93
 /* ── Header ── */
 header{border-bottom:1px solid #1a1a2a;padding:14px 0;position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 header nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px}
-.site-logo{color:#fff;font-weight:800;font-size:17px;letter-spacing:-.3px}
-.site-logo span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 header .nav-links{display:flex;gap:20px}
 header .nav-links a{color:#888;font-size:14px}
 header .nav-links a:hover{color:#ddd;text-decoration:none}
@@ -158,7 +157,14 @@ footer p+p{margin-top:8px}
 <body>
 <header>
 <nav>
-<a href="https://blog.comparedge.com/" class="site-logo">Compar<span>Edge</span> Blog</a>
+<a href="https://blog.comparedge.com/" class="site-logo" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none">
+  <svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+    <path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+  </svg>
+  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
+</a>
 <div class="nav-links">
 <a href="https://comparedge.com">Main Site</a>
 <a href="https://comparedge.com/compare">Compare Tools</a>
@@ -186,7 +192,7 @@ footer p+p{margin-top:8px}
 <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Contents</h4>
   <ol>
     <li><a href="#framework">Decision Framework</a></li>
     <li><a href="#comparison">Tool Comparison</a></li>
@@ -212,23 +218,23 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>#</th><th>Tool</th><th>Rating</th><th>Price</th><th>Free Plan</th><th>Best For</th></tr></thead>
 <tbody>
-<tr><td><span class="rank-badge">1</span></td><td><strong><a href="https://comparedge.com/tools/cursor">Cursor</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.8</td><td>$20/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">2</span></td><td><strong><a href="https://comparedge.com/tools/windsurf">Windsurf (Codeium)</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.7</td><td>$20/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">3</span></td><td><strong><a href="https://comparedge.com/tools/github-copilot">GitHub Copilot</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$10/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">4</span></td><td><strong><a href="https://comparedge.com/tools/codeium">Codeium</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$20/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">5</span></td><td><strong><a href="https://comparedge.com/tools/bolt-new">Bolt.new</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$25/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">6</span></td><td><strong><a href="https://comparedge.com/tools/v0-dev">v0 by Vercel</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$30/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">7</span></td><td><strong><a href="https://comparedge.com/tools/phind">Phind</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$17/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">8</span></td><td><strong><a href="https://comparedge.com/tools/windsurf-editor">Windsurf</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$20/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">9</span></td><td><strong><a href="https://comparedge.com/tools/replit-ai">Replit AI</a></strong></td><td><span style="color:#f59e0b">★★★★☆</span> 4.3</td><td>$20/mo</td><td>✅</td><td>[object Object]</td></tr>
-<tr><td><span class="rank-badge">10</span></td><td><strong><a href="https://comparedge.com/tools/tabnine">Tabnine</a></strong></td><td><span style="color:#f59e0b">★★★★☆</span> 4.2</td><td>$12/mo</td><td>✅</td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">1</span></td><td><strong><a href="https://comparedge.com/tools/cursor">Cursor</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.8</td><td>$20/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">2</span></td><td><strong><a href="https://comparedge.com/tools/windsurf">Windsurf (Codeium)</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.7</td><td>$20/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">3</span></td><td><strong><a href="https://comparedge.com/tools/github-copilot">GitHub Copilot</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$10/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">4</span></td><td><strong><a href="https://comparedge.com/tools/codeium">Codeium</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$20/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">5</span></td><td><strong><a href="https://comparedge.com/tools/bolt-new">Bolt.new</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$25/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">6</span></td><td><strong><a href="https://comparedge.com/tools/v0-dev">v0 by Vercel</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$30/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">7</span></td><td><strong><a href="https://comparedge.com/tools/phind">Phind</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$17/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">8</span></td><td><strong><a href="https://comparedge.com/tools/windsurf-editor">Windsurf</a></strong></td><td><span style="color:#f59e0b">★★★★½</span> 4.5</td><td>$20/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">9</span></td><td><strong><a href="https://comparedge.com/tools/replit-ai">Replit AI</a></strong></td><td><span style="color:#f59e0b">★★★★☆</span> 4.3</td><td>$20/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
+<tr><td><span class="rank-badge">10</span></td><td><strong><a href="https://comparedge.com/tools/tabnine">Tabnine</a></strong></td><td><span style="color:#f59e0b">★★★★☆</span> 4.2</td><td>$12/mo</td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>[object Object]</td></tr>
 </tbody>
 </table></div>
 
 <h2 id="by-use-case">Recommendations by Use Case</h2>
-<div class="takeaway green"><strong>✅ Best for VS Code users:</strong> GitHub Copilot — deepest VS Code integration, $10/mo or free, 100M+ users.</div>
-<div class="takeaway"><strong>💡 Best for codebase-aware AI:</strong> Cursor — full IDE with AI baked in, understands your entire project. Free tier available.</div>
-<div class="takeaway yellow"><strong>⚡ Best free option:</strong> Cursor — highest-rated tool with a genuine free plan, no time limit.</div>
+<div class="takeaway green"><strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg> Best for VS Code users:</strong> GitHub Copilot — deepest VS Code integration, $10/mo or free, 100M+ users.</div>
+<div class="takeaway"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg> Best for codebase-aware AI:</strong> Cursor — full IDE with AI baked in, understands your entire project. Free tier available.</div>
+<div class="takeaway yellow"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Best free option:</strong> Cursor — highest-rated tool with a genuine free plan, no time limit.</div>
 
 <h2 id="pricing">Pricing Comparison</h2>
 <div class="bar-chart"><div class="bar-row">
@@ -345,7 +351,7 @@ footer p+p{margin-top:8px}
 
 
 <div class="highlight">
-<h3>🔗 Compare AI Coding Tools</h3>
+<h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Compare AI Coding Tools</h3>
 <p>See full feature matrix, radar charts, and side-by-side comparisons for all 10 tools:</p>
 <p style="margin-top:12px"><a class="cta" href="https://comparedge.com/best/ai-coding">All AI Coding Tools →</a></p>
 </div>

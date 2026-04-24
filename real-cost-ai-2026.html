@@ -27,8 +27,7 @@ a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline;color:#93
 /* ── Header ── */
 header{border-bottom:1px solid #1a1a2a;padding:14px 0;position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 header nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px}
-.site-logo{color:#fff;font-weight:800;font-size:17px;letter-spacing:-.3px}
-.site-logo span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 header .nav-links{display:flex;gap:20px}
 header .nav-links a{color:#888;font-size:14px}
 header .nav-links a:hover{color:#ddd;text-decoration:none}
@@ -158,7 +157,14 @@ footer p+p{margin-top:8px}
 <body>
 <header>
 <nav>
-<a href="https://blog.comparedge.com/" class="site-logo">Compar<span>Edge</span> Blog</a>
+<a href="https://blog.comparedge.com/" class="site-logo" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none">
+  <svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+    <path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+  </svg>
+  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
+</a>
 <div class="nav-links">
 <a href="https://comparedge.com">Main Site</a>
 <a href="https://comparedge.com/compare">Compare Tools</a>
@@ -188,7 +194,7 @@ footer p+p{margin-top:8px}
 
 <p>Budgeting for AI tools in 2026 is complicated by wildly different pricing models — subscriptions, per-seat, token-based, usage-based. Here's a clear breakdown by category using real pricing data from ComparEdge's database.</p>
 
-<div class="takeaway"><strong>💡 Key Finding:</strong> A fully-equipped AI stack for a small team (coding + writing + image + CRM + PM) can run $60-300/month — or $0 if you choose free tiers carefully.</div>
+<div class="takeaway"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg> Key Finding:</strong> A fully-equipped AI stack for a small team (coding + writing + image + CRM + PM) can run $60-300/month — or $0 if you choose free tiers carefully.</div>
 
 <h2 id="by-category">Pricing by Category</h2>
 <div class="table-wrap"><table>
@@ -260,7 +266,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/openai-api">OpenAI API</a></strong></td><td>❌</td><td>Free only</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/chatgpt">ChatGPT</a></strong></td><td>✅</td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/claude-api">Anthropic API (Claude)</a></strong></td><td>❌</td><td>Free only</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/llama">Llama (Meta)</a></strong></td><td>✅</td><td>Free only</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/openai-api">OpenAI API</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>Free only</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/chatgpt">ChatGPT</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/claude-api">Anthropic API (Claude)</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>Free only</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/llama">Llama (Meta)</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>Free only</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -269,7 +275,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/cursor">Cursor</a></strong></td><td>✅</td><td>$20/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/windsurf">Windsurf (Codeium)</a></strong></td><td>✅</td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/github-copilot">GitHub Copilot</a></strong></td><td>✅</td><td>$10/mo</td><td>4.5/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/codeium">Codeium</a></strong></td><td>✅</td><td>$20/mo</td><td>4.5/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/cursor">Cursor</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$20/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/windsurf">Windsurf (Codeium)</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/github-copilot">GitHub Copilot</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$10/mo</td><td>4.5/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/codeium">Codeium</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$20/mo</td><td>4.5/5</td></tr>
 </tbody>
 </table></div>
 
@@ -278,7 +284,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/topaz-ai">Topaz Labs AI</a></strong></td><td>❌</td><td>$199/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/remove-bg">Remove.bg</a></strong></td><td>✅</td><td>$2/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/canva-ai">Canva AI</a></strong></td><td>✅</td><td>$10/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/midjourney">Midjourney</a></strong></td><td>❌</td><td>$10/mo</td><td>4.5/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/topaz-ai">Topaz Labs AI</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$199/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/remove-bg">Remove.bg</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$2/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/canva-ai">Canva AI</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$10/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/midjourney">Midjourney</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$10/mo</td><td>4.5/5</td></tr>
 </tbody>
 </table></div>
 
@@ -287,7 +293,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/jasper">Jasper</a></strong></td><td>❌</td><td>$39/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/surfer-seo">Surfer SEO</a></strong></td><td>❌</td><td>$99/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/grammarly">Grammarly</a></strong></td><td>✅</td><td>$12/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/writesonic">Writesonic</a></strong></td><td>✅</td><td>$79/mo</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/jasper">Jasper</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$39/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/surfer-seo">Surfer SEO</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$99/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/grammarly">Grammarly</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$12/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/writesonic">Writesonic</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$79/mo</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -296,7 +302,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/heygen">HeyGen</a></strong></td><td>✅</td><td>$29/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/synthesia">Synthesia</a></strong></td><td>✅</td><td>$29/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/descript">Descript</a></strong></td><td>✅</td><td>$19/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/capcut-ai">CapCut AI</a></strong></td><td>✅</td><td>$10/mo</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/heygen">HeyGen</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$29/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/synthesia">Synthesia</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$29/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/descript">Descript</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$19/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/capcut-ai">CapCut AI</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$10/mo</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -305,7 +311,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/less-annoying-crm">Less Annoying CRM</a></strong></td><td>❌</td><td>$15/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/attio">Attio</a></strong></td><td>✅</td><td>$34/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/close">Close</a></strong></td><td>❌</td><td>$49/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/monday-crm">monday CRM</a></strong></td><td>❌</td><td>$12/mo</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/less-annoying-crm">Less Annoying CRM</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$15/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/attio">Attio</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$34/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/close">Close</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$49/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/monday-crm">monday CRM</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td>$12/mo</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -314,7 +320,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/loops">Loops</a></strong></td><td>✅</td><td>$49/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/klaviyo">Klaviyo</a></strong></td><td>✅</td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/mailerlite">MailerLite</a></strong></td><td>✅</td><td>$10/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/beehiiv">beehiiv</a></strong></td><td>✅</td><td>$43/mo</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/loops">Loops</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$49/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/klaviyo">Klaviyo</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$20/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/mailerlite">MailerLite</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$10/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/beehiiv">beehiiv</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$43/mo</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -323,7 +329,7 @@ footer p+p{margin-top:8px}
 <div class="table-wrap"><table>
 <thead><tr><th>Tool</th><th>Free</th><th>Starting Price</th><th>Rating</th></tr></thead>
 <tbody>
-<tr><td><strong><a href="https://comparedge.com/tools/height">Height</a></strong></td><td>✅</td><td>$8.5/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/miro">Miro</a></strong></td><td>✅</td><td>$8/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/notion">Notion</a></strong></td><td>✅</td><td>$12/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/clickup">ClickUp</a></strong></td><td>✅</td><td>$7/mo</td><td>4.7/5</td></tr>
+<tr><td><strong><a href="https://comparedge.com/tools/height">Height</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$8.5/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/miro">Miro</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$8/mo</td><td>4.8/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/notion">Notion</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$12/mo</td><td>4.7/5</td></tr><tr><td><strong><a href="https://comparedge.com/tools/clickup">ClickUp</a></strong></td><td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td><td>$7/mo</td><td>4.7/5</td></tr>
 </tbody>
 </table></div>
 
@@ -337,7 +343,7 @@ footer p+p{margin-top:8px}
 </ul>
 
 <div class="highlight">
-<h3>🔗 Compare Pricing Across All Categories</h3>
+<h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Compare Pricing Across All Categories</h3>
 <p>Filter by free plan, price range, and features across all 331+ tools on ComparEdge:</p>
 <p style="margin-top:12px"><a class="cta" href="https://comparedge.com/pricing">Pricing Comparison Tool →</a></p>
 </div>

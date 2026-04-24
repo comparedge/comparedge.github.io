@@ -27,8 +27,7 @@ a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline;color:#93
 /* ── Header ── */
 header{border-bottom:1px solid #1a1a2a;padding:14px 0;position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 header nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px}
-.site-logo{color:#fff;font-weight:800;font-size:17px;letter-spacing:-.3px}
-.site-logo span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 header .nav-links{display:flex;gap:20px}
 header .nav-links a{color:#888;font-size:14px}
 header .nav-links a:hover{color:#ddd;text-decoration:none}
@@ -158,7 +157,14 @@ footer p+p{margin-top:8px}
 <body>
 <header>
 <nav>
-<a href="https://blog.comparedge.com/" class="site-logo">Compar<span>Edge</span> Blog</a>
+<a href="https://blog.comparedge.com/" class="site-logo" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none">
+  <svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+    <path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+  </svg>
+  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
+</a>
 <div class="nav-links">
 <a href="https://comparedge.com">Main Site</a>
 <a href="https://comparedge.com/compare">Compare Tools</a>
@@ -187,7 +193,7 @@ footer p+p{margin-top:8px}
 <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Contents</h4>
   <ol>
     <li><a href="#all-tools">All 13 Tools Compared</a></li>
     <li><a href="#free-options">Free Options</a></li>
@@ -205,91 +211,91 @@ footer p+p{margin-top:8px}
     <td><span class="rank-badge">1</span></td>
     <td><strong><a href="https://comparedge.com/tools/topaz-ai">Topaz Labs AI</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.8</td>
-    <td>❌</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
     <td>$199/mo</td>
     <td style="font-size:13px">AI upscaling</td>
   </tr><tr>
     <td><span class="rank-badge">2</span></td>
     <td><strong><a href="https://comparedge.com/tools/remove-bg">Remove.bg</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.8</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$2/mo</td>
     <td style="font-size:13px">Instant background removal</td>
   </tr><tr>
     <td><span class="rank-badge">3</span></td>
     <td><strong><a href="https://comparedge.com/tools/canva-ai">Canva AI</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.7</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$10/mo</td>
     <td style="font-size:13px">Text to image</td>
   </tr><tr>
     <td><span class="rank-badge">4</span></td>
     <td><strong><a href="https://comparedge.com/tools/midjourney">Midjourney</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>❌</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
     <td>$10/mo</td>
     <td style="font-size:13px">Text-to-image generation</td>
   </tr><tr>
     <td><span class="rank-badge">5</span></td>
     <td><strong><a href="https://comparedge.com/tools/dalle">DALL-E 3</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>❌</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
     <td>$20/mo</td>
     <td style="font-size:13px">Natural language prompts</td>
   </tr><tr>
     <td><span class="rank-badge">6</span></td>
     <td><strong><a href="https://comparedge.com/tools/adobe-firefly">Adobe Firefly</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$5/mo</td>
     <td style="font-size:13px">Text to image</td>
   </tr><tr>
     <td><span class="rank-badge">7</span></td>
     <td><strong><a href="https://comparedge.com/tools/leonardo-ai">Leonardo AI</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$12/mo</td>
     <td style="font-size:13px">Text-to-image</td>
   </tr><tr>
     <td><span class="rank-badge">8</span></td>
     <td><strong><a href="https://comparedge.com/tools/ideogram">Ideogram</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$8/mo</td>
     <td style="font-size:13px">Text rendering in images</td>
   </tr><tr>
     <td><span class="rank-badge">9</span></td>
     <td><strong><a href="https://comparedge.com/tools/kling-ai">Kling AI</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$10/mo</td>
     <td style="font-size:13px">Text to video</td>
   </tr><tr>
     <td><span class="rank-badge">10</span></td>
     <td><strong><a href="https://comparedge.com/tools/luma-ai">Luma AI (Dream Machine)</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$30/mo</td>
     <td style="font-size:13px">Text to video</td>
   </tr><tr>
     <td><span class="rank-badge">11</span></td>
     <td><strong><a href="https://comparedge.com/tools/luminar-ai">Luminar Neo</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>❌</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
     <td>$9/mo</td>
     <td style="font-size:13px">AI sky replacement</td>
   </tr><tr>
     <td><span class="rank-badge">12</span></td>
     <td><strong><a href="https://comparedge.com/tools/flux-ai">Flux</a></strong></td>
     <td><span style="color:#f59e0b">★★★★½</span> 4.5</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>Free</td>
     <td style="font-size:13px">State-of-art image quality</td>
   </tr><tr>
     <td><span class="rank-badge">13</span></td>
     <td><strong><a href="https://comparedge.com/tools/stable-diffusion">Stable Diffusion</a></strong></td>
     <td><span style="color:#f59e0b">★★★★☆</span> 4.3</td>
-    <td>✅</td>
+    <td><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></td>
     <td>$20/mo</td>
     <td style="font-size:13px">Open source</td>
   </tr>
@@ -334,9 +340,9 @@ footer p+p{margin-top:8px}
 </div>
 
 <h2 id="top-picks">Top Picks by Category</h2>
-<div class="takeaway green"><strong>✅ Best Overall:</strong> Topaz Labs AI (4.8/5) — top user-rated tool overall.</div>
-<div class="takeaway"><strong>💡 Best Free:</strong> Remove.bg (4.8/5) — highest-rated with a genuine free plan.</div>
-<div class="takeaway yellow"><strong>⚡ Best for Beginners:</strong> Canva AI — integrates AI image generation into the broader Canva design platform. Free plan available.</div>
+<div class="takeaway green"><strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg> Best Overall:</strong> Topaz Labs AI (4.8/5) — top user-rated tool overall.</div>
+<div class="takeaway"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg> Best Free:</strong> Remove.bg (4.8/5) — highest-rated with a genuine free plan.</div>
+<div class="takeaway yellow"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Best for Beginners:</strong> Canva AI — integrates AI image generation into the broader Canva design platform. Free plan available.</div>
 
 
 <div class="product-card">
@@ -413,7 +419,7 @@ footer p+p{margin-top:8px}
 </ul>
 
 <div class="highlight">
-<h3>🔗 Compare AI Image Tools</h3>
+<h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Compare AI Image Tools</h3>
 <p>Side-by-side feature comparison and live pricing for all 13 tools:</p>
 <p style="margin-top:12px"><a class="cta" href="https://comparedge.com/best/ai-image">All AI Image Tools →</a></p>
 </div>

@@ -14,6 +14,25 @@ const YEAR = new Date().getFullYear();
 const TODAY = new Date().toISOString().split('T')[0];
 const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
+const ICONS = {
+  lightbulb: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>',
+  check: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg>',
+  x: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+  trophy: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>',
+  link: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
+  chart: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+  trending: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+  lightning: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+  target: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+  money: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  warning: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  free: '<span style="display:inline-block;background:#10b98120;color:#10b981;font-size:11px;font-weight:700;padding:1px 6px;border-radius:4px;border:1px solid #10b98140">FREE</span>',
+  clipboard: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>',
+  books: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+  swords: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="3" y2="21"/></svg>',
+};
+
+
 const productsPath = path.join(__dirname, '../site-prototype/data/products.json');
 const db = JSON.parse(fs.readFileSync(productsPath, 'utf8'));
 const products = Array.isArray(db.products) ? db.products : Object.values(db.products);
@@ -78,8 +97,7 @@ a{color:#60a5fa;text-decoration:none}a:hover{text-decoration:underline;color:#93
 /* ── Header ── */
 header{border-bottom:1px solid #1a1a2a;padding:14px 0;position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 header nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px}
-.site-logo{color:#fff;font-weight:800;font-size:17px;letter-spacing:-.3px}
-.site-logo span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 header .nav-links{display:flex;gap:20px}
 header .nav-links a{color:#888;font-size:14px}
 header .nav-links a:hover{color:#ddd;text-decoration:none}
@@ -233,7 +251,14 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
 <body>
 <header>
 <nav>
-<a href="${BLOG_URL}/" class="site-logo">Compar<span>Edge</span> Blog</a>
+<a href="${BLOG_URL}/" class="site-logo" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none">
+  <svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+    <path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+  </svg>
+  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
+</a>
 <div class="nav-links">
 <a href="${SITE_URL}">Main Site</a>
 <a href="${SITE_URL}/compare">Compare Tools</a>
@@ -332,7 +357,7 @@ function generateLLMPricingArticle() {
 <div class="updated"><span class="dot"></span>Prices verified ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#comparison-table">Full Pricing Table</a></li>
     <li><a href="#bar-chart">Visual Price Chart</a></li>
@@ -344,7 +369,7 @@ function generateLLMPricingArticle() {
 
 <p>We compared real API token prices across <strong>${llms.length} LLM providers</strong>. <strong>${cheapest.name}</strong> offers the cheapest input tokens at <strong>$${cheapest.cheapestInput}/1M</strong> — ${Math.round(expensive.cheapestInput / cheapest.cheapestInput)}× cheaper than <strong>${expensive.name}</strong> at <strong>$${expensive.cheapestInput}/1M</strong>.</p>
 
-<div class="takeaway"><strong>💡 Key Takeaway:</strong> For budget-conscious projects, open-source models via API (Llama, DeepSeek) can cut costs by 10-50× vs premium models. But premium models often deliver significantly better results for complex tasks.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Key Takeaway:</strong> For budget-conscious projects, open-source models via API (Llama, DeepSeek) can cut costs by 10-50× vs premium models. But premium models often deliver significantly better results for complex tasks.</div>
 
 <h2 id="comparison-table">Full LLM API Pricing Table (${YEAR})</h2>
 <div class="table-wrap">
@@ -387,10 +412,10 @@ ${topDetailed.map((p, i) => `
 <li><strong>Free tiers for prototyping:</strong> Google AI Studio and Replicate have generous free tiers — start there before committing.</li>
 <li><strong>Open source option:</strong> Self-host Llama 3.1 on GPU cloud for zero per-token cost (you pay for compute instead).</li>
 </ul>
-<div class="takeaway green"><strong>✅ Our Pick for Cheap + Quality:</strong> DeepSeek V3 at $0.14/1M input tokens offers near-GPT-4 quality at a fraction of the cost. Best for high-volume applications.</div>
+<div class="takeaway green"><strong>${ICONS.check} Our Pick for Cheap + Quality:</strong> DeepSeek V3 at $0.14/1M input tokens offers near-GPT-4 quality at a fraction of the cost. Best for high-volume applications.</div>
 
 <div class="highlight">
-<h3>🔗 Compare LLMs Interactively</h3>
+<h3>${ICONS.link} Compare LLMs Interactively</h3>
 <p>See radar charts, feature matrices, and live pricing for all ${llms.length}+ LLM providers on ComparEdge:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/llm">Compare All LLMs →</a> &nbsp; <a class="cta-secondary" href="${SITE_URL}/compare">Side-by-Side Compare</a></p>
 </div>
@@ -417,7 +442,7 @@ ${faqItems.map(f => `<div class="faq-item"><div class="faq-q">${escHtml(f.q)}</d
 function generateVSArticle(slug1, slug2) {
   const p1 = findProduct(slug1);
   const p2 = findProduct(slug2);
-  if (!p1 || !p2) { console.warn(`⚠️  Missing product: ${slug1} or ${slug2}`); return null; }
+  if (!p1 || !p2) { console.warn(`[WARN] Missing product: ${slug1} or ${slug2}`); return null; }
 
   const r1 = getAvgRating(p1), r2 = getAvgRating(p2);
   const pr1 = getDisplayPrice(p1), pr2 = getDisplayPrice(p2);
@@ -479,7 +504,7 @@ ${p2.tokenPricing.models.map(m => `<tr><td>${escHtml(p2.name)}: ${escHtml(m.name
 <div class="updated"><span class="dot"></span>Data verified ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#overview">Quick Overview</a></li>
     ${tokenSection ? '<li><a href="#pricing">Token Pricing</a></li>' : ''}
@@ -519,7 +544,7 @@ ${p2.tokenPricing.models.map(m => `<tr><td>${escHtml(p2.name)}: ${escHtml(m.name
 <tbody>
 <tr><td><strong>Rating</strong></td><td>${r1 ? `${r1}/5` : '—'}</td><td>${r2 ? `${r2}/5` : '—'}</td></tr>
 <tr><td><strong>Starting Price</strong></td><td>${escHtml(pr1)}</td><td>${escHtml(pr2)}</td></tr>
-<tr><td><strong>Free Plan</strong></td><td>${p1.pricing?.free ? '✅ Yes' : '❌ No'}</td><td>${p2.pricing?.free ? '✅ Yes' : '❌ No'}</td></tr>
+<tr><td><strong>Free Plan</strong></td><td>${p1.pricing?.free ? ICONS.check+' Yes' : ICONS.x+' No'}</td><td>${p2.pricing?.free ? ICONS.check+' Yes' : ICONS.x+' No'}</td></tr>
 <tr><td><strong>Founded</strong></td><td>${p1.founded || '—'}</td><td>${p2.founded || '—'}</td></tr>
 <tr><td><strong>Users</strong></td><td>${p1.users || '—'}</td><td>${p2.users || '—'}</td></tr>
 </tbody>
@@ -541,19 +566,19 @@ ${tokenSection}
 
 <h2 id="pros-cons">${escHtml(p1.name)} — Pros & Cons</h2>
 <div class="pros-cons">
-<div class="pros"><h3>✅ Pros</h3><ul>${(p1.pros || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
-<div class="cons"><h3>❌ Cons</h3><ul>${(p1.cons || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
+<div class="pros"><h3>${ICONS.check} Pros</h3><ul>${(p1.pros || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
+<div class="cons"><h3>${ICONS.x} Cons</h3><ul>${(p1.cons || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
 </div>
 
 <h2>${escHtml(p2.name)} — Pros & Cons</h2>
 <div class="pros-cons">
-<div class="pros"><h3>✅ Pros</h3><ul>${(p2.pros || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
-<div class="cons"><h3>❌ Cons</h3><ul>${(p2.cons || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
+<div class="pros"><h3>${ICONS.check} Pros</h3><ul>${(p2.pros || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
+<div class="cons"><h3>${ICONS.x} Cons</h3><ul>${(p2.cons || []).slice(0, 5).map(x => `<li>${escHtml(x)}</li>`).join('')}</ul></div>
 </div>
 
 <h2 id="verdict">Our Verdict</h2>
 <div class="takeaway ${winner ? 'green' : ''}">
-<strong>🏆 ${winner ? `${escHtml(winner.name)} Wins` : 'Tie — Depends on Use Case'}:</strong> ${
+<strong>${ICONS.trophy} ${winner ? `${escHtml(winner.name)} Wins` : 'Tie — Depends on Use Case'}:</strong> ${
   winner
     ? `${escHtml(winner.name)} (${getAvgRating(winner)}/5) edges ahead of ${escHtml(loser.name)} (${getAvgRating(loser)}/5) in user satisfaction. But the right tool depends on your workflow — see our full interactive comparison for detailed use-case analysis.`
     : `Both tools are closely matched. Choose ${escHtml(p1.name)} if ${(unique1[0] || 'its unique features')} matter most. Choose ${escHtml(p2.name)} if ${(unique2[0] || 'its unique features')} are your priority.`
@@ -620,7 +645,7 @@ function generateBestFreeArticle(category, categoryName) {
 
 <p>We analyzed <strong>${catProducts.length} ${categoryName.toLowerCase()} tools</strong> with genuine free plans. Rankings based on verified G2 and Capterra ratings, not affiliate deals.</p>
 
-<div class="takeaway"><strong>💡 Our Methodology:</strong> Only tools with permanent free plans (not free trials) are included. Ranked by average user rating across G2 and Capterra.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Our Methodology:</strong> Only tools with permanent free plans (not free trials) are included. Ranked by average user rating across G2 and Capterra.</div>
 
 <h2 id="ratings-chart">Rating Comparison</h2>
 ${chart}
@@ -651,7 +676,7 @@ ${catProducts.slice(0, 6).map((p, i) => `
 `).join('\n')}
 
 <div class="highlight">
-<h3>🔗 Compare All ${escHtml(categoryName)}</h3>
+<h3>${ICONS.link} Compare All ${escHtml(categoryName)}</h3>
 <p>Interactive comparisons, feature matrices, and pricing for all ${catProducts.length}+ tools including paid options:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/${category}">All ${escHtml(categoryName)} →</a></p>
 </div>
@@ -712,7 +737,7 @@ function generateAICodingGuide() {
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#framework">Decision Framework</a></li>
     <li><a href="#comparison">Tool Comparison</a></li>
@@ -740,15 +765,15 @@ function generateAICodingGuide() {
 <tbody>
 ${coders.map((p, i) => {
   const minPaid = getMinPaidPrice(p);
-  return `<tr><td><span class="rank-badge">${i+1}</span></td><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td><td>${minPaid ? `$${minPaid}/mo` : 'Free only'}</td><td>${p.pricing?.free ? '✅' : '❌'}</td><td>${escHtml((p.useCases || [])[0] || p.description?.split('.')[0] || '—')}</td></tr>`;
+  return `<tr><td><span class="rank-badge">${i+1}</span></td><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td><td>${minPaid ? `$${minPaid}/mo` : 'Free only'}</td><td>${p.pricing?.free ? ICONS.check : ICONS.x}</td><td>${escHtml((p.useCases || [])[0] || p.description?.split('.')[0] || '—')}</td></tr>`;
 }).join('\n')}
 </tbody>
 </table></div>
 
 <h2 id="by-use-case">Recommendations by Use Case</h2>
-<div class="takeaway green"><strong>✅ Best for VS Code users:</strong> GitHub Copilot — deepest VS Code integration, $10/mo or free, 100M+ users.</div>
-<div class="takeaway"><strong>💡 Best for codebase-aware AI:</strong> Cursor — full IDE with AI baked in, understands your entire project. Free tier available.</div>
-<div class="takeaway yellow"><strong>⚡ Best free option:</strong> ${coders.filter(p => p.pricing?.free).sort((a,b)=>(parseFloat(b.rating)||0)-(parseFloat(a.rating)||0))[0]?.name || 'Codeium'} — highest-rated tool with a genuine free plan, no time limit.</div>
+<div class="takeaway green"><strong>${ICONS.check} Best for VS Code users:</strong> GitHub Copilot — deepest VS Code integration, $10/mo or free, 100M+ users.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Best for codebase-aware AI:</strong> Cursor — full IDE with AI baked in, understands your entire project. Free tier available.</div>
+<div class="takeaway yellow"><strong>${ICONS.lightning} Best free option:</strong> ${coders.filter(p => p.pricing?.free).sort((a,b)=>(parseFloat(b.rating)||0)-(parseFloat(a.rating)||0))[0]?.name || 'Codeium'} — highest-rated tool with a genuine free plan, no time limit.</div>
 
 <h2 id="pricing">Pricing Comparison</h2>
 ${barChart(coders.filter(p => getMinPaidPrice(p)).map(p => ({ name: p.name, price: getMinPaidPrice(p) })), 'name', 'price', '$')}
@@ -768,7 +793,7 @@ ${coders.slice(0, 5).map((p, i) => `
 `).join('\n')}
 
 <div class="highlight">
-<h3>🔗 Compare AI Coding Tools</h3>
+<h3>${ICONS.link} Compare AI Coding Tools</h3>
 <p>See full feature matrix, radar charts, and side-by-side comparisons for all ${coders.length} tools:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/ai-coding">All AI Coding Tools →</a></p>
 </div>
@@ -824,7 +849,7 @@ function generateLLMIntegrationGuide() {
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#choose-provider">Choosing a Provider</a></li>
     <li><a href="#pricing-math">Pricing Math</a></li>
@@ -840,14 +865,14 @@ function generateLLMIntegrationGuide() {
 <h2 id="choose-provider">Step 1: Choose Your Provider</h2>
 <p>Consider three dimensions:</p>
 <div class="card-grid">
-  <div class="card"><h3>🎯 Quality Priority</h3><p>Need best-in-class reasoning? Go with <strong>OpenAI API</strong> (GPT-4) or <strong>Anthropic API</strong> (Claude). Expect to pay $1.5-5/1M input tokens.</p></div>
-  <div class="card"><h3>💰 Cost Priority</h3><p>Budget-conscious? <strong>DeepSeek</strong> ($0.14/1M) or <strong>Llama via Replicate</strong> ($0.05-0.10/1M) deliver excellent quality at 10-50× lower cost.</p></div>
+  <div class="card"><h3>${ICONS.target} Quality Priority</h3><p>Need best-in-class reasoning? Go with <strong>OpenAI API</strong> (GPT-4) or <strong>Anthropic API</strong> (Claude). Expect to pay $1.5-5/1M input tokens.</p></div>
+  <div class="card"><h3>${ICONS.money} Cost Priority</h3><p>Budget-conscious? <strong>DeepSeek</strong> ($0.14/1M) or <strong>Llama via Replicate</strong> ($0.05-0.10/1M) deliver excellent quality at 10-50× lower cost.</p></div>
   <div class="card"><h3>🔄 Flexibility</h3><p>Need multiple models? <strong>Hugging Face</strong> and <strong>Replicate</strong> give access to hundreds of open-source models. Use LiteLLM for unified API routing.</p></div>
-  <div class="card"><h3>🆓 Free Tier</h3><p>Prototyping? Start with <strong>Google AI Studio</strong> (free Gemini access) or <strong>Cohere</strong> (free trial). No credit card needed.</p></div>
+  <div class="card"><h3>${ICONS.free} Free Tier</h3><p>Prototyping? Start with <strong>Google AI Studio</strong> (free Gemini access) or <strong>Cohere</strong> (free trial). No credit card needed.</p></div>
 </div>
 
 <h2 id="pricing-math">Understanding Token Pricing</h2>
-<div class="takeaway"><strong>💡 Token Math:</strong> 1 token ≈ 0.75 words. 1,000 words ≈ 1,333 tokens. A 10-page document ≈ 7,500 tokens. <br><br><strong>Cost formula:</strong> (input_tokens + output_tokens) / 1,000,000 × price_per_1M = cost</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Token Math:</strong> 1 token ≈ 0.75 words. 1,000 words ≈ 1,333 tokens. A 10-page document ≈ 7,500 tokens. <br><br><strong>Cost formula:</strong> (input_tokens + output_tokens) / 1,000,000 × price_per_1M = cost</div>
 
 <p>Example: Processing 1,000 customer emails daily (avg 500 tokens input, 200 tokens output):</p>
 <div class="table-wrap"><table>
@@ -888,12 +913,12 @@ ${llmApis.slice(0, 5).map(p => `
 </ul>
 
 <h2 id="cost-optimization">Cost Optimization Strategies</h2>
-<div class="takeaway green"><strong>✅ Quick Wins:</strong> Switch from GPT-4 to GPT-4o mini for 95% of requests — same quality for most use cases at 10× lower cost.</div>
-<div class="takeaway"><strong>💡 Advanced:</strong> Self-host Llama 3.1 70B on a $0.30/hr GPU. At 1M+ tokens/day, it's cheaper than any API provider.</div>
-<div class="takeaway yellow"><strong>⚡ Cache Layer:</strong> Tools like GPTCache or Redis can cache semantic query results, reducing API calls by 40-60% for chat applications.</div>
+<div class="takeaway green"><strong>${ICONS.check} Quick Wins:</strong> Switch from GPT-4 to GPT-4o mini for 95% of requests — same quality for most use cases at 10× lower cost.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Advanced:</strong> Self-host Llama 3.1 70B on a $0.30/hr GPU. At 1M+ tokens/day, it's cheaper than any API provider.</div>
+<div class="takeaway yellow"><strong>${ICONS.lightning} Cache Layer:</strong> Tools like GPTCache or Redis can cache semantic query results, reducing API calls by 40-60% for chat applications.</div>
 
 <div class="highlight">
-<h3>🔗 Compare LLM APIs Side-by-Side</h3>
+<h3>${ICONS.link} Compare LLM APIs Side-by-Side</h3>
 <p>Interactive feature matrices and live pricing for all ${llmApis.length} providers:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/llm">Compare All LLMs →</a> &nbsp; <a class="cta-secondary" href="${SITE_URL}/pricing">Live Pricing Data</a></p>
 </div>
@@ -957,7 +982,7 @@ function generateFreeAIStartups() {
 </div>
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
-<div class="takeaway"><strong>💡 Our Criteria:</strong> Only permanent free plans (not trials). Tools must be actively maintained and rated 4.0+ on G2 or Capterra. Data from ComparEdge's database of 331+ products.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Our Criteria:</strong> Only permanent free plans (not trials). Tools must be actively maintained and rated 4.0+ on G2 or Capterra. Data from ComparEdge's database of 331+ products.</div>
 
 <h2 id="top-20">All 20 Free AI Tools Ranked</h2>
 <div class="table-wrap"><table>
@@ -984,7 +1009,7 @@ ${tools.slice(0, 3).map(p => `
 `).join('\n')}
 
 <div class="highlight">
-<h3>💰 Start Free, Scale Smart</h3>
+<h3>${ICONS.money} Start Free, Scale Smart</h3>
 <p>These free tiers are enough to validate your product. When you hit limits, <a href="${SITE_URL}">ComparEdge</a> has detailed pricing breakdowns to find the best upgrade path.</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}">Explore 331+ Tools →</a></p>
 </div>
@@ -1055,7 +1080,7 @@ function generateMarketAnalysis() {
 
 <p>This analysis covers <strong>${total} AI and SaaS products</strong> tracked by ComparEdge across ${Object.keys(cats).length} categories. Data sourced from official product pages, G2, and Capterra — updated ${TODAY_DISPLAY}.</p>
 
-<div class="takeaway"><strong>💡 Key Finding:</strong> ${Math.round(withFree/total*100)}% of tools have free plans — meaning free trials or freemium tiers are now the dominant go-to-market strategy, not the exception.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Key Finding:</strong> ${Math.round(withFree/total*100)}% of tools have free plans — meaning free trials or freemium tiers are now the dominant go-to-market strategy, not the exception.</div>
 
 <h2 id="by-category">Products by Category</h2>
 ${barChart(topCats.map(([c, n]) => ({ name: c.replace(/-/g, ' '), count: n })), 'name', 'count', '')}
@@ -1080,7 +1105,7 @@ ${barChart(topRated.map(c => ({ name: c.cat.replace(/-/g,' '), rating: parseFloa
 <li><strong>${total - withFree} products</strong> are paid-only</li>
 <li>The trend toward freemium models continues to accelerate in ${YEAR}</li>
 </ul>
-<div class="takeaway green"><strong>✅ For Buyers:</strong> With ${withFree} free options available, there's almost always a way to test before you pay. Use <a href="${SITE_URL}">ComparEdge</a> to filter by free plan across any category.</div>
+<div class="takeaway green"><strong>${ICONS.check} For Buyers:</strong> With ${withFree} free options available, there's almost always a way to test before you pay. Use <a href="${SITE_URL}">ComparEdge</a> to filter by free plan across any category.</div>
 
 <h2 id="key-insights">Key Market Insights</h2>
 <ul>
@@ -1091,7 +1116,7 @@ ${barChart(topRated.map(c => ({ name: c.cat.replace(/-/g,' '), rating: parseFloa
 </ul>
 
 <div class="highlight">
-<h3>🔗 Explore the Full Dataset</h3>
+<h3>${ICONS.link} Explore the Full Dataset</h3>
 <p>All ${total} products with feature matrices, real pricing, and side-by-side comparisons:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}">Browse All ${total} Tools →</a></p>
 </div>
@@ -1152,7 +1177,7 @@ function generateRealCostAI() {
 
 <p>Budgeting for AI tools in ${YEAR} is complicated by wildly different pricing models — subscriptions, per-seat, token-based, usage-based. Here's a clear breakdown by category using real pricing data from ComparEdge's database.</p>
 
-<div class="takeaway"><strong>💡 Key Finding:</strong> A fully-equipped AI stack for a small team (coding + writing + image + CRM + PM) can run $60-300/month — or $0 if you choose free tiers carefully.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Key Finding:</strong> A fully-equipped AI stack for a small team (coding + writing + image + CRM + PM) can run $60-300/month — or $0 if you choose free tiers carefully.</div>
 
 <h2 id="by-category">Pricing by Category</h2>
 <div class="table-wrap"><table>
@@ -1182,7 +1207,7 @@ ${catData.map(c => {
 ${catProds.map(p => {
   const mp = getMinPaidPrice(p);
   const r = getAvgRating(p);
-  return `<tr><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td>${p.pricing?.free ? '✅' : '❌'}</td><td>${mp ? `$${mp}/mo` : 'Free only'}</td><td>${r ? `${r}/5` : '—'}</td></tr>`;
+  return `<tr><td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td><td>${p.pricing?.free ? ICONS.check : ICONS.x}</td><td>${mp ? `$${mp}/mo` : 'Free only'}</td><td>${r ? `${r}/5` : '—'}</td></tr>`;
 }).join('')}
 </tbody>
 </table></div>`;
@@ -1198,7 +1223,7 @@ ${catProds.map(p => {
 </ul>
 
 <div class="highlight">
-<h3>🔗 Compare Pricing Across All Categories</h3>
+<h3>${ICONS.link} Compare Pricing Across All Categories</h3>
 <p>Filter by free plan, price range, and features across all 331+ tools on ComparEdge:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/pricing">Pricing Comparison Tool →</a></p>
 </div>
@@ -1253,7 +1278,7 @@ function generateHighestRated() {
 
 <p>Out of <strong>${products.filter(p=>p.rating?.g2).length} rated tools</strong> in our database, these 25 stand out with the highest combined G2 + Capterra scores. All ratings are from verified users — no editorial bias.</p>
 
-<div class="takeaway"><strong>💡 Methodology:</strong> We average G2 and Capterra scores (when both available). Tools with only one rating source use that single score. Minimum 10 reviews required for inclusion.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Methodology:</strong> We average G2 and Capterra scores (when both available). Tools with only one rating source use that single score. Minimum 10 reviews required for inclusion.</div>
 
 <h2 id="top-25">Top 25 Highest Rated Tools</h2>
 ${barChart(rated.slice(0, 15).map(p => ({ name: p.name, rating: parseFloat(p.avgRating) })), 'name', 'rating', '')}
@@ -1268,7 +1293,7 @@ ${rated.map((p, i) => `<tr>
   <td><span style="color:#f59e0b">${stars(p.avgRating)}</span> <strong>${p.avgRating}</strong></td>
   <td>${p.rating.g2 || '—'}</td>
   <td>${p.rating.capterra || '—'}</td>
-  <td>${p.pricing?.free ? '✅' : '❌'}</td>
+  <td>${p.pricing?.free ? ICONS.check : ICONS.x}</td>
 </tr>`).join('')}
 </tbody>
 </table></div>
@@ -1288,7 +1313,7 @@ ${['llm','ai-coding','ai-image','crm','email-marketing','project-management','vi
 </table></div>
 
 <div class="highlight">
-<h3>🔗 Find Your Top Tool</h3>
+<h3>${ICONS.link} Find Your Top Tool</h3>
 <p>Filter and sort all 331+ tools by rating, price, free plan, and features on ComparEdge:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}">Explore All Tools →</a></p>
 </div>
@@ -1346,7 +1371,7 @@ function generateAIImageRoundup() {
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#all-tools">All ${tools.length} Tools Compared</a></li>
     <li><a href="#free-options">Free Options</a></li>
@@ -1366,7 +1391,7 @@ ${tools.map((p, i) => {
     <td><span class="rank-badge">${i+1}</span></td>
     <td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td>
     <td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td>
-    <td>${p.pricing?.free ? '✅' : '❌'}</td>
+    <td>${p.pricing?.free ? ICONS.check : ICONS.x}</td>
     <td>${mp ? `$${mp}/mo` : p.pricing?.free ? 'Free' : 'Custom'}</td>
     <td style="font-size:13px">${escHtml((p.features || [])[0] || '—')}</td>
   </tr>`;
@@ -1388,9 +1413,9 @@ ${freeTools.slice(0, 4).map(p => `
 </div>
 
 <h2 id="top-picks">Top Picks by Category</h2>
-<div class="takeaway green"><strong>✅ Best Overall:</strong> ${tools[0].name} (${tools[0].rating}/5) — top user-rated tool overall.</div>
-<div class="takeaway"><strong>💡 Best Free:</strong> ${freeTools.sort((a,b)=>(parseFloat(b.rating)||0)-(parseFloat(a.rating)||0))[0].name} (${freeTools[0].rating}/5) — highest-rated with a genuine free plan.</div>
-<div class="takeaway yellow"><strong>⚡ Best for Beginners:</strong> Canva AI — integrates AI image generation into the broader Canva design platform. Free plan available.</div>
+<div class="takeaway green"><strong>${ICONS.check} Best Overall:</strong> ${tools[0].name} (${tools[0].rating}/5) — top user-rated tool overall.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Best Free:</strong> ${freeTools.sort((a,b)=>(parseFloat(b.rating)||0)-(parseFloat(a.rating)||0))[0].name} (${freeTools[0].rating}/5) — highest-rated with a genuine free plan.</div>
+<div class="takeaway yellow"><strong>${ICONS.lightning} Best for Beginners:</strong> Canva AI — integrates AI image generation into the broader Canva design platform. Free plan available.</div>
 
 ${tools.slice(0, 5).map((p, i) => `
 <div class="product-card">
@@ -1415,7 +1440,7 @@ ${tools.slice(0, 5).map((p, i) => `
 </ul>
 
 <div class="highlight">
-<h3>🔗 Compare AI Image Tools</h3>
+<h3>${ICONS.link} Compare AI Image Tools</h3>
 <p>Side-by-side feature comparison and live pricing for all ${tools.length} tools:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/ai-image">All AI Image Tools →</a></p>
 </div>
@@ -1478,7 +1503,7 @@ function generateCRMComparison() {
 
 <p>We analyzed <strong>${tools.length} CRM platforms</strong> to help you find the right fit — from solo freelancers on free plans to enterprise sales teams needing deep customization.</p>
 
-<div class="takeaway"><strong>💡 Key Finding:</strong> ${freeTools.length} of ${tools.length} CRM tools have free plans — you can test most options before spending a penny. Start free, upgrade when you hit limits.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Key Finding:</strong> ${freeTools.length} of ${tools.length} CRM tools have free plans — you can test most options before spending a penny. Start free, upgrade when you hit limits.</div>
 
 <h2 id="all-crm">All ${tools.length} CRM Tools Ranked</h2>
 ${barChart(tools.slice(0,12).map(p => ({ name: p.name, rating: parseFloat(p.rating)||0 })), 'name', 'rating', '')}
@@ -1492,7 +1517,7 @@ ${tools.map((p, i) => {
     <td><span class="rank-badge">${i+1}</span></td>
     <td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td>
     <td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td>
-    <td>${p.pricing?.free ? '✅' : '❌'}</td>
+    <td>${p.pricing?.free ? ICONS.check : ICONS.x}</td>
     <td>${mp ? `$${mp}/mo` : p.pricing?.free ? 'Free only' : 'Custom'}</td>
     <td style="font-size:13px">${escHtml(String(useCase).slice(0,60))}</td>
   </tr>`;
@@ -1510,8 +1535,8 @@ ${tools.slice(0, 5).map((p, i) => `
   </div>
   <p>${escHtml(p.description || '')}</p>
   <div class="pros-cons">
-    <div class="pros"><h3>✅ Pros</h3><ul>${(p.pros || []).slice(0,3).map(x=>`<li>${escHtml(x)}</li>`).join('')}</ul></div>
-    <div class="cons"><h3>❌ Cons</h3><ul>${(p.cons || []).slice(0,2).map(x=>`<li>${escHtml(x)}</li>`).join('')}</ul></div>
+    <div class="pros"><h3>${ICONS.check} Pros</h3><ul>${(p.pros || []).slice(0,3).map(x=>`<li>${escHtml(x)}</li>`).join('')}</ul></div>
+    <div class="cons"><h3>${ICONS.x} Cons</h3><ul>${(p.cons || []).slice(0,2).map(x=>`<li>${escHtml(x)}</li>`).join('')}</ul></div>
   </div>
   <a href="${SITE_URL}/tools/${p.slug}">Full ${escHtml(p.name)} review →</a>
 </div>
@@ -1530,7 +1555,7 @@ ${freeTools.slice(0,4).map((p,i) => `
 </div>
 
 <div class="highlight">
-<h3>🔗 Compare CRM Tools</h3>
+<h3>${ICONS.link} Compare CRM Tools</h3>
 <p>Feature matrix, radar charts, and live pricing for all ${tools.length} CRMs:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/crm">All CRM Tools →</a> &nbsp; <a class="cta-secondary" href="${SITE_URL}/compare">Side-by-Side Compare</a></p>
 </div>
@@ -1592,7 +1617,7 @@ function generateEmailMarketing() {
 
 <p>We compared all <strong>${tools.length} major email marketing platforms</strong> across pricing, automation capabilities, deliverability, and ease of use. Data sourced from G2, Capterra, and official pricing pages.</p>
 
-<div class="takeaway"><strong>💡 Key Insight:</strong> ${freeTools.length} platforms offer free plans — perfect for getting started. The key differentiator at scale isn't price, it's automation quality and deliverability rates.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Key Insight:</strong> ${freeTools.length} platforms offer free plans — perfect for getting started. The key differentiator at scale isn't price, it's automation quality and deliverability rates.</div>
 
 <h2 id="all-platforms">All ${tools.length} Platforms Compared</h2>
 ${barChart(tools.slice(0,12).map(p => ({ name: p.name, rating: parseFloat(p.rating)||0 })), 'name', 'rating', '')}
@@ -1606,7 +1631,7 @@ ${tools.map((p, i) => {
     <td><span class="rank-badge">${i+1}</span></td>
     <td><strong><a href="${SITE_URL}/tools/${p.slug}">${escHtml(p.name)}</a></strong></td>
     <td><span style="color:#f59e0b">${stars(p.rating)}</span> ${p.rating || '—'}</td>
-    <td>${p.pricing?.free ? '✅' : '❌'}</td>
+    <td>${p.pricing?.free ? ICONS.check : ICONS.x}</td>
     <td>${mp ? `$${mp}/mo` : p.pricing?.free ? 'Free only' : 'Custom'}</td>
     <td style="font-size:13px">${escHtml((p.features||[])[0]||'—')}</td>
   </tr>`;
@@ -1629,12 +1654,12 @@ ${tools.slice(0, 5).map((p, i) => `
 `).join('\n')}
 
 <h2 id="by-use-case">Recommendations by Use Case</h2>
-<div class="takeaway green"><strong>✅ Best for Small Business:</strong> Mailchimp or MailerLite — intuitive, good free plans, strong template libraries.</div>
-<div class="takeaway"><strong>💡 Best for E-commerce:</strong> Klaviyo — built for Shopify, revenue-focused automations, powerful segmentation.</div>
-<div class="takeaway yellow"><strong>⚡ Best for Creators/Newsletters:</strong> beehiiv or Kit — audience-focused features, monetization tools, clean subscriber management.</div>
+<div class="takeaway green"><strong>${ICONS.check} Best for Small Business:</strong> Mailchimp or MailerLite — intuitive, good free plans, strong template libraries.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Best for E-commerce:</strong> Klaviyo — built for Shopify, revenue-focused automations, powerful segmentation.</div>
+<div class="takeaway yellow"><strong>${ICONS.lightning} Best for Creators/Newsletters:</strong> beehiiv or Kit — audience-focused features, monetization tools, clean subscriber management.</div>
 
 <div class="highlight">
-<h3>🔗 Compare Email Marketing Platforms</h3>
+<h3>${ICONS.link} Compare Email Marketing Platforms</h3>
 <p>Feature matrix and live pricing for all ${tools.length} platforms on ComparEdge:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/email-marketing">All Email Tools →</a></p>
 </div>
@@ -1695,7 +1720,7 @@ function generateOpenSourceVsProprietary() {
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#comparison">Head-to-Head Comparison</a></li>
     <li><a href="#cost">Cost Analysis</a></li>
@@ -1737,13 +1762,13 @@ function generateOpenSourceVsProprietary() {
 <div class="table-wrap"><table>
 <thead><tr><th>Factor</th><th>Open Source</th><th>Proprietary</th></tr></thead>
 <tbody>
-<tr><td><strong>Cost at scale</strong></td><td style="color:#10b981">✅ Very low (infrastructure only)</td><td style="color:#ef4444">❌ High per-token fees</td></tr>
-<tr><td><strong>Setup complexity</strong></td><td style="color:#ef4444">❌ High (infrastructure required)</td><td style="color:#10b981">✅ API call = done</td></tr>
-<tr><td><strong>Data privacy</strong></td><td style="color:#10b981">✅ Full control</td><td style="color:#f59e0b">⚠️ Data sent to provider</td></tr>
-<tr><td><strong>Latest models</strong></td><td style="color:#f59e0b">⚠️ 6-12 months behind</td><td style="color:#10b981">✅ Always latest</td></tr>
-<tr><td><strong>Customization</strong></td><td style="color:#10b981">✅ Fine-tune freely</td><td style="color:#ef4444">❌ Limited to API options</td></tr>
-<tr><td><strong>Quality (reasoning)</strong></td><td style="color:#f59e0b">⚠️ Near-equal for most tasks</td><td style="color:#10b981">✅ Best on hard tasks</td></tr>
-<tr><td><strong>Uptime SLA</strong></td><td style="color:#ef4444">❌ Your responsibility</td><td style="color:#10b981">✅ 99.9%+ guaranteed</td></tr>
+<tr><td><strong>Cost at scale</strong></td><td style="color:#10b981">${ICONS.check} Very low (infrastructure only)</td><td style="color:#ef4444">${ICONS.x} High per-token fees</td></tr>
+<tr><td><strong>Setup complexity</strong></td><td style="color:#ef4444">${ICONS.x} High (infrastructure required)</td><td style="color:#10b981">${ICONS.check} API call = done</td></tr>
+<tr><td><strong>Data privacy</strong></td><td style="color:#10b981">${ICONS.check} Full control</td><td style="color:#f59e0b">${ICONS.warning} Data sent to provider</td></tr>
+<tr><td><strong>Latest models</strong></td><td style="color:#f59e0b">${ICONS.warning} 6-12 months behind</td><td style="color:#10b981">${ICONS.check} Always latest</td></tr>
+<tr><td><strong>Customization</strong></td><td style="color:#10b981">${ICONS.check} Fine-tune freely</td><td style="color:#ef4444">${ICONS.x} Limited to API options</td></tr>
+<tr><td><strong>Quality (reasoning)</strong></td><td style="color:#f59e0b">${ICONS.warning} Near-equal for most tasks</td><td style="color:#10b981">${ICONS.check} Best on hard tasks</td></tr>
+<tr><td><strong>Uptime SLA</strong></td><td style="color:#ef4444">${ICONS.x} Your responsibility</td><td style="color:#10b981">${ICONS.check} 99.9%+ guaranteed</td></tr>
 </tbody>
 </table></div>
 
@@ -1788,12 +1813,12 @@ ${proprietary.slice(0, 3).map(p => `
 `).join('')}
 
 <h2 id="when-to-use">When to Use Each</h2>
-<div class="takeaway green"><strong>✅ Choose Open Source when:</strong> You need data privacy, high-volume processing (1M+ tokens/day), custom fine-tuning, or have existing GPU infrastructure.</div>
-<div class="takeaway"><strong>💡 Choose Proprietary when:</strong> You need the latest model capabilities, minimal DevOps overhead, guaranteed uptime SLAs, or are building a prototype quickly.</div>
-<div class="takeaway yellow"><strong>⚡ Hybrid Approach:</strong> Many production apps use proprietary APIs for complex tasks + open source for high-volume simple tasks. LiteLLM makes multi-provider routing easy.</div>
+<div class="takeaway green"><strong>${ICONS.check} Choose Open Source when:</strong> You need data privacy, high-volume processing (1M+ tokens/day), custom fine-tuning, or have existing GPU infrastructure.</div>
+<div class="takeaway"><strong>${ICONS.lightbulb} Choose Proprietary when:</strong> You need the latest model capabilities, minimal DevOps overhead, guaranteed uptime SLAs, or are building a prototype quickly.</div>
+<div class="takeaway yellow"><strong>${ICONS.lightning} Hybrid Approach:</strong> Many production apps use proprietary APIs for complex tasks + open source for high-volume simple tasks. LiteLLM makes multi-provider routing easy.</div>
 
 <div class="highlight">
-<h3>🔗 Compare All LLMs</h3>
+<h3>${ICONS.link} Compare All LLMs</h3>
 <p>Side-by-side feature comparison and live pricing for all ${products.filter(p=>p.category==='llm').length} LLMs:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/best/llm">Compare LLMs →</a></p>
 </div>
@@ -1845,7 +1870,7 @@ function generateAIPricingGuide() {
 <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
-  <h4>📋 Contents</h4>
+  <h4>${ICONS.clipboard} Contents</h4>
   <ol>
     <li><a href="#trick-1">The Per-Seat Multiplier</a></li>
     <li><a href="#trick-2">Annual Billing Lock-In</a></li>
@@ -1885,11 +1910,11 @@ function generateAIPricingGuide() {
 <p>"Free" means two very different things.</p>
 <div class="card-grid">
 <div class="card">
-  <h3>✅ Free Plan (Freemium)</h3>
+  <h3>${ICONS.check} Free Plan (Freemium)</h3>
   <p>Permanent free tier — you can use it forever with limitations. Examples: HubSpot Free CRM, Mailchimp Free, GitHub Copilot Free.</p>
 </div>
 <div class="card">
-  <h3>⚠️ Free Trial</h3>
+  <h3>${ICONS.warning} Free Trial</h3>
   <p>Time-limited access (14-30 days). You must pay or lose access. Many tools advertise "free" prominently but it's actually just a trial.</p>
 </div>
 </div>
@@ -1917,7 +1942,7 @@ function generateAIPricingGuide() {
 <blockquote>"The real question isn't 'what does this tool cost?' but 'what will this tool cost me, at my scale, with the features I need?'" — ComparEdge Research</blockquote>
 
 <div class="highlight">
-<h3>🔗 Transparent Pricing Data</h3>
+<h3>${ICONS.link} Transparent Pricing Data</h3>
 <p>ComparEdge publishes detailed pricing breakdowns for all ${products.length}+ tools — including all plan tiers, per-seat vs flat rate, and known hidden costs:</p>
 <p style="margin-top:12px"><a class="cta" href="${SITE_URL}/pricing">View Pricing Data →</a></p>
 </div>
@@ -1985,22 +2010,22 @@ function generateIndex(articles) {
   const sections = {
     guides: {
       label: 'Guides & How-Tos',
-      emoji: '📚',
+      emoji: ICONS.books,
       slugs: ['how-to-choose-ai-coding-assistant', 'llm-api-integration-guide', 'free-ai-tools-startups-2026', 'ai-pricing-pages-guide']
     },
     comparisons: {
       label: 'Head-to-Head Comparisons',
-      emoji: '⚔️',
+      emoji: ICONS.swords,
       slugs: ['cheapest-llm-api-pricing', 'claude-api-vs-openai-api', 'cursor-vs-github-copilot', 'deepseek-vs-openai-api', 'chatgpt-vs-claude', 'dalle-vs-midjourney', 'clickup-vs-notion']
     },
     analysis: {
       label: 'Data & Analysis',
-      emoji: '📊',
+      emoji: ICONS.chart,
       slugs: ['ai-tools-market-2026-analysis', 'real-cost-ai-2026', 'highest-rated-ai-tools-2026', 'open-source-vs-proprietary-llms']
     },
     rankings: {
       label: 'Category Rankings',
-      emoji: '🏆',
+      emoji: ICONS.trophy,
       slugs: ['ai-image-generators-2026', 'crm-software-compared-2026', 'best-email-marketing-2026', 'best-free-llm', 'best-free-ai-coding', 'best-free-project-management']
     }
   };
@@ -2040,7 +2065,7 @@ ${secArticles.map(a => `
 ${sectionsHtml}
 
 <div class="highlight" style="text-align:center;margin-top:40px">
-  <h3>🔗 Want Interactive Comparisons?</h3>
+  <h3>${ICONS.link} Want Interactive Comparisons?</h3>
   <p>Radar charts, feature matrices, and live pricing for ${products.length}+ tools on ComparEdge.</p>
   <p style="margin-top:16px"><a class="cta" href="${SITE_URL}">Explore ComparEdge →</a></p>
 </div>
@@ -2073,14 +2098,14 @@ articles.forEach(a => {
   const pageSchema = a.schema;
   const html = htmlPage({ ...a, canonical: `${BLOG_URL}/${a.slug}.html` });
   fs.writeFileSync(path.join(outDir, `${a.slug}.html`), html, 'utf8');
-  console.log(`✅ ${a.slug}.html — "${a.title.slice(0, 55)}..."`);
+  console.log(`[OK] ${a.slug}.html — "${a.title.slice(0, 55)}..."`);
 });
 
 // Write index
 const indexData = generateIndex(articles);
 const indexHtml = htmlPage({ ...indexData, canonical: BLOG_URL + '/' });
 fs.writeFileSync(path.join(outDir, 'index.html'), indexHtml, 'utf8');
-console.log(`✅ index.html`);
+console.log(`[OK] index.html`);
 
 // Write sitemap
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -2089,12 +2114,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${articles.map(a => `<url><loc>${BLOG_URL}/${a.slug}.html</loc><lastmod>${TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`).join('\n')}
 </urlset>`;
 fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemap, 'utf8');
-console.log(`✅ sitemap.xml (${articles.length + 1} URLs)`);
+console.log(`[OK] sitemap.xml (${articles.length + 1} URLs)`);
 
 // Write robots.txt
 const robots = `User-agent: *\nAllow: /\nSitemap: ${BLOG_URL}/sitemap.xml`;
 fs.writeFileSync(path.join(outDir, 'robots.txt'), robots, 'utf8');
-console.log(`✅ robots.txt`);
+console.log(`[OK] robots.txt`);
 
 console.log(`\n🎉 Generated ${articles.length} articles + index + sitemap + robots.txt`);
 console.log(`📁 Output: ${outDir}`);
