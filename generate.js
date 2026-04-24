@@ -126,9 +126,9 @@ header .nav-links a.primary:hover{opacity:.9}
 .stat-num{font-size:1.8em;font-weight:800;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
 .stat-label{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
 /* ── Meta ── */
-.meta{color:#555;font-size:14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.meta{color:#555;font-size:14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .meta-sep{color:#333}
-.updated{display:inline-flex;align-items:center;gap:6px;background:#111827;border:1px solid #1f2937;border-radius:20px;padding:4px 12px;font-size:12px;color:#6b7280}
+.updated{display:inline-flex;align-items:center;gap:5px;background:#111827;border:1px solid #1f2937;border-radius:20px;padding:3px 10px;font-size:12px;color:#6b7280;margin-left:2px}
 .updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 /* ── TOC ── */
@@ -242,6 +242,7 @@ footer p+p{margin-top:8px}
   .site-logo svg{width:22px;height:20px}
   header .nav-links{display:none}
   .burger{display:block}
+  table th:nth-child(4),table td:nth-child(4),table th:nth-child(5),table td:nth-child(5){display:none}
   .container{padding:16px 14px}
 }
 @media(min-width:900px){
@@ -348,8 +349,10 @@ function makeFAQSchema(faqs) {
 
 // 1. LLM PRICING
 function generateLLMPricingArticle() {
+  // Deduplicate products with identical token pricing (e.g. Llama vs Llama 3.1)
+  const SKIP_SLUGS = new Set(['llama-3-1', 'deepseek-v3', 'mistral-large', 'command-r-plus', 'phi-3-medium']);
   const llms = products
-    .filter(p => p.category === 'llm' && p.tokenPricing?.models?.length)
+    .filter(p => p.category === 'llm' && p.tokenPricing?.models?.length && !SKIP_SLUGS.has(p.slug))
     .map(p => ({
       ...p,
       cheapestInput: Math.min(...p.tokenPricing.models.map(m => m.input)),
@@ -394,10 +397,9 @@ function generateLLMPricingArticle() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time><span class="meta-sep">·</span>
   <span>${llms.length} providers compared</span>
+  <div class="updated"><span class="dot"></span>Verified ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Prices verified ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -542,9 +544,8 @@ ${p2.tokenPricing.models.map(m => `<tr><td>${escHtml(p2.name)}: ${escHtml(m.name
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Data verified ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Data verified ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -681,10 +682,9 @@ function generateBestFreeArticle(category, categoryName) {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time><span class="meta-sep">·</span>
   <span>${catProducts.length} tools analyzed</span>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <p>We analyzed <strong>${catProducts.length} ${categoryName.toLowerCase()} tools</strong> with genuine free plans. Rankings based on verified G2 and Capterra ratings, not affiliate deals.</p>
 
@@ -775,9 +775,8 @@ function generateAICodingGuide() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -887,9 +886,8 @@ function generateLLMIntegrationGuide() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -1021,9 +1019,8 @@ function generateFreeAIStartups() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="takeaway"><strong>${ICONS.lightbulb} Our Criteria:</strong> Only permanent free plans (not trials). Tools must be actively maintained and rated 4.0+ on G2 or Capterra. Data from ComparEdge's database of 331+ products.</div>
 
@@ -1117,9 +1114,8 @@ function generateMarketAnalysis() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Data updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Data updated ${TODAY_DISPLAY}</div>
 
 <p>This analysis covers <strong>${total} AI and SaaS products</strong> tracked by ComparEdge across ${Object.keys(cats).length} categories. Data sourced from official product pages, G2, and Capterra — updated ${TODAY_DISPLAY}.</p>
 
@@ -1214,9 +1210,8 @@ function generateRealCostAI() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Prices verified ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Prices verified ${TODAY_DISPLAY}</div>
 
 <p>Budgeting for AI tools in ${YEAR} is complicated by wildly different pricing models — subscriptions, per-seat, token-based, usage-based. Here's a clear breakdown by category using real pricing data from ComparEdge's database.</p>
 
@@ -1315,9 +1310,8 @@ function generateHighestRated() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Ratings updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Ratings updated ${TODAY_DISPLAY}</div>
 
 <p>Out of <strong>${products.filter(p=>p.rating?.g2).length} rated tools</strong> in our database, these 25 stand out with the highest combined G2 + Capterra scores. All ratings are from verified users — no editorial bias.</p>
 
@@ -1409,9 +1403,8 @@ function generateAIImageRoundup() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -1758,9 +1751,8 @@ function generateOpenSourceVsProprietary() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
@@ -1908,9 +1900,8 @@ function generateAIPricingGuide() {
 </div>
 <div class="meta">
   <span>By ComparEdge Research</span><span class="meta-sep">·</span>
-  <time datetime="${TODAY}">${TODAY_DISPLAY}</time>
+  <div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 </div>
-<div class="updated"><span class="dot"></span>Updated ${TODAY_DISPLAY}</div>
 
 <div class="toc">
   <h4>${ICONS.clipboard} Contents</h4>
