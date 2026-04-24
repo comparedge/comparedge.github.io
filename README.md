@@ -3,7 +3,25 @@
 Data-driven comparisons of AI tools, LLMs, and SaaS products.
 
 🔗 **[blog.comparedge.com](https://blog.comparedge.com)** — 21 articles with real pricing data  
+🔗 **[blog.comparedge.com/playbooks/](https://blog.comparedge.com/playbooks/)** — 331 product playbooks  
 🔗 **[comparedge.com](https://comparedge.com)** — Compare 331+ tools with interactive charts  
+
+## Product Playbooks
+
+A collection of **331 unique product playbooks** — one per product in the ComparEdge database. Each playbook is a data-driven, SEO-optimized guide covering:
+
+- Pricing breakdown with plan-by-plan analysis
+- Feature overview with real product data
+- Use case scenarios from verified sources
+- Alternatives comparison within the category
+- 4 product-specific FAQ questions with schema markup
+- Animated SVGs with category-specific color themes
+- Full SEO: OG tags, Twitter cards, Article + BreadcrumbList + FAQ schemas
+
+Browse all playbooks: [blog.comparedge.com/playbooks/](https://blog.comparedge.com/playbooks/)
+
+### Playbook categories covered:
+AI/LLM · AI Coding · AI Creative (image, video, voice) · CRM · Project Management · Email Marketing · Cloud Hosting · Crypto/Web3 (wallets, exchanges, DEX, bots, analytics, tax, DeFi) · Video Conferencing · Productivity (AI writing, assistants, agents, VPN, accounting, password managers, website builders)
 
 ## Articles
 
