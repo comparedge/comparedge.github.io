@@ -158,12 +158,16 @@ code,pre{background:var(--surface);border:1px solid var(--border);border-radius:
 .article-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important}
 .article-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,.08);text-decoration:none!important}
 .article-card .card-img{height:170px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.article-card .card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.article-card .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .article-card .card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
+.article-card .card-desc{font-size:.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .article-card h3{font-family:system-ui,-apple-system,sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:10px}
-.article-card .card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
-.article-card .card-date{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--text-dim)}
-.article-card .card-read{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em}
+.article-card .card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.article-card .card-author{display:flex;align-items:center;gap:8px}
+.article-card .card-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;flex-shrink:0}
+.article-card .card-author-name{display:block;font-size:.75rem;color:var(--text);font-weight:500}
+.article-card .card-date{font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--text-muted);display:block}
+.article-card .card-read{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0}
 /* ── Category filter pills ── */
 .filter-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .filter-pill{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;padding:6px 16px;border-radius:20px;border:1px solid var(--border);color:var(--text-dim);background:none;cursor:pointer;transition:all .2s}
@@ -354,6 +358,8 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-0)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
   <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
   <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
   <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
@@ -361,79 +367,110 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
     <h3>Cheapest LLM APIs 2026: 9 Providers Ranked</h3>
+    <p class="card-desc">Compare LLM API token prices for 2026. Llama (Meta) from $0.05/1M tokens. 9 providers ranked by real input &amp; output …</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="ai-image-generators-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-1" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-1"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-1)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-1)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-1)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
+    <h3>AI Image Generators 2026: 13 Tools Compared</h3>
+    <p class="card-desc">Best AI image generators in 2026. Midjourney, DALL-E 3, Stable Diffusion &amp; 10 more compared. Real pricing, ratings &…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="how-to-choose-ai-coding-assistant.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-2"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-2)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">STEP-BY-STEP · EXPERT · GUIDE</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-2)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
+    <h3>How to Choose an AI Coding Assistant in 2026</h3>
+    <p class="card-desc">Decision framework for picking an AI coding tool in 2026. 10 tools compared by price, features &amp; IDE support. Real d…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#8b5cf640,#8b5cf620);color:#8b5cf6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="ai-tools-market-2026-analysis.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-3"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-3)" stroke-width="2.5" filter="url(#gl4-analysis-3)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">MARKET DATA · TRENDS · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
+    <h3>AI Tools Market 2026: 331 Products in 28 Categories</h3>
+    <p class="card-desc">Data analysis of 331 AI and SaaS tools across 28 categories. Avg rating: 4.42/5. 246 tools have free plans. Market insig…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#f59e0b40,#f59e0b20);color:#f59e0b">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
 </a>
 <a href="claude-api-vs-openai-api.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="cg-comparisons-1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-1"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-1)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
-  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-1)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-1)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
-  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
-  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
-  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>Anthropic API (Claude) vs OpenAI API 2026: Which Is Better?</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="cursor-vs-github-copilot.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="cg-comparisons-2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-2)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
-  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-2)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-2)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
-  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
-  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
-  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>GitHub Copilot vs Cursor 2026: Which Is Better?</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="deepseek-vs-openai-api.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="cg-comparisons-3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-3"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-3)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
-  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-3)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-3)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
-  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
-  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
-  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>DeepSeek vs OpenAI API 2026: Which Is Better?</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="chatgpt-vs-claude.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
   <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="300" height="170" fill="#0a0e1a"/>
   <defs><linearGradient id="cg-comparisons-4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-4"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
@@ -442,81 +479,24 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-4)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
   <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
   <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
   <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>ChatGPT vs Claude 2026: Which Is Better?</h3>
+    <h3>Anthropic API (Claude) vs OpenAI API 2026: Which Is Better?</h3>
+    <p class="card-desc">Anthropic API (Claude) vs OpenAI API comparison 2026. Anthropic API (Claude): $1/1M tokens, 4.7/5. OpenAI API: $0.75/1M …</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="dalle-vs-midjourney.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="cg-comparisons-5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-5"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-5)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
-  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-5)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-5)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
-  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
-  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
-  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>Midjourney vs DALL-E 3 2026: Which Is Better?</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="clickup-vs-notion.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="cg-comparisons-6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-6"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-6)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
-  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-6)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-6)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
-  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
-  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
-  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
-    <h3>Notion vs ClickUp 2026: Which Is Better?</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="ai-image-generators-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="rg-rankings-7" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-7"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-7)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
-  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
-  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
-  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
-  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
-    <h3>AI Image Generators 2026: 13 Tools Compared</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
@@ -524,21 +504,120 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 <a href="crm-software-compared-2026.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
   <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="rg-rankings-8" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-8"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-8)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <defs><linearGradient id="rg-rankings-5" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-5"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-5)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-5)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-5)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
   <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
   <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
   <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
     <h3>CRM Software 2026: 18 Tools From Free to Enterprise</h3>
+    <p class="card-desc">Compare 18 CRM tools in 2026. Free plans, pricing tiers, and ratings. From $12/mo to enterprise. #1 rated: Less Annoying…</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="llm-api-integration-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-6"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-6)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">STEP-BY-STEP · EXPERT · GUIDE</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-6)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
+    <h3>LLM API Guide 2026: Costs, Models &amp; Integration</h3>
+    <p class="card-desc">Complete guide to integrating LLM APIs in 2026. Real token costs, code examples, and best practices. Covers 14 providers…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#8b5cf640,#8b5cf620);color:#8b5cf6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="real-cost-ai-2026.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="ag-analysis-7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-7"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-7)" stroke-width="2.5" filter="url(#gl4-analysis-7)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">MARKET DATA · TRENDS · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
+    <h3>The Real Cost of AI in 2026: Free to Enterprise</h3>
+    <p class="card-desc">What does AI actually cost in 2026? Pricing analysis across 8 categories. From $0 free tiers to $299+/month enterprise p…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#f59e0b40,#f59e0b20);color:#f59e0b">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="cursor-vs-github-copilot.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-8" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-8"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-8)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-8)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-8)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
+    <h3>GitHub Copilot vs Cursor 2026: Which Is Better?</h3>
+    <p class="card-desc">GitHub Copilot vs Cursor comparison 2026. GitHub Copilot: $10/mo, 4.5/5. Cursor: $20/mo, 4.8/5. Pricing, features &amp; …</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
@@ -553,122 +632,23 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
   <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
   <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
   <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
     <h3>Best Email Marketing 2026: 20 Platforms Ranked</h3>
+    <p class="card-desc">Compare 20 email marketing platforms in 2026. Free plans, pricing, automation &amp; deliverability. #1: Loops (4.8/5). R…</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="best-free-llm.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="rg-rankings-10" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-10"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-10)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
-  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
-  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
-  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
-  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
-    <h3>Best Free AI Models &amp; LLMs 2026: Top 20 Ranked</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="best-free-ai-coding.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="rg-rankings-11" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-11"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-11)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
-  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
-  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
-  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
-  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
-    <h3>Best Free AI Coding Tools 2026: Top 10 Ranked</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="best-free-project-management.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="rg-rankings-12" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-12"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-12)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
-  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
-  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
-  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
-  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
-    <h3>Best Free Project Management Tools 2026: Top 19 Ranked</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="how-to-choose-ai-coding-assistant.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="gg-guides-13" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-13"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-13)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
-  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
-  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
-  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-13)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
-  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
-  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
-    <h3>How to Choose an AI Coding Assistant in 2026</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="llm-api-integration-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="gg-guides-14" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-14"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-14)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
-  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
-  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
-  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-14)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
-  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
-  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
-    <h3>LLM API Guide 2026: Costs, Models &amp; Integration</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
@@ -676,83 +656,29 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 <a href="free-ai-tools-startups-2026.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
   <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="gg-guides-15" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-15"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-15)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <defs><linearGradient id="gg-guides-10" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-10"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-10)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
   <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
   <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
   <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
-  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-15)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">STEP-BY-STEP · EXPERT · GUIDE</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-10)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
   <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
   <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
     <h3>20 Free AI Tools for Startups That Work in 2026</h3>
+    <p class="card-desc">Best free AI tools for startups in 2026. 20 tools with real free plans — no credit card tricks. Covers writing, coding, …</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="ai-pricing-pages-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="gg-guides-16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-16"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-16)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
-  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
-  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
-  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-16)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
-  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
-  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
-    <h3>Why AI Tool Pricing Misleads You (2026 Guide)</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="ai-tools-market-2026-analysis.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="ag-analysis-17" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-17"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-17)" stroke-width="2.5" filter="url(#gl4-analysis-17)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
-  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
-  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
-    <h3>AI Tools Market 2026: 331 Products in 28 Categories</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
-      <span class="card-read">Read →</span>
-    </div>
-  </div>
-</a>
-<a href="real-cost-ai-2026.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
-  <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="ag-analysis-18" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-18"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-18)" stroke-width="2.5" filter="url(#gl4-analysis-18)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
-  <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
-  <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
-  <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
-  <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
-  <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
-</svg></div>
-  <div class="card-body">
-    <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
-    <h3>The Real Cost of AI in 2026: Free to Enterprise</h3>
-    <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#8b5cf640,#8b5cf620);color:#8b5cf6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
@@ -760,20 +686,120 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 <a href="highest-rated-ai-tools-2026.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
   <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="ag-analysis-19" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-19"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-19)" stroke-width="2.5" filter="url(#gl4-analysis-19)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <defs><linearGradient id="ag-analysis-11" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-11"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-11)" stroke-width="2.5" filter="url(#gl4-analysis-11)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
   <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
   <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">MARKET DATA · TRENDS · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
     <h3>Highest Rated AI Tools 2026: Top 25 by User Score</h3>
+    <p class="card-desc">Top 25 AI and SaaS tools by real user ratings in 2026. Data from G2 and Capterra. #1: Height (4.8/5). Updated April 24, …</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#f59e0b40,#f59e0b20);color:#f59e0b">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="deepseek-vs-openai-api.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-12" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-12"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-12)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-12)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-12)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
+    <h3>DeepSeek vs OpenAI API 2026: Which Is Better?</h3>
+    <p class="card-desc">DeepSeek vs OpenAI API comparison 2026. DeepSeek: $0.14/1M tokens, 4.5/5. OpenAI API: $0.75/1M tokens, 4.8/5. Pricing, f…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="best-free-llm.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-13" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-13"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-13)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-13)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-13)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
+    <h3>Best Free AI Models &amp; LLMs 2026: Top 20 Ranked</h3>
+    <p class="card-desc">20 free ai models &amp; llms with real plans compared for 2026. #1: ChatGPT (4.7/5). Real ratings &amp; feature data.</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="ai-pricing-pages-guide.html" class="article-card fade-in" data-cat="guides" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(139,92,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="gg-guides-14" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><filter id="gl3-guides-14"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="150" cy="75" r="40" fill="rgba(139,92,246,.08)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#gl3-guides-14)"><animate attributeName="r" values="40;44;40" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
+  <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
+  <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">STEP-BY-STEP · EXPERT · GUIDE</text>
+  <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-guides-14)" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
+  <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#8b5cf6;background:rgba(139,92,246,.12);border:1px solid #8b5cf633">Guides</span>
+    <h3>Why AI Tool Pricing Misleads You (2026 Guide)</h3>
+    <p class="card-desc">AI pricing pages use 7 tricks to hide real costs. Learn to read them correctly. Real examples from 331 tools. Save money…</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#8b5cf640,#8b5cf620);color:#8b5cf6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
@@ -781,20 +807,183 @@ footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;ba
 <a href="open-source-vs-proprietary-llms.html" class="article-card fade-in" data-cat="analysis" style="text-decoration:none">
   <div class="card-img" style="background:rgba(245,158,11,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="300" height="170" fill="#0a0e1a"/>
-  <defs><linearGradient id="ag-analysis-20" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-20"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-20)" stroke-width="2.5" filter="url(#gl4-analysis-20)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
+  <defs><linearGradient id="ag-analysis-15" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient><filter id="gl4-analysis-15"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <polyline points="30,130 70,110 110,120 150,70 190,90 230,50 270,60" fill="none" stroke="url(#ag-analysis-15)" stroke-width="2.5" filter="url(#gl4-analysis-15)"><animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/></polyline>
   <circle cx="150" cy="70" r="5" fill="#f59e0b" opacity=".8"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
   <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">MARKET DATA · TRENDS · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg></div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:#f59e0b;background:rgba(245,158,11,.12);border:1px solid #f59e0b33">Analysis</span>
     <h3>Open Source vs Proprietary LLMs: 2026 Guide</h3>
+    <p class="card-desc">Open source LLMs (Llama, DeepSeek) vs proprietary (GPT-4, Claude) compared in 2026. Cost, quality, privacy &amp; use cas…</p>
     <div class="card-footer">
-      <span class="card-date">2026-04-24 · 4 min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#f59e0b40,#f59e0b20);color:#f59e0b">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="chatgpt-vs-claude.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-16"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-16)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-16)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-16)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
+    <h3>ChatGPT vs Claude 2026: Which Is Better?</h3>
+    <p class="card-desc">ChatGPT vs Claude comparison 2026. ChatGPT: $20/mo, 4.7/5. Claude: $20/mo, 4.5/5. Pricing, features &amp; verdict.</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="best-free-ai-coding.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-17" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-17"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-17)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-17)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-17)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
+    <h3>Best Free AI Coding Tools 2026: Top 10 Ranked</h3>
+    <p class="card-desc">10 free ai coding tools with real plans compared for 2026. #1: Cursor (4.8/5). Real ratings &amp; feature data.</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="dalle-vs-midjourney.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-18" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-18"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-18)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-18)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-18)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
+    <h3>Midjourney vs DALL-E 3 2026: Which Is Better?</h3>
+    <p class="card-desc">Midjourney vs DALL-E 3 comparison 2026. Midjourney: $10/mo, 4.5/5. DALL-E 3: $20/mo, 4.5/5. Pricing, features &amp; verd</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="best-free-project-management.html" class="article-card fade-in" data-cat="rankings" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(16,185,129,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="rg-rankings-19" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#34d399"/></linearGradient><filter id="gl2-rankings-19"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="70" y="90" width="35" height="55" rx="4" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-19)"><animate attributeName="height" values="55;60;55" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="90;85;90" dur="2s" repeatCount="indefinite"/></rect>
+  <rect x="130" y="50" width="35" height="95" rx="4" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="1.5" filter="url(#gl2-rankings-19)"><animate attributeName="height" values="95;100;95" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="50;45;50" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
+  <rect x="190" y="70" width="35" height="75" rx="4" fill="rgba(16,185,129,.12)" stroke="#10b981" stroke-width="1.5" filter="url(#gl2-rankings-19)"><animate attributeName="height" values="75;80;75" dur="3s" begin=".6s" repeatCount="indefinite"/><animate attributeName="y" values="70;65;70" dur="3s" begin=".6s" repeatCount="indefinite"/></rect>
+  <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
+  <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
+  <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
+  <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#10b981;background:rgba(16,185,129,.12);border:1px solid #10b98133">Rankings</span>
+    <h3>Best Free Project Management Tools 2026: Top 19 Ranked</h3>
+    <p class="card-desc">19 free project management tools with real plans compared for 2026. #1: Height (4.8/5). Real ratings &amp; feature data.</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#10b98140,#10b98120);color:#10b981">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
+      <span class="card-read">Read →</span>
+    </div>
+  </div>
+</a>
+<a href="clickup-vs-notion.html" class="article-card fade-in" data-cat="comparisons" style="text-decoration:none">
+  <div class="card-img" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="300" height="170" fill="#0a0e1a"/>
+  <defs><linearGradient id="cg-comparisons-20" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient><filter id="gl-comparisons-20"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="100" cy="85" r="35" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width="1.5" filter="url(#gl-comparisons-20)"><animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="200" cy="85" r="35" fill="rgba(6,182,212,.1)" stroke="#06b6d4" stroke-width="1.5" filter="url(#gl-comparisons-20)"><animate attributeName="r" values="35;38;35" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+  <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-comparisons-20)" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
+  <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
+  <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
+  <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
+  <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+</svg></div>
+  <div class="card-body">
+    <span class="card-tag-pill" style="color:#3b82f6;background:rgba(59,130,246,.12);border:1px solid #3b82f633">Comparisons</span>
+    <h3>Notion vs ClickUp 2026: Which Is Better?</h3>
+    <p class="card-desc">Notion vs ClickUp comparison 2026. Notion: $12/mo, 4.7/5. ClickUp: $7/mo, 4.7/5. Pricing, features &amp; verdict.</p>
+    <div class="card-footer">
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,#3b82f640,#3b82f620);color:#3b82f6">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">2026-04-24 · 4 min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>

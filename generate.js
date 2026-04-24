@@ -234,12 +234,16 @@ code,pre{background:var(--surface);border:1px solid var(--border);border-radius:
 .article-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;text-decoration:none!important}
 .article-card:hover{border-color:rgba(0,229,255,.5);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,.08);text-decoration:none!important}
 .article-card .card-img{height:170px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.article-card .card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.article-card .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .article-card .card-tag-pill{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;padding:3px 10px;border-radius:20px;margin-bottom:10px;align-self:flex-start}
+.article-card .card-desc{font-size:.85rem;color:var(--text-dim);line-height:1.5;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .article-card h3{font-family:system-ui,-apple-system,sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:10px}
-.article-card .card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
-.article-card .card-date{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--text-dim)}
-.article-card .card-read{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em}
+.article-card .card-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.article-card .card-author{display:flex;align-items:center;gap:8px}
+.article-card .card-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;flex-shrink:0}
+.article-card .card-author-name{display:block;font-size:.75rem;color:var(--text);font-weight:500}
+.article-card .card-date{font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--text-muted);display:block}
+.article-card .card-read{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0}
 /* ── Category filter pills ── */
 .filter-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .filter-pill{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;padding:6px 16px;border-radius:20px;border:1px solid var(--border);color:var(--text-dim);background:none;cursor:pointer;transition:all .2s}
@@ -2210,6 +2214,8 @@ function cardHeaderSVG(category, idx) {
   <line x1="135" y1="85" x2="165" y2="85" stroke="url(#cg-${uid})" stroke-width="2" stroke-dasharray="4,4"><animate attributeName="stroke-dashoffset" values="0;8" dur="1s" repeatCount="indefinite"/></line>
   <text x="100" y="88" font-family="Space Mono,monospace" font-size="11" fill="#3b82f6" text-anchor="middle" opacity=".8">VS</text>
   <text x="200" y="88" font-family="Space Mono,monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity=".8">VS</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#3b82f6" text-anchor="middle" letter-spacing=".08em">HEAD-TO-HEAD · DATA · 2026</text>
   <circle cx="70" cy="55" r="3" fill="#3b82f6"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="230" cy="115" r="3" fill="#06b6d4"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <circle cx="150" cy="45" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
@@ -2224,6 +2230,8 @@ function cardHeaderSVG(category, idx) {
   <text x="87" y="85" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">2</text>
   <text x="147" y="45" font-family="Space Mono,monospace" font-size="14" fill="#34d399" text-anchor="middle" font-weight="700">1</text>
   <text x="207" y="65" font-family="Space Mono,monospace" font-size="14" fill="#10b981" text-anchor="middle" font-weight="700">3</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#10b981" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#10b981" text-anchor="middle" letter-spacing=".08em">TOP RANKED · VERIFIED · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#10b981"><animate attributeName="opacity" values=".2;.7;.2" dur="2s" repeatCount="indefinite"/></circle>
   <circle cx="250" cy="80" r="2" fill="#34d399"><animate attributeName="opacity" values=".2;.7;.2" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
 </svg>`,
@@ -2235,6 +2243,8 @@ function cardHeaderSVG(category, idx) {
   <circle cx="150" cy="75" r="25" fill="rgba(167,139,250,.06)" stroke="#a78bfa" stroke-width="1"><animate attributeName="r" values="25;28;25" dur="3s" begin=".5s" repeatCount="indefinite"/></circle>
   <path d="M140,65 L148,60 L148,72 L140,72 Z" fill="#8b5cf6" opacity=".8"><animate attributeName="opacity" values=".8;.4;.8" dur="2s" repeatCount="indefinite"/></path>
   <text x="155" y="80" font-family="Space Mono,monospace" font-size="10" fill="#a78bfa" opacity=".7">HOW TO</text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#8b5cf6" text-anchor="middle" letter-spacing=".08em">STEP-BY-STEP · EXPERT · GUIDE</text>
   <polyline points="70,120 100,100 130,110 160,80 190,95 220,70" fill="none" stroke="url(#gg-${uid})" stroke-width="2" stroke-dasharray="6,4"><animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/></polyline>
   <circle cx="80" cy="40" r="2" fill="#8b5cf6"><animate attributeName="opacity" values=".3;.8;.3" dur="2.5s" repeatCount="indefinite"/></circle>
   <circle cx="240" cy="50" r="3" fill="#a78bfa"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
@@ -2248,7 +2258,8 @@ function cardHeaderSVG(category, idx) {
   <circle cx="230" cy="50" r="6" fill="#fbbf24" opacity=".9"><animate attributeName="r" values="6;9;6" dur="2.5s" begin=".5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.5;.9" dur="2.5s" begin=".5s" repeatCount="indefinite"/></circle>
   <rect x="60" y="100" width="20" height="30" rx="3" fill="rgba(245,158,11,.15)" stroke="#f59e0b" stroke-width="1"><animate attributeName="height" values="30;35;30" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="100;95;100" dur="2s" repeatCount="indefinite"/></rect>
   <rect x="90" y="85" width="20" height="45" rx="3" fill="rgba(245,158,11,.2)" stroke="#fbbf24" stroke-width="1"><animate attributeName="height" values="45;50;45" dur="2.5s" begin=".3s" repeatCount="indefinite"/><animate attributeName="y" values="85;80;85" dur="2.5s" begin=".3s" repeatCount="indefinite"/></rect>
-  <text x="250" y="130" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b" opacity=".5">DATA<animate attributeName="opacity" values=".5;.2;.5" dur="3s" repeatCount="indefinite"/></text>
+  <rect x="75" y="140" width="150" height="20" rx="10" fill="rgba(10,14,26,.85)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="150" y="153" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b" text-anchor="middle" letter-spacing=".08em">MARKET DATA · TRENDS · 2026</text>
   <circle cx="50" cy="50" r="2" fill="#f59e0b"><animate attributeName="opacity" values=".3;.8;.3" dur="2s" repeatCount="indefinite"/></circle>
 </svg>`
   };
@@ -2285,21 +2296,38 @@ function generateIndex(articles) {
     const cat = articleCatMap[a.slug] || 'default';
     const meta = categoryMeta[cat] || { label:'Article', color:'#64748b', bg:'rgba(100,116,139,.12)' };
     const readMins = Math.max(4, Math.ceil(a.description.length / 80));
+    const desc = escHtml(a.description).slice(0, 120) + (a.description.length > 120 ? '…' : '');
     const ci = cardIdx++;
     return `<a href="${a.slug}.html" class="article-card fade-in" data-cat="${cat}" style="text-decoration:none">
   <div class="card-img" style="background:${meta.bg}">${cardHeaderSVG(cat, ci)}</div>
   <div class="card-body">
     <span class="card-tag-pill" style="color:${meta.color};background:${meta.bg};border:1px solid ${meta.color}33">${meta.label}</span>
     <h3>${escHtml(a.title)}</h3>
+    <p class="card-desc">${desc}</p>
     <div class="card-footer">
-      <span class="card-date">${TODAY} · ${readMins} min</span>
+      <div class="card-author">
+        <span class="card-avatar" style="background:linear-gradient(135deg,${meta.color}40,${meta.color}20);color:${meta.color}">CE</span>
+        <div>
+          <span class="card-author-name">ComparEdge Research</span>
+          <span class="card-date">${TODAY} · ${readMins} min</span>
+        </div>
+      </div>
       <span class="card-read">Read →</span>
     </div>
   </div>
 </a>`;
   }
 
-  const cardsHtml = orderedArticles.map(a => renderCard(a)).join('\n');
+  // Interleave categories instead of grouping
+  const maxLen = Math.max(...Object.values(categoryMeta).map(m => m.slugs.length));
+  const interleaved = [];
+  for (let i = 0; i < maxLen; i++) {
+    for (const cat of Object.keys(categoryMeta)) {
+      const slug = categoryMeta[cat].slugs[i];
+      if (slug && articleMap[slug]) interleaved.push(articleMap[slug]);
+    }
+  }
+  const cardsHtml = interleaved.map(a => renderCard(a)).join('\n');
 
   // Ticker items (doubled for seamless loop)
   const tickerItems = [
