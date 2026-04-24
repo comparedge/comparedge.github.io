@@ -259,13 +259,12 @@ function htmlPage({ title, description, canonical, article, schema, slug }) {
     <path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
     <path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
   </svg>
-  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span>
+  <span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:600;font-size:17px;color:#666;margin-left:4px">Blog</span>
 </a>
 <div class="nav-links">
+<a href="${SITE_URL}" class="primary">ComparEdge →</a>
 <a href="${SITE_URL}/compare">Compare</a>
 <a href="${SITE_URL}/pricing">Pricing</a>
-<a href="${BLOG_URL}/">Articles</a>
-<a href="${SITE_URL}" class="primary">ComparEdge →</a>
 </div>
 </nav>
 </header>
