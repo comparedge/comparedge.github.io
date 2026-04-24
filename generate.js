@@ -200,11 +200,16 @@ code,pre{background:#0f1117;border:1px solid #1e2433;border-radius:6px;padding:2
 .faq-a{padding:16px 20px;background:#070b13;color:#94a3b8;font-size:15px;border-top:1px solid #1e2433}
 /* ── Category index cards ── */
 .index-section h2{border-left:none;padding-left:0;font-size:1.2em;text-transform:uppercase;letter-spacing:.8px;color:#64748b;margin:40px 0 16px}
-.article-card{background:#0d1117;border:1px solid #1e2433;border-radius:12px;padding:20px 22px;margin-bottom:12px;transition:border-color .2s,transform .15s}
-.article-card:hover{border-color:#3b82f6;transform:translateY(-1px)}
-.article-card h3{margin:0 0 6px;font-size:1.05em}
+.article-card{background:#0d1117;border:1px solid #1e2433;border-radius:14px;padding:20px 22px;margin-bottom:12px;transition:all .2s;display:flex;gap:16px;align-items:flex-start}
+.article-card:hover{border-color:#3b82f680;transform:translateY(-1px);background:#0f1520}
+.article-card .card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.article-card .card-body{flex:1;min-width:0}
+.article-card h3{margin:0 0 4px;font-size:1em;line-height:1.3}
 .article-card h3 a{color:#e2e8f0}
-.article-card p{margin:0;font-size:14px;color:#64748b}
+.article-card h3 a:hover{text-decoration:none;color:#fff}
+.article-card p{margin:0;font-size:13px;color:#64748b;line-height:1.5}
+.article-card .card-meta{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:11px;color:#475569}
+.article-card .card-tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:4px;display:inline-block}
 /* ── Footer ── */
 footer{border-top:1px solid #111827;margin-top:60px;padding:28px 0;text-align:center;color:#374151;font-size:13px}
 footer a{color:#4b5563}footer a:hover{color:#9ca3af}
@@ -213,13 +218,22 @@ footer p+p{margin-top:8px}
 @media(max-width:640px){
   .card-grid{grid-template-columns:1fr}
   .pros-cons{grid-template-columns:1fr}
-  .hero{padding:28px 20px}
-  .hero h1{font-size:1.65em}
-  .bar-label{min-width:90px;font-size:13px}
-  .bar-value{min-width:60px;font-size:13px}
-  h1{font-size:1.7em}
-  h2{font-size:1.25em}
+  .hero{padding:24px 16px}
+  .hero h1{font-size:1.5em}
+  .hero-stats{gap:12px}
+  .stat-num{font-size:1.5em}
+  .stat-label{font-size:10px}
+  .bar-label{min-width:80px;font-size:12px}
+  .bar-value{min-width:50px;font-size:12px}
+  h1{font-size:1.6em}
+  h2{font-size:1.2em}
   body{font-size:16px}
+  header nav{padding:0 12px;gap:8px}
+  .site-logo span{font-size:15px!important}
+  .site-logo svg{width:20px;height:18px}
+  header .nav-links{gap:4px}
+  header .nav-links a{font-size:11px;padding:5px 10px}
+  .container{padding:16px 14px}
 }
 @media(min-width:900px){
   .toc{position:sticky;top:80px;float:right;width:220px;margin:0 -260px 20px 24px;font-size:13px}
@@ -2040,11 +2054,22 @@ function generateIndex(articles) {
     return `
 <div class="index-section" id="${key}">
 <h2>${sec.emoji} ${sec.label}</h2>
-${secArticles.map(a => `
-<div class="article-card">
-  <h3><a href="${a.slug}.html">${escHtml(a.title)}</a></h3>
-  <p>${escHtml(a.description)}</p>
-</div>`).join('')}
+${secArticles.map(a => {
+      const tagColor = key === 'comparisons' ? '#3b82f6' : key === 'rankings' ? '#10b981' : key === 'guides' ? '#8b5cf6' : key === 'analysis' ? '#f59e0b' : '#64748b';
+      const tagLabel = key === 'comparisons' ? 'Compare' : key === 'rankings' ? 'Ranking' : key === 'guides' ? 'Guide' : key === 'analysis' ? 'Analysis' : 'Article';
+      return `
+<a href="${a.slug}.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:${tagColor}15;border:1px solid ${tagColor}30">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${tagColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:${tagColor};background:${tagColor}15">${tagLabel}</span>
+    <h3><span>${escHtml(a.title)}</span></h3>
+    <p>${escHtml(a.description).slice(0, 120)}${a.description.length > 120 ? '…' : ''}</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>`;
+    }).join('')}
 </div>`;
   }).join('\n');
 

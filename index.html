@@ -130,11 +130,16 @@ code,pre{background:#0f1117;border:1px solid #1e2433;border-radius:6px;padding:2
 .faq-a{padding:16px 20px;background:#070b13;color:#94a3b8;font-size:15px;border-top:1px solid #1e2433}
 /* ── Category index cards ── */
 .index-section h2{border-left:none;padding-left:0;font-size:1.2em;text-transform:uppercase;letter-spacing:.8px;color:#64748b;margin:40px 0 16px}
-.article-card{background:#0d1117;border:1px solid #1e2433;border-radius:12px;padding:20px 22px;margin-bottom:12px;transition:border-color .2s,transform .15s}
-.article-card:hover{border-color:#3b82f6;transform:translateY(-1px)}
-.article-card h3{margin:0 0 6px;font-size:1.05em}
+.article-card{background:#0d1117;border:1px solid #1e2433;border-radius:14px;padding:20px 22px;margin-bottom:12px;transition:all .2s;display:flex;gap:16px;align-items:flex-start}
+.article-card:hover{border-color:#3b82f680;transform:translateY(-1px);background:#0f1520}
+.article-card .card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.article-card .card-body{flex:1;min-width:0}
+.article-card h3{margin:0 0 4px;font-size:1em;line-height:1.3}
 .article-card h3 a{color:#e2e8f0}
-.article-card p{margin:0;font-size:14px;color:#64748b}
+.article-card h3 a:hover{text-decoration:none;color:#fff}
+.article-card p{margin:0;font-size:13px;color:#64748b;line-height:1.5}
+.article-card .card-meta{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:11px;color:#475569}
+.article-card .card-tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:4px;display:inline-block}
 /* ── Footer ── */
 footer{border-top:1px solid #111827;margin-top:60px;padding:28px 0;text-align:center;color:#374151;font-size:13px}
 footer a{color:#4b5563}footer a:hover{color:#9ca3af}
@@ -143,13 +148,22 @@ footer p+p{margin-top:8px}
 @media(max-width:640px){
   .card-grid{grid-template-columns:1fr}
   .pros-cons{grid-template-columns:1fr}
-  .hero{padding:28px 20px}
-  .hero h1{font-size:1.65em}
-  .bar-label{min-width:90px;font-size:13px}
-  .bar-value{min-width:60px;font-size:13px}
-  h1{font-size:1.7em}
-  h2{font-size:1.25em}
+  .hero{padding:24px 16px}
+  .hero h1{font-size:1.5em}
+  .hero-stats{gap:12px}
+  .stat-num{font-size:1.5em}
+  .stat-label{font-size:10px}
+  .bar-label{min-width:80px;font-size:12px}
+  .bar-value{min-width:50px;font-size:12px}
+  h1{font-size:1.6em}
+  h2{font-size:1.2em}
   body{font-size:16px}
+  header nav{padding:0 12px;gap:8px}
+  .site-logo span{font-size:15px!important}
+  .site-logo svg{width:20px;height:18px}
+  header .nav-links{gap:4px}
+  header .nav-links a{font-size:11px;padding:5px 10px}
+  .container{padding:16px 14px}
 }
 @media(min-width:900px){
   .toc{position:sticky;top:80px;float:right;width:220px;margin:0 -260px 20px 24px;font-size:13px}
@@ -193,105 +207,252 @@ footer p+p{margin-top:8px}
 <div class="index-section" id="guides">
 <h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Guides & How-Tos</h2>
 
-<div class="article-card">
-  <h3><a href="how-to-choose-ai-coding-assistant.html">How to Choose an AI Coding Assistant in 2026</a></h3>
-  <p>Decision framework for picking an AI coding tool in 2026. 10 tools compared by price, features &amp; IDE support. Real data from 10 products.</p>
-</div>
-<div class="article-card">
-  <h3><a href="llm-api-integration-guide.html">LLM API Guide 2026: Costs, Models &amp; Integration</a></h3>
-  <p>Complete guide to integrating LLM APIs in 2026. Real token costs, code examples, and best practices. Covers 14 providers from $0.05/1M tokens.</p>
-</div>
-<div class="article-card">
-  <h3><a href="free-ai-tools-startups-2026.html">20 Free AI Tools for Startups That Work in 2026</a></h3>
-  <p>Best free AI tools for startups in 2026. 20 tools with real free plans — no credit card tricks. Covers writing, coding, images, CRM &amp; more. Ranked by ratings.</p>
-</div>
-<div class="article-card">
-  <h3><a href="ai-pricing-pages-guide.html">Why AI Tool Pricing Misleads You (2026 Guide)</a></h3>
-  <p>AI pricing pages use 7 tricks to hide real costs. Learn to read them correctly. Real examples from 331 tools. Save money with this 2026 guide.</p>
-</div>
+<a href="how-to-choose-ai-coding-assistant.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#8b5cf615;border:1px solid #8b5cf630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#8b5cf6;background:#8b5cf615">Guide</span>
+    <h3><span>How to Choose an AI Coding Assistant in 2026</span></h3>
+    <p>Decision framework for picking an AI coding tool in 2026. 10 tools compared by price, features &amp; IDE support. Real d…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="llm-api-integration-guide.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#8b5cf615;border:1px solid #8b5cf630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#8b5cf6;background:#8b5cf615">Guide</span>
+    <h3><span>LLM API Guide 2026: Costs, Models &amp; Integration</span></h3>
+    <p>Complete guide to integrating LLM APIs in 2026. Real token costs, code examples, and best practices. Covers 14 providers…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="free-ai-tools-startups-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#8b5cf615;border:1px solid #8b5cf630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#8b5cf6;background:#8b5cf615">Guide</span>
+    <h3><span>20 Free AI Tools for Startups That Work in 2026</span></h3>
+    <p>Best free AI tools for startups in 2026. 20 tools with real free plans — no credit card tricks. Covers writing, coding, …</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="ai-pricing-pages-guide.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#8b5cf615;border:1px solid #8b5cf630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#8b5cf6;background:#8b5cf615">Guide</span>
+    <h3><span>Why AI Tool Pricing Misleads You (2026 Guide)</span></h3>
+    <p>AI pricing pages use 7 tricks to hide real costs. Learn to read them correctly. Real examples from 331 tools. Save money…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
 </div>
 
 <div class="index-section" id="comparisons">
 <h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="3" y2="21"/></svg> Head-to-Head Comparisons</h2>
 
-<div class="article-card">
-  <h3><a href="cheapest-llm-api-pricing.html">Cheapest LLM APIs 2026: 14 Providers Ranked</a></h3>
-  <p>Compare LLM API token prices for 2026. Llama (Meta) from $0.05/1M tokens. 14 providers ranked by real input &amp; output cost.</p>
-</div>
-<div class="article-card">
-  <h3><a href="claude-api-vs-openai-api.html">Anthropic API (Claude) vs OpenAI API 2026: Which Is Better?</a></h3>
-  <p>Anthropic API (Claude) vs OpenAI API comparison 2026. Anthropic API (Claude): $1/1M tokens, 4.7/5. OpenAI API: $0.75/1M tokens, 4.8/5. Pricing, features &amp; verdict.</p>
-</div>
-<div class="article-card">
-  <h3><a href="cursor-vs-github-copilot.html">GitHub Copilot vs Cursor 2026: Which Is Better?</a></h3>
-  <p>GitHub Copilot vs Cursor comparison 2026. GitHub Copilot: $10/mo, 4.5/5. Cursor: $20/mo, 4.8/5. Pricing, features &amp; verdict.</p>
-</div>
-<div class="article-card">
-  <h3><a href="deepseek-vs-openai-api.html">DeepSeek vs OpenAI API 2026: Which Is Better?</a></h3>
-  <p>DeepSeek vs OpenAI API comparison 2026. DeepSeek: $0.14/1M tokens, 4.5/5. OpenAI API: $0.75/1M tokens, 4.8/5. Pricing, features &amp; verdict.</p>
-</div>
-<div class="article-card">
-  <h3><a href="chatgpt-vs-claude.html">ChatGPT vs Claude 2026: Which Is Better?</a></h3>
-  <p>ChatGPT vs Claude comparison 2026. ChatGPT: $20/mo, 4.7/5. Claude: $20/mo, 4.5/5. Pricing, features &amp; verdict.</p>
-</div>
-<div class="article-card">
-  <h3><a href="dalle-vs-midjourney.html">Midjourney vs DALL-E 3 2026: Which Is Better?</a></h3>
-  <p>Midjourney vs DALL-E 3 comparison 2026. Midjourney: $10/mo, 4.5/5. DALL-E 3: $20/mo, 4.5/5. Pricing, features &amp; verdict.</p>
-</div>
-<div class="article-card">
-  <h3><a href="clickup-vs-notion.html">Notion vs ClickUp 2026: Which Is Better?</a></h3>
-  <p>Notion vs ClickUp comparison 2026. Notion: $12/mo, 4.7/5. ClickUp: $7/mo, 4.7/5. Pricing, features &amp; verdict.</p>
-</div>
+<a href="cheapest-llm-api-pricing.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>Cheapest LLM APIs 2026: 14 Providers Ranked</span></h3>
+    <p>Compare LLM API token prices for 2026. Llama (Meta) from $0.05/1M tokens. 14 providers ranked by real input &amp; output…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="claude-api-vs-openai-api.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>Anthropic API (Claude) vs OpenAI API 2026: Which Is Better?</span></h3>
+    <p>Anthropic API (Claude) vs OpenAI API comparison 2026. Anthropic API (Claude): $1/1M tokens, 4.7/5. OpenAI API: $0.75/1M …</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="cursor-vs-github-copilot.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>GitHub Copilot vs Cursor 2026: Which Is Better?</span></h3>
+    <p>GitHub Copilot vs Cursor comparison 2026. GitHub Copilot: $10/mo, 4.5/5. Cursor: $20/mo, 4.8/5. Pricing, features &amp; …</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="deepseek-vs-openai-api.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>DeepSeek vs OpenAI API 2026: Which Is Better?</span></h3>
+    <p>DeepSeek vs OpenAI API comparison 2026. DeepSeek: $0.14/1M tokens, 4.5/5. OpenAI API: $0.75/1M tokens, 4.8/5. Pricing, f…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="chatgpt-vs-claude.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>ChatGPT vs Claude 2026: Which Is Better?</span></h3>
+    <p>ChatGPT vs Claude comparison 2026. ChatGPT: $20/mo, 4.7/5. Claude: $20/mo, 4.5/5. Pricing, features &amp; verdict.</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="dalle-vs-midjourney.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>Midjourney vs DALL-E 3 2026: Which Is Better?</span></h3>
+    <p>Midjourney vs DALL-E 3 comparison 2026. Midjourney: $10/mo, 4.5/5. DALL-E 3: $20/mo, 4.5/5. Pricing, features &amp; verd</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="clickup-vs-notion.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#3b82f615;border:1px solid #3b82f630">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#3b82f6;background:#3b82f615">Compare</span>
+    <h3><span>Notion vs ClickUp 2026: Which Is Better?</span></h3>
+    <p>Notion vs ClickUp comparison 2026. Notion: $12/mo, 4.7/5. ClickUp: $7/mo, 4.7/5. Pricing, features &amp; verdict.</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
 </div>
 
 <div class="index-section" id="analysis">
 <h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Data & Analysis</h2>
 
-<div class="article-card">
-  <h3><a href="ai-tools-market-2026-analysis.html">AI Tools Market 2026: 331 Products in 28 Categories</a></h3>
-  <p>Data analysis of 331 AI and SaaS tools across 28 categories. Avg rating: 4.42/5. 246 tools have free plans. Market insights for 2026.</p>
-</div>
-<div class="article-card">
-  <h3><a href="real-cost-ai-2026.html">The Real Cost of AI in 2026: Free to Enterprise</a></h3>
-  <p>What does AI actually cost in 2026? Pricing analysis across 8 categories. From $0 free tiers to $299+/month enterprise plans. Real data from 331 tools.</p>
-</div>
-<div class="article-card">
-  <h3><a href="highest-rated-ai-tools-2026.html">Highest Rated AI Tools 2026: Top 25 by User Score</a></h3>
-  <p>Top 25 AI and SaaS tools by real user ratings in 2026. Data from G2 and Capterra. #1: Height (4.8/5). Updated April 24, 2026.</p>
-</div>
-<div class="article-card">
-  <h3><a href="open-source-vs-proprietary-llms.html">Open Source vs Proprietary LLMs: 2026 Guide</a></h3>
-  <p>Open source LLMs (Llama, DeepSeek) vs proprietary (GPT-4, Claude) compared in 2026. Cost, quality, privacy &amp; use cases. Real pricing data.</p>
-</div>
+<a href="ai-tools-market-2026-analysis.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#f59e0b15;border:1px solid #f59e0b30">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#f59e0b;background:#f59e0b15">Analysis</span>
+    <h3><span>AI Tools Market 2026: 331 Products in 28 Categories</span></h3>
+    <p>Data analysis of 331 AI and SaaS tools across 28 categories. Avg rating: 4.42/5. 246 tools have free plans. Market insig…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="real-cost-ai-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#f59e0b15;border:1px solid #f59e0b30">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#f59e0b;background:#f59e0b15">Analysis</span>
+    <h3><span>The Real Cost of AI in 2026: Free to Enterprise</span></h3>
+    <p>What does AI actually cost in 2026? Pricing analysis across 8 categories. From $0 free tiers to $299+/month enterprise p…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="highest-rated-ai-tools-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#f59e0b15;border:1px solid #f59e0b30">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#f59e0b;background:#f59e0b15">Analysis</span>
+    <h3><span>Highest Rated AI Tools 2026: Top 25 by User Score</span></h3>
+    <p>Top 25 AI and SaaS tools by real user ratings in 2026. Data from G2 and Capterra. #1: Height (4.8/5). Updated April 24, …</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="open-source-vs-proprietary-llms.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#f59e0b15;border:1px solid #f59e0b30">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#f59e0b;background:#f59e0b15">Analysis</span>
+    <h3><span>Open Source vs Proprietary LLMs: 2026 Guide</span></h3>
+    <p>Open source LLMs (Llama, DeepSeek) vs proprietary (GPT-4, Claude) compared in 2026. Cost, quality, privacy &amp; use cas…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
 </div>
 
 <div class="index-section" id="rankings">
 <h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> Category Rankings</h2>
 
-<div class="article-card">
-  <h3><a href="ai-image-generators-2026.html">AI Image Generators 2026: 13 Tools Compared</a></h3>
-  <p>Best AI image generators in 2026. Midjourney, DALL-E 3, Stable Diffusion &amp; 10 more compared. Real pricing, ratings &amp; output quality data.</p>
-</div>
-<div class="article-card">
-  <h3><a href="crm-software-compared-2026.html">CRM Software 2026: 18 Tools From Free to Enterprise</a></h3>
-  <p>Compare 18 CRM tools in 2026. Free plans, pricing tiers, and ratings. From $12/mo to enterprise. #1 rated: Less Annoying CRM (4.8/5).</p>
-</div>
-<div class="article-card">
-  <h3><a href="best-email-marketing-2026.html">Best Email Marketing 2026: 20 Platforms Ranked</a></h3>
-  <p>Compare 20 email marketing platforms in 2026. Free plans, pricing, automation &amp; deliverability. #1: Loops (4.8/5). Real data.</p>
-</div>
-<div class="article-card">
-  <h3><a href="best-free-llm.html">Best Free AI Models &amp; LLMs 2026: Top 20 Ranked</a></h3>
-  <p>20 free ai models &amp; llms with real plans compared for 2026. #1: ChatGPT (4.7/5). Real ratings &amp; feature data.</p>
-</div>
-<div class="article-card">
-  <h3><a href="best-free-ai-coding.html">Best Free AI Coding Tools 2026: Top 10 Ranked</a></h3>
-  <p>10 free ai coding tools with real plans compared for 2026. #1: Cursor (4.8/5). Real ratings &amp; feature data.</p>
-</div>
-<div class="article-card">
-  <h3><a href="best-free-project-management.html">Best Free Project Management Tools 2026: Top 19 Ranked</a></h3>
-  <p>19 free project management tools with real plans compared for 2026. #1: Height (4.8/5). Real ratings &amp; feature data.</p>
-</div>
+<a href="ai-image-generators-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>AI Image Generators 2026: 13 Tools Compared</span></h3>
+    <p>Best AI image generators in 2026. Midjourney, DALL-E 3, Stable Diffusion &amp; 10 more compared. Real pricing, ratings &…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="crm-software-compared-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>CRM Software 2026: 18 Tools From Free to Enterprise</span></h3>
+    <p>Compare 18 CRM tools in 2026. Free plans, pricing tiers, and ratings. From $12/mo to enterprise. #1 rated: Less Annoying…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="best-email-marketing-2026.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>Best Email Marketing 2026: 20 Platforms Ranked</span></h3>
+    <p>Compare 20 email marketing platforms in 2026. Free plans, pricing, automation &amp; deliverability. #1: Loops (4.8/5). R…</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="best-free-llm.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>Best Free AI Models &amp; LLMs 2026: Top 20 Ranked</span></h3>
+    <p>20 free ai models &amp; llms with real plans compared for 2026. #1: ChatGPT (4.7/5). Real ratings &amp; feature data.</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="best-free-ai-coding.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>Best Free AI Coding Tools 2026: Top 10 Ranked</span></h3>
+    <p>10 free ai coding tools with real plans compared for 2026. #1: Cursor (4.8/5). Real ratings &amp; feature data.</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
+<a href="best-free-project-management.html" class="article-card" style="text-decoration:none">
+  <div class="card-icon" style="background:#10b98115;border:1px solid #10b98130">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+  </div>
+  <div class="card-body">
+    <span class="card-tag" style="color:#10b981;background:#10b98115">Ranking</span>
+    <h3><span>Best Free Project Management Tools 2026: Top 19 Ranked</span></h3>
+    <p>19 free project management tools with real plans compared for 2026. #1: Height (4.8/5). Real ratings &amp; feature data.</p>
+    <div class="card-meta"><span>Read article →</span></div>
+  </div>
+</a>
 </div>
 
 <div class="highlight" style="text-align:center;margin-top:40px">
