@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notion Playbook: Power User Guide 2026</title>
+<meta name="description" content="The real Notion power user guide. Second brain setup, team wikis, database relations, freelancer CRM, content calendar, and honest ClickUp vs Obsidian comparison.">
+<link rel="canonical" href="https://blog.comparedge.com/playbooks/notion.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Notion Playbook: Power User Guide 2026">
+<meta property="og:description" content="Real Notion workflows: second brain setup, database relations, freelancer CRM, content calendar, and when ClickUp or Obsidian is better.">
+<meta property="og:url" content="https://blog.comparedge.com/playbooks/notion.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ComparEdge Blog">
+<meta property="og:image" content="https://comparedge.com/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notion Playbook: Power User Guide 2026">
+<meta name="twitter:description" content="Real Notion power user guide: databases, relations, rollups, second brain, freelancer CRM, content calendar workflows.">
+<link rel="icon" href="https://comparedge.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"Article","datePublished":"2026-04-15","dateModified":"2026-04-24","author":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com"},"publisher":{"@type":"Organization","name":"ComparEdge","url":"https://comparedge.com","logo":{"@type":"ImageObject","url":"https://comparedge.com/logo.png"}},"headline":"Notion Playbook: Power User Guide 2026","description":"The definitive Notion power user guide with real workflows for second brain, team wiki, databases, CRM, and content calendar.","mainEntityOfPage":"https://blog.comparedge.com/playbooks/notion.html"},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://blog.comparedge.com/"},{"@type":"ListItem","position":2,"name":"Playbooks","item":"https://blog.comparedge.com/playbooks/"},{"@type":"ListItem","position":3,"name":"Notion Playbook","item":"https://blog.comparedge.com/playbooks/notion.html"}]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is Notion AI worth the extra cost?","acceptedAnswer":{"@type":"Answer","text":"For Business plan users ($15/user/mo), Notion AI is included and worth it — especially the Meeting Notes summarization, which is a genuine time-saver. For Plus plan users, the $10/user/mo add-on is harder to justify unless you write heavily in Notion. The Q&A feature (asking questions across your workspace) is genuinely useful if your wiki is well-maintained."}},
+{"@type":"Question","name":"How do Notion database relations work?","acceptedAnswer":{"@type":"Answer","text":"Relations link two databases so entries can reference each other. Example: a Projects database and a Tasks database, where each Task has a relation to its Project. Once linked, you can use Rollup properties to aggregate child data in the parent — like counting total tasks, summing hours, or showing the earliest deadline. Relations + Rollups together replace what most people use spreadsheets for."}},
+{"@type":"Question","name":"Should I use Notion or Obsidian for personal knowledge management?","acceptedAnswer":{"@type":"Answer","text":"Obsidian if: you want local files (Markdown stored on your device), you value privacy, or you're building a dense bidirectional knowledge graph with graph view. Notion if: you collaborate with others, you want database features (databases are Notion's superpower vs Obsidian's weakness), or you prefer cloud sync without managing files. Many power users use both: Obsidian for personal notes, Notion for team work."}},
+{"@type":"Question","name":"What is the best Notion plan for a freelancer?","acceptedAnswer":{"@type":"Answer","text":"The Free plan works for solo freelancers with basic needs. Plus ($10/mo) unlocks unlimited file uploads and custom domains for client portals — worth it once you're sharing Notion pages with clients. The guest limit (10 guests on Free, unlimited on Plus) is often the deciding factor."}}
+]}
+]</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a0f;--surface:#0f1119;--surface2:#141620;--border:#1e2433;--accent:#00e5ff;--accent2:#8b5cf6;--accent3:#3b82f6;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:3px}
+a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
+.site-logo:hover{opacity:1!important}
+.container{max-width:860px;margin:0 auto;padding:24px 24px}
+header{height:60px;border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(16px)}
+header nav{display:flex;align-items:center;justify-content:center;height:100%;max-width:1200px;margin:0 auto;padding:0 24px;gap:40px}
+.site-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-center{display:flex;gap:28px;align-items:center}
+.nav-center a{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#64748b;text-decoration:none;transition:color .2s}
+.nav-center a:hover{color:#00e5ff}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,.98);z-index:200;flex-direction:column;padding:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.mobile-menu-close{background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu a{display:block;font-family:'Space Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:#00e5ff}
+.mobile-menu a.primary-link{color:var(--accent);font-weight:700}
+main{padding-top:60px}
+.breadcrumb{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;letter-spacing:0.03em}
+.breadcrumb a{color:var(--text-dim)}
+.breadcrumb a:hover{color:var(--text)}
+.hero-svg-wrap{border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border)}
+.article-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--text-dim)}
+.meta-tag{display:inline-block;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.1em}
+.updated{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.updated .dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:0 0 36px}
+.toc h4{font-family:'Space Mono',monospace;color:var(--text-dim);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px}
+.toc ol{margin:0 0 0 18px}
+.toc li{margin-bottom:6px}
+.toc a{color:var(--accent);font-size:15px}
+h1{font-size:2.2em;font-weight:800;line-height:1.2;color:#fff;margin-bottom:16px;letter-spacing:-0.02em}
+h2{font-size:1.4em;font-weight:700;margin:44px 0 14px;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;scroll-margin-top:88px;letter-spacing:-0.01em}
+h3{font-size:1.1em;font-weight:700;margin:28px 0 10px;color:var(--text)}
+p{margin-bottom:18px;color:var(--text-dim)}
+strong{color:var(--text)}
+ul,ol{margin:0 0 18px 22px;color:var(--text-dim)}
+li{margin-bottom:7px;font-size:15px}
+.callout{border-left:4px solid var(--accent);background:#050d10;padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.callout strong{color:#67e8f9}
+.callout.green{border-color:#10b981;background:#0a1f18}.callout.green strong{color:#6ee7b7}
+.callout.yellow{border-color:#f59e0b;background:#1a1505}.callout.yellow strong{color:#fcd34d}
+.callout.red{border-color:#ef4444;background:#1a0808}.callout.red strong{color:#fca5a5}
+.callout.purple{border-color:#8b5cf6;background:#0f0a1f}.callout.purple strong{color:#c4b5fd}
+code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-family:'Space Mono',monospace;font-size:0.82em;color:#67e8f9}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:16px 0 24px;font-family:'Space Mono',monospace;font-size:0.82em;line-height:1.7;color:#a5f3fc}
+pre code{background:none;border:none;padding:0;font-size:1em}
+.table-wrap{overflow-x:auto;margin:16px 0 28px;border-radius:10px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--surface);color:var(--text);padding:12px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:11px 14px;border-bottom:1px solid var(--surface2);color:var(--text-dim);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;color:var(--text);background:var(--surface)}
+.faq-a{padding:14px 20px;color:var(--text-dim);font-size:15px;border-top:1px solid var(--border)}
+footer{border-top:1px solid var(--border);margin-top:80px;padding:48px 0 28px;background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;padding:0 24px 36px;border-bottom:1px solid var(--border)}
+.footer-brand p{color:var(--text-dim);font-size:14px;margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);font-size:14px;margin-bottom:8px;text-decoration:none}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:13px;font-family:'Space Mono',monospace}
+.footer-bottom a{color:var(--text-dim)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0369a1,#7c3aed);color:#fff!important;padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta:hover{opacity:.85}
+@media(max-width:768px){.burger{display:block}.nav-center{display:none}h1{font-size:1.7em}h2{font-size:1.2em}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="https://blog.comparedge.com/" class="site-logo"><svg width="26" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="nt-lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><path d="M4 38 L20 6 L25 15 L34 5 L32 17 L42 15 L30 34 L24 25 Z" fill="none" stroke="url(#nt-lg1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 6 L24 38 L19 29 L10 39 L12 27 L2 29 L14 10 L20 19 Z" fill="none" stroke="white" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/></svg><span style="font-weight:800;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:17px;letter-spacing:-.3px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+  <div class="nav-center">
+    <a href="https://blog.comparedge.com/">Home</a>
+    <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge</a>
+    <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+    <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+  </div>
+  <button class="burger" onclick="document.getElementById('nt-mob').classList.add('open')" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+</header>
+<div id="nt-mob" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="https://blog.comparedge.com/" style="text-decoration:none"><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge Blog</span></a>
+    <button class="mobile-menu-close" onclick="document.getElementById('nt-mob').classList.remove('open')" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <a href="https://blog.comparedge.com/">Home</a>
+  <a href="https://comparedge.com" target="_blank" rel="noopener" class="primary-link">ComparEdge →</a>
+  <a href="https://comparedge.com/compare" target="_blank" rel="noopener">Compare</a>
+  <a href="https://comparedge.com/pricing" target="_blank" rel="noopener">Pricing</a>
+</div>
+
+<main class="container">
+<nav class="breadcrumb"><a href="https://blog.comparedge.com/">Blog</a> / <a href="https://blog.comparedge.com/playbooks/">Playbooks</a> / Notion</nav>
+
+<!-- Animated SVG Hero: Document blocks rearranging, checkboxes ticking -->
+<div class="hero-svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#0a0e1a">
+  <defs>
+    <filter id="nt-glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="nt-grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e2e8f0"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="nt-grad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#00e5ff"/></linearGradient>
+  </defs>
+  <!-- Notion page frame -->
+  <rect x="30" y="20" width="360" height="260" rx="8" fill="#ffffff" opacity="0.04" stroke="#1e2433" stroke-width="1"/>
+  <!-- Notion icon circles (simulating page icon) -->
+  <text x="48" y="52" font-size="20">📋</text>
+  <text x="75" y="55" fill="#e2e8f0" font-size="15" font-weight="700" font-family="system-ui">Product Roadmap</text>
+  <!-- Block lines appearing -->
+  <rect x="48" y="65" width="160" height="8" rx="2" fill="#1e2433">
+    <animate attributeName="width" values="0;160;160" dur="1.5s" fill="freeze"/>
+  </rect>
+  <rect x="48" y="80" width="220" height="6" rx="2" fill="#1e2433">
+    <animate attributeName="width" values="0;220;220" dur="2s" fill="freeze"/>
+  </rect>
+  <rect x="48" y="92" width="180" height="6" rx="2" fill="#1e2433">
+    <animate attributeName="width" values="0;180;180" dur="2.3s" fill="freeze"/>
+  </rect>
+  <!-- Checkboxes -->
+  <rect x="48" y="110" width="14" height="14" rx="3" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+  <polyline points="51,117 55,121 61,112" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" fill="none" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" dur="3s" repeatCount="indefinite"/>
+  </polyline>
+  <rect x="48" y="110" width="14" height="14" rx="3" fill="rgba(139,92,246,0.2)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="68" y="122" fill="#64748b" font-size="12" font-family="system-ui">Write Q2 launch plan</text>
+  <rect x="48" y="132" width="14" height="14" rx="3" fill="none" stroke="#10b981" stroke-width="1.5"/>
+  <polyline points="51,139 55,143 61,134" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <rect x="48" y="132" width="14" height="14" rx="3" fill="rgba(16,185,129,0.2)"/>
+  <text x="68" y="143" fill="#64748b" font-size="12" font-family="system-ui" text-decoration="line-through">Set up team wiki</text>
+  <rect x="48" y="153" width="14" height="14" rx="3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="68" y="164" fill="#64748b" font-size="12" font-family="system-ui">Create content calendar</text>
+  <!-- Database grid -->
+  <rect x="48" y="190" width="310" height="70" rx="4" fill="#0d1117" stroke="#1e2433" stroke-width="1"/>
+  <line x1="48" y1="205" x2="358" y2="205" stroke="#1e2433" stroke-width="1"/>
+  <line x1="48" y1="222" x2="358" y2="222" stroke="#1e2433" stroke-width="1"/>
+  <line x1="48" y1="239" x2="358" y2="239" stroke="#1e2433" stroke-width="1"/>
+  <line x1="150" y1="190" x2="150" y2="260" stroke="#1e2433" stroke-width="1"/>
+  <line x1="250" y1="190" x2="250" y2="260" stroke="#1e2433" stroke-width="1"/>
+  <text x="60" y="202" fill="#64748b" font-size="9" font-family="monospace">NAME</text>
+  <text x="160" y="202" fill="#64748b" font-size="9" font-family="monospace">STATUS</text>
+  <text x="260" y="202" fill="#64748b" font-size="9" font-family="monospace">DUE DATE</text>
+  <text x="55" y="217" fill="#e2e8f0" font-size="10" font-family="system-ui">Blog post draft</text>
+  <rect x="158" y="208" width="56" height="12" rx="6" fill="rgba(16,185,129,0.2)"/>
+  <text x="175" y="218" fill="#10b981" font-size="9" font-family="monospace">Done</text>
+  <text x="258" y="217" fill="#64748b" font-size="10" font-family="monospace">Apr 15</text>
+  <text x="55" y="234" fill="#e2e8f0" font-size="10" font-family="system-ui">Product video</text>
+  <rect x="158" y="225" width="72" height="12" rx="6" fill="rgba(245,158,11,0.2)"/>
+  <text x="167" y="235" fill="#f59e0b" font-size="9" font-family="monospace">In Progress</text>
+  <text x="258" y="234" fill="#64748b" font-size="10" font-family="monospace">Apr 22</text>
+  <!-- Product label -->
+  <text x="450" y="125" fill="url(#nt-grad1)" font-size="62" font-weight="800" font-family="system-ui,sans-serif" letter-spacing="-2" filter="url(#nt-glow)">Notion</text>
+  <text x="450" y="155" fill="#8b5cf6" font-size="14" font-family="'Space Mono',monospace" opacity="0.7">WORKSPACE PLAYBOOK</text>
+  <line x1="450" y1="165" x2="450" y2="165" stroke="url(#nt-grad2)" stroke-width="2">
+    <animate attributeName="x2" values="450;730;730" dur="1.5s" fill="freeze"/>
+  </line>
+</svg>
+</div>
+
+<span class="meta-tag">Playbook</span>
+<h1>The Notion Power User Playbook</h1>
+<div class="article-meta">
+  <span>By ComparEdge Research</span>
+  <span>·</span>
+  <span>April 15, 2026</span>
+  <span>·</span>
+  <span>17 min read</span>
+  <span>·</span>
+  <div class="updated"><span class="dot"></span>Updated April 24, 2026</div>
+</div>
+
+<div class="toc">
+  <h4>📋 Contents</h4>
+  <ol>
+    <li><a href="#second-brain">Building a Second Brain in Notion</a></li>
+    <li><a href="#team-wiki">Team Wiki Setup: Step-by-Step</a></li>
+    <li><a href="#databases">Databases Deep Dive: Relations, Rollups, Formulas</a></li>
+    <li><a href="#crm-workflow">Workflow: Notion as a Freelancer CRM</a></li>
+    <li><a href="#content-calendar">Workflow: Content Calendar for Marketing Teams</a></li>
+    <li><a href="#notion-ai">Notion AI: What's Worth Paying For</a></li>
+    <li><a href="#vs-others">Notion vs ClickUp vs Obsidian</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</div>
+
+<p>Notion is the most flexible productivity tool ever built — which is also its biggest curse. The blank page paralysis is real. Most people use 10% of what Notion can do and wonder why it feels like overkill. This guide closes that gap with concrete, opinionated workflows that actually work in daily use.</p>
+
+<h2 id="second-brain">Building a Second Brain in Notion</h2>
+<p>The "second brain" concept (from Tiago Forte's PARA method) works particularly well in Notion because of how linked databases handle cross-referencing. Here's a concrete implementation:</p>
+
+<h3>The PARA Structure in Notion</h3>
+<ul>
+  <li><strong>Projects:</strong> Active work with a deadline. Database view with status (Active / Paused / Done), deadline property, linked to Tasks and Resources.</li>
+  <li><strong>Areas:</strong> Ongoing responsibilities without deadlines (Health, Finances, Career). Simple pages with sub-pages, not databases — they don't have discrete end states.</li>
+  <li><strong>Resources:</strong> Reference material you might use someday. Database with tags (industry, topic, tool), creation date, source URL.</li>
+  <li><strong>Archives:</strong> Everything completed or no longer relevant. Don't delete — move here. Notion's search makes retrieval fast.</li>
+</ul>
+
+<h3>The Capture Inbox</h3>
+<p>Add a "Capture Inbox" database as your landing zone. Every fleeting thought, article, idea goes here first — unfiled. Once a week (or once a day for heavy users), you do a 10-minute triage: move items to Projects/Areas/Resources or delete them.</p>
+
+<p>Inbox database properties:</p>
+<ul>
+  <li><strong>Type:</strong> Select — Idea / Task / Article / Reference / Random</li>
+  <li><strong>Status:</strong> Select — New / Triaged / Archived</li>
+  <li><strong>Source:</strong> Text — where it came from</li>
+  <li><strong>Date Captured:</strong> Date (auto-filled via formula)</li>
+</ul>
+
+<p>Filter: Default view shows only Status = New. Triaged items auto-hide, keeping the view clean.</p>
+
+<h3>Quick Capture on Mobile</h3>
+<p>The Notion mobile widget lets you add to your Inbox database without opening the full app. Set it up once and it becomes the fastest capture tool you have. Far better than using Apple Notes as a buffer.</p>
+
+<div class="callout green"><strong>💡 The Triage Rule:</strong> If something sits in your Inbox for 3 weeks without being moved, it wasn't important. Archive it without guilt. The goal of capture is zero friction, not perfect filing.</div>
+
+<h2 id="team-wiki">Team Wiki Setup: Step-by-Step</h2>
+<p>A team wiki in Notion is only as good as the structure that makes it easy to find things. Here's the architecture that actually gets used (as opposed to the ones that rot after month 2):</p>
+
+<h3>Top-Level Structure</h3>
+<pre><code>📁 [Company] Wiki
+├── 🚀 Getting Started (onboarding)
+│   ├── Day 1 Checklist
+│   ├── Tools & Access (with links, no passwords)
+│   └── Who to Contact for What
+├── 🏢 How We Work
+│   ├── Async Communication Guidelines
+│   ├── Meeting Norms
+│   └── Decision-Making Process
+├── 📦 Products
+│   ├── [Product A] — architecture, docs, runbooks
+│   └── [Product B]
+├── 👥 Teams
+│   ├── Engineering
+│   ├── Marketing
+│   └── Operations
+└── 📚 Resources
+    ├── Brand Assets
+    ├── Legal Templates
+    └── Vendor Contacts</code></pre>
+
+<h3>The Content Rules That Keep Wikis Alive</h3>
+<ol>
+  <li><strong>One owner per page.</strong> Set a "Page Owner" property. Ownerless pages become orphans nobody updates.</li>
+  <li><strong>Last reviewed date.</strong> Add "Last Reviewed" date property. Any page not reviewed in 90 days appears in a "Needs Review" database view — a shared responsibility for the team.</li>
+  <li><strong>Verification badges.</strong> Business plan includes "Verify" — a green checkmark that shows the page was recently reviewed. Use it for critical pages (incident runbooks, legal docs).</li>
+  <li><strong>Link liberally, don't duplicate.</strong> Use Notion links (@mention pages) rather than copying content. Duplication creates outdated information.</li>
+</ol>
+
+<h3>Onboarding Template That Works</h3>
+<p>Create a template for the "Getting Started" section that generates personal onboarding pages for new hires. Include:</p>
+<ul>
+  <li>Pre-filled first week task checklist (with due dates calculated from start date)</li>
+  <li>Links to every tool they need access to</li>
+  <li>One-on-one meeting agenda with their manager</li>
+  <li>30/60/90 day expectation document</li>
+</ul>
+<p>Template + database automation (triggered on new hire date) can generate this automatically, cutting onboarding admin time significantly.</p>
+
+<h2 id="databases">Databases Deep Dive: Relations, Rollups, Formulas</h2>
+<p>Databases are where Notion transitions from "fancy notes app" to something genuinely powerful. Most users understand basic table views; relations and rollups are where real leverage lives.</p>
+
+<h3>Relations: Connecting Databases</h3>
+<p>A relation links two databases. The canonical example:</p>
+
+<ul>
+  <li><strong>Projects database:</strong> Q3 Launch, Website Redesign, Bug Fix Sprint</li>
+  <li><strong>Tasks database:</strong> Write homepage copy, Fix checkout bug, Design new logo</li>
+  <li>Each Task has a "Project" relation property that links it to one entry in Projects</li>
+</ul>
+
+<p>Once related, you can see all Tasks for a given Project directly on the Project page. No duplication, always in sync.</p>
+
+<h3>Rollups: Aggregate Child Data in the Parent</h3>
+<p>Rollups let you surface aggregated data from related databases. In the Projects → Tasks example:</p>
+
+<ul>
+  <li>Count of related Tasks (shows total workload per project)</li>
+  <li>Count where Status = "Done" (progress without manual tracking)</li>
+  <li>Earliest/latest Due Date among Tasks (auto-calculated project window)</li>
+  <li>Sum of Estimated Hours (capacity planning)</li>
+</ul>
+
+<pre><code>Rollup setup:
+Property: Total Tasks
+Relation: Tasks
+Rollup: Count all
+
+Property: Completed Tasks  
+Relation: Tasks
+Rollup: Count values (where Status = Done)
+
+Property: Completion %
+Formula: prop("Completed Tasks") / prop("Total Tasks") * 100</code></pre>
+
+<h3>Formulas: Practical Examples</h3>
+<p>Notion formulas use a JavaScript-like syntax. The ones actually worth using:</p>
+
+<pre><code>// Days until deadline
+dateBetween(prop("Due Date"), now(), "days")
+
+// Traffic light status
+if(prop("Days Until Due") < 0, "🔴 Overdue", 
+  if(prop("Days Until Due") < 3, "🟡 Due Soon", "🟢 On Track"))
+
+// Completion percentage display
+format(floor(prop("Completion %"))) + "%"
+
+// Calculate project health (not started = 0, in progress = 1, done = 2)
+if(prop("Status") == "Not Started", 0, 
+  if(prop("Status") == "In Progress", 1, 2))</code></pre>
+
+<div class="callout yellow"><strong>⚠️ Formula performance:</strong> Complex formulas on large databases (1,000+ entries) can slow Notion noticeably. Keep formulas simple in frequently-filtered views. Use rollups instead of formulas where possible — rollups are more performant.</div>
+
+<h2 id="crm-workflow">Workflow: Notion as a Freelancer CRM</h2>
+<p>A freelancer CRM doesn't need Salesforce. It needs three linked databases and some discipline.</p>
+
+<h3>Database Structure</h3>
+<ul>
+  <li><strong>Contacts database:</strong> Company, Name, Email, LinkedIn URL, Role, Relationship status (Prospect / Active / Past / Cold)</li>
+  <li><strong>Projects database:</strong> Client (relation to Contacts), Status, Rate ($/hr or fixed), Start Date, End Date, Total Value</li>
+  <li><strong>Interactions Log:</strong> Contact (relation), Type (Email / Call / Meeting / Proposal Sent), Notes, Date</li>
+</ul>
+
+<h3>The Pipeline View</h3>
+<p>Create a Board view of your Contacts database grouped by Relationship Status: Prospect → Proposal Sent → Active → Retainer → Past. This is your sales pipeline.</p>
+
+<p>Filter the Board to show only contacts with projected project value > $0. Now you're looking at real money in motion.</p>
+
+<h3>Weekly Review Process</h3>
+<ol>
+  <li>Open Contacts filtered by "Last Interaction > 30 days ago" — who needs a follow-up?</li>
+  <li>Open Projects filtered by "Status = Active AND End Date within 30 days" — what's ending soon? (Potential renewal conversation)</li>
+  <li>Open Interactions Log grouped by week — what did you actually do this week? (Useful for invoicing and client updates)</li>
+</ol>
+
+<h3>Rollup: Revenue at a Glance</h3>
+<p>In your Contacts database, add a rollup: "Total Revenue" → relation to Projects → sum of "Total Value." Now each client record shows exactly how much they've paid you lifetime.</p>
+
+<h2 id="content-calendar">Workflow: Content Calendar for Marketing Teams</h2>
+<p>The content calendar is one of Notion's most-replicated templates. Here's the version that actually gets used, versus the ones that look good in screenshots but don't survive first contact with a real content team.</p>
+
+<h3>Core Database Properties</h3>
+<ul>
+  <li><strong>Title:</strong> Working title (not the final SEO title)</li>
+  <li><strong>Status:</strong> Idea → Researching → Draft → Review → Approved → Scheduled → Published</li>
+  <li><strong>Channel:</strong> Blog / LinkedIn / Twitter/X / Email / YouTube</li>
+  <li><strong>Publish Date:</strong> Date (the target date, not the actual — track that separately)</li>
+  <li><strong>Author:</strong> Person property</li>
+  <li><strong>SEO Keyword:</strong> Text (primary keyword)</li>
+  <li><strong>CTA:</strong> What's the desired action? (critical and almost always forgotten)</li>
+  <li><strong>Performance:</strong> Number — fill in after publishing (pageviews, engagements, etc.)</li>
+</ul>
+
+<h3>Views That Actually Help</h3>
+<ul>
+  <li><strong>Calendar view:</strong> Filter by "Status = Scheduled OR Published" — visual overview of publishing cadence</li>
+  <li><strong>Board view by Status:</strong> The Kanban pipeline. Every piece is always in exactly one stage.</li>
+  <li><strong>Author board:</strong> Board grouped by Author — shows each person's workload at a glance</li>
+  <li><strong>Upcoming deadlines:</strong> Table view sorted by Publish Date, filtered to "Status ≠ Published AND Publish Date within 14 days"</li>
+</ul>
+
+<h3>The Bottleneck Usually Isn't Idea Generation</h3>
+<p>Most teams' content calendar problems are in the Review stage — pieces sit there for weeks while a manager is busy. Fix this with a simple SLA: a piece in Review for more than 3 business days automatically gets flagged in a "Stuck" view. Make the flag a formula:</p>
+
+<pre><code>if(
+  prop("Status") == "Review" AND 
+  dateBetween(now(), prop("Date Moved to Review"), "days") > 3,
+  "🚨 STUCK",
+  ""
+)</code></pre>
+
+<h2 id="notion-ai">Notion AI: What's Worth Paying For</h2>
+<p>Notion AI is $10/user/month as an add-on (included in Business plan at $15/user/mo). Here's an honest assessment of what's actually useful:</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Feature</th><th>Worth It?</th><th>Real-World Usefulness</th></tr></thead>
+<tbody>
+<tr><td>Meeting Notes summarization</td><td>✅ Yes</td><td>Connect to calendar, AI auto-summarizes meetings with action items. Saves 5-10 min per meeting.</td></tr>
+<tr><td>Write / Improve text</td><td>⚠️ Sometimes</td><td>Decent for first drafts in Notion. But ChatGPT Plus or Claude gives better quality writing assistance.</td></tr>
+<tr><td>Q&A (ask questions across workspace)</td><td>✅ Yes (with good wiki)</td><td>Genuinely useful if your workspace is well-organized. Terrible if your docs are a mess — AI can't find what doesn't exist.</td></tr>
+<tr><td>Auto-fill database properties</td><td>✅ Yes</td><td>AI fills in tags, categories, summaries for database entries. Huge time-saver for content databases.</td></tr>
+<tr><td>Translate</td><td>⚠️ Basic</td><td>Works, but DeepL is better for serious translation work.</td></tr>
+<tr><td>Notion Agent</td><td>🆕 New in 2026</td><td>Autonomous task execution within Notion. Still maturing but promising for repetitive database operations.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout purple"><strong>Honest take:</strong> If you're on the Business plan, Notion AI is included and worth using for Meeting Notes + Q&A alone. If you're evaluating the $10/mo add-on on Plus, only pay for it if you live in Notion and produce significant written content there. Otherwise, use a dedicated AI writing tool.</div>
+
+<h2 id="vs-others">Notion vs ClickUp vs Obsidian</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Criteria</th><th>Notion</th><th>ClickUp</th><th>Obsidian</th></tr></thead>
+<tbody>
+<tr><td>Best for</td><td>Wikis, documents + databases, team knowledge</td><td>Project/task management, time tracking</td><td>Personal knowledge, writing, local-first</td></tr>
+<tr><td>Database power</td><td>Excellent — flexible views, relations, rollups</td><td>Excellent — more task-specific features</td><td>Weak — Dataview plugin helps but it's not native</td></tr>
+<tr><td>Documents/wiki</td><td>Excellent</td><td>Mediocre — docs feel secondary</td><td>Excellent — Markdown native</td></tr>
+<tr><td>Task management</td><td>Good — but not a dedicated PM tool</td><td>Best-in-class — subtasks, time tracking, dependencies, automations</td><td>Basic — plugins only</td></tr>
+<tr><td>Privacy/local storage</td><td>Cloud only</td><td>Cloud only</td><td>Local files; optional sync</td></tr>
+<tr><td>Graph/backlinks</td><td>Basic backlinks</td><td>No</td><td>Excellent — graph view, bidirectional links</td></tr>
+<tr><td>Collaboration</td><td>Excellent — real-time, comments, mentions</td><td>Excellent — designed for teams</td><td>Limited — Live Preview plugin</td></tr>
+<tr><td>Price</td><td>Free–$15/user/mo</td><td>Free–$19/user/mo</td><td>Free (Obsidian Sync: $10/mo)</td></tr>
+<tr><td>Learning curve</td><td>Medium</td><td>High</td><td>Medium-High</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Choose Notion if:</strong> Your team needs shared documentation + project tracking in one place, you like flexibility over structure, and you work with cross-functional knowledge (not just tasks).</p>
+
+<p><strong>Choose ClickUp if:</strong> You're a PM or project-heavy team that needs serious task management — subtasks, time tracking, Gantt charts, workload views. Notion's task management is genuinely inferior to ClickUp for complex project work.</p>
+
+<p><strong>Choose Obsidian if:</strong> You're managing personal knowledge (not team work), you want local files and privacy, or you're building a long-term knowledge graph where bidirectional linking and graph view matter.</p>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-item">
+  <div class="faq-q">Is Notion AI worth the extra cost?</div>
+  <div class="faq-a">For Business plan users ($15/user/mo), Notion AI is included and worth it — especially Meeting Notes summarization and the Q&A feature. For Plus plan users, the $10/user/mo add-on is harder to justify unless you write heavily in Notion and your workspace is well-organized enough for Q&A to be useful.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">How do Notion database relations work?</div>
+  <div class="faq-a">Relations link two databases so entries can reference each other. Example: a Projects database and Tasks database, where each Task relates to its Project. Once linked, use Rollup properties to aggregate child data in the parent — counting tasks, summing hours, showing earliest deadlines. Relations + Rollups together replace what most people use spreadsheets for.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Should I use Notion or Obsidian for personal knowledge management?</div>
+  <div class="faq-a">Obsidian if: you want local Markdown files, value privacy, or need a dense bidirectional knowledge graph with graph view. Notion if: you collaborate with others, need database features, or prefer cloud sync. Many power users use both: Obsidian for personal notes, Notion for team work.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">What is the best Notion plan for a freelancer?</div>
+  <div class="faq-a">The Free plan works for solo freelancers with basic needs. Plus ($10/mo) unlocks unlimited file uploads and custom domains for client portals — worth it once you're sharing Notion pages with clients. The guest limit (10 on Free, unlimited on Plus) is often the deciding factor for client-facing work.</div>
+</div>
+
+<div style="margin-top:40px">
+  <a class="cta" href="https://comparedge.com/tools/notion">View Notion on ComparEdge →</a>
+</div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="https://blog.comparedge.com/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none"><span style="font-weight:800;font-size:15px;background:linear-gradient(90deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ComparEdge</span><span style="font-weight:700;font-size:15px;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Blog</span></a>
+      <p>Data-driven SaaS & AI intelligence. Independent comparisons, real pricing data, and market analysis for 2026 and beyond.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Playbooks</h4>
+      <a href="/playbooks/chatgpt.html">ChatGPT</a>
+      <a href="/playbooks/cursor.html">Cursor</a>
+      <a href="/playbooks/midjourney.html">Midjourney</a>
+      <a href="/playbooks/notion.html">Notion</a>
+      <a href="/playbooks/hubspot.html">HubSpot</a>
+    </div>
+    <div class="footer-col">
+      <h4>Related</h4>
+      <a href="https://blog.comparedge.com/clickup-vs-notion.html">ClickUp vs Notion</a>
+      <a href="https://blog.comparedge.com/best-free-project-management.html">Free PM Tools</a>
+      <a href="https://blog.comparedge.com/free-ai-tools-startups-2026.html">AI Tools for Startups</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://comparedge.com" target="_blank" rel="noopener">ComparEdge.com</a>
+      <a href="https://comparedge.com/submit" target="_blank" rel="noopener">Submit a Tool</a>
+      <a href="https://github.com/comparedge" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ComparEdge · <a href="https://comparedge.com">comparedge.com</a></span>
+    <span>Updated April 24, 2026</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.fade-in');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.1});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

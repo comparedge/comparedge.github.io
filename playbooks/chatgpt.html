@@ -43,7 +43,8 @@ a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}
 .progress-bar{position:fixed;top:60px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99;transition:width .1s linear;width:0}
 /* Sticky sidebar TOC */
 .article-layout{position:relative}
-.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);scrollbar-width:thin}
+.sidebar-toc{position:fixed;top:90px;left:max(16px,calc((100vw - 1200px)/2 - 10px));width:200px;max-height:calc(100vh - 120px);overflow-y:auto;z-index:50;padding:16px;background:rgba(15,17,25,.9);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(12px);scrollbar-width:thin;opacity:0;transform:translateX(-10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.sidebar-toc.visible{opacity:1;transform:none;pointer-events:auto}
 .sidebar-toc h4{font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:12px}
 .sidebar-toc ol{list-style:none;margin:0;padding:0;counter-reset:stoc}
 .sidebar-toc li{counter-increment:stoc;margin-bottom:6px}
@@ -555,12 +556,19 @@ HOW TO RESPOND:
     if(thumb&&track){thumb.style.height=(pct*100)+'%'}
   }
 
-  // Sidebar TOC active section
+  // Sidebar TOC — show only after scrolling past inline TOC
+  var sidebar=document.getElementById('sidebarToc');
+  var inlineToc=document.querySelector('.toc');
   var tocLinks=document.querySelectorAll('.sidebar-toc a');
   var sections=[];
   tocLinks.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)sections.push({id:id,el:el,link:a})});
   function updateActive(){
     var scrollPos=window.scrollY+120;
+    // Show/hide sidebar based on inline TOC position
+    if(sidebar&&inlineToc){
+      var tocBottom=inlineToc.offsetTop+inlineToc.offsetHeight;
+      sidebar.classList.toggle('visible',scrollPos>tocBottom);
+    }
     var active=null;
     for(var i=sections.length-1;i>=0;i--){if(sections[i].el.offsetTop<=scrollPos){active=sections[i].id;break}}
     tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});
