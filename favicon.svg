@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#0a0a0a"/>
+  <!-- Primary sharp arrow -->
+  <path d="M3 28 L14 5 L17 11 L23 4 L22 12 L29 11 L21 24 L17 18 Z"
+    fill="none" stroke="#3b82f6" strokeWidth="1.6"
+    stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Ghost arrow -->
+  <path d="M29 4 L18 27 L15 21 L9 28 L10 20 L3 21 L11 8 L15 14 Z"
+    fill="none" stroke="white" strokeWidth="1"
+    stroke-linejoin="round" stroke-linecap="round" opacity="0.18"/>
+</svg>
